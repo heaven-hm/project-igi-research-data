@@ -132,3 +132,10 @@ The footer `ident` must match `TEX_IDENT` (`"LOOP"`) or the file is rejected.
 
 **Pixel data:** Starts at offset 0x20 (immediately after header). Only the first mip level is loaded.
 **Line width:** Computed as `unk3 * bytes_per_pixel`. This is the byte stride per row.
+
+## 3.7 Tiles vs. mip levels
+
+The multi-image versions store their extra images for two different reasons:
+
+- **`TEX07` / `TEX09` store tiles.** The trailing `TEX06` footer (seen in the footer tables) carries a `count_x × count_y` grid. Each item is a full-resolution tile, and the bitmap reassembles them row-major into one image. All tiles are read at the parent header's `width`/`height`.
+- **`TEX11` stores a mip chain.** Up to ten levels follow the header, each half the dimensions of the previous one (level *n* is `width >> n` × `height >> n`). Level 0 is the full-resolution base image.

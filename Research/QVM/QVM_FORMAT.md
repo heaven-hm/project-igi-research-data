@@ -108,3 +108,45 @@ The CALL opcode has variable-length encoding:
 [opcode: 1 byte] [operand: 0, 1, 2, or 4 bytes depending on opcode]
 ```
 Most instructions are 1 byte (opcode only). Branch instructions (BRA, BF, BT) use 4-byte signed offsets. Push variants use 1, 2, or 4-byte operands as indicated in the table above.
+
+## 4.6 Execution Model
+
+The VM uses a **stack-based architecture**:
+1. Push operands onto the stack (literals, variables, strings)
+2. Execute operators that pop operands and push results
+3. CALL pops a function name variable from the stack, evaluates arguments from subprograms, and pushes the call result
+4. BF pops a condition and branches (used for if/else and while loops)
+5. BRK terminates a block; BRA jumps unconditionally (used after CALL to skip argument code, and for else/loop branches)
+
+### Control Flow Reconstruction
+The decompiler reconstructs the structured control flow from branch offsets:
+- **BF with forward BRA at end of then-block (offset > 0)** -> if/else
+- **BF with BRA offset = 0 at end of then-block** -> if (no else)
+- **BF with backward BRA at end of then-block (offset < 0)** -> while loop
+
+## 4.7 Decompiled Output (QSC)
+
+The converter decompiles QVM bytecode into QSC — a C-like scripting language. Example:
+`c
+if(AIFunction_GetCurrentEventType() == AIEVENT_CREATE)
+{
+        AIFunction_DefaultHandler();
+}
+`
+QSC files use tab indentation and semicolon-terminated statements. Function calls use the Task_New(id, "Type", "Name", ...) pattern for object definitions, and engine API calls like AIFunction_*, AIAction_* for AI scripting.
+
+## 4.8 File Organization
+
+QVM files appear throughout the game directory structure:
+- config.qvm -> Game configuration
+- common/ai/default.qvm -> Default AI behavior
+- missions/location1/level1/objects.qvm -> Level object placement (largest files)
+- missions/location1/level1/mission.qvm -> Mission logic
+- missions/location1/level1/ai/500.qvm -> Individual AI scripts
+
+## 4.9 Statistics (IGI 2)
+- Total files: 1,786 (all version 8.7, signature LOOP)
+- Size range: 105–393,614 bytes (Median: 292 bytes)
+- Contiguous layout: 100% of files
+- objects.qvm are the largest files containing all object definitions for a level.
+- Opcode Frequency: BRK is the most common (530,932), followed by PUSHSIW (124,805) and PUSHIIB (91,742). 23 of 49 opcodes are used.
