@@ -73,7 +73,7 @@ Some MEFs have two chunks `REIH` (reversed HIER - Bone Hierarchy) and `MANB` (re
 * `MANB` contains names.
 
 All IFFs have a chunk `REIH` (bone hierarchy). The binary structure is exactly the same as in MEFs `REIH`. But `MANB` (bone names) in IFFs we don't have. So you should have hardcoded bone names in your animation exporter.
-Fortunately, in IGI 2 we have only two variations of skeletons:
+There are typically two variations of skeletons:
 * with 31 bones - for 3rd party animations
 * with 47 bones - for 1st party animations
 

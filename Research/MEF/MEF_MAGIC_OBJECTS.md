@@ -11,8 +11,6 @@ The system is split across two data sources that the engine combines at load tim
 
 ## 9.1 MagicObject Config Files
 
-Two formats exist depending on game version:
-
 **IGI 1** — `magicobjconfig.qsc` uses `Task_New`:
 ```qsc
 Task_New(-1, "MagicObjConfig",
@@ -20,15 +18,6 @@ Task_New(-1, "MagicObjConfig",
     "model_id",   // which .mef mesh to use
     TASKTYPE_XXX  // what behavior to apply
 );
-```
-
-**IGI 2** — `magicobj.qvm` (compiled from `magicobj.qsc`) uses `DefineMagicObj`:
-```qsc
-DefineMagicObj("model_id", "model_id", TASKTYPE_XXX);
-// Some task types have extra parameters:
-DefineMagicObj("614_02_1", "614_02_1", TASKTYPE_AISTATIONARYGUN, "614_03_1", 361, 15, -4, 10000, 15, 15, "tank_turret", 0, 6);
-DefineMagicObj("610_02_1", "610_02_1", TASKTYPE_CARDOOR, 0, 30, -118);
-DefineMagicObj("700_05_1", "700_05_1", TASKTYPE_HELIDOOR, 1, 0.6, 2.65);
 ```
 
 The engine checks every ATTA sub-model name against this registry at spawn time. If found, it spawns a MagicObject with the configured behavior; if not found, it spawns a static visual sub-part.
