@@ -632,30 +632,676 @@
                 "note": "Checks if current player profle is active."
             }
         },
-	{
-		"Native": {
-			"hash": "00416D80",
-			"address": 4287872,
-			"name": "EnablePlayerHit",
-			"signature": "int EnablePlayerHit()",
-			"note": "Set (0057BABC + 0xE1) value to 0 for Enable, 1 for Disable"
-		}
-	},
-	{
-	  "Native": {
-	    "hash": "00471F60",
-	    "address": 4653664,
-	    "name": "EnemyDetectorOverlay",
-	    "signature": "uint32_t EnemyDetectorOverlay(int contextBase, int targetAddr, float sortingDistance, int configFlag, int *screenPosition, int eventParam, int extraParam1, int extraParam2)",
-	    "note": "Shows red box on enemy when using binoculars. Params: contextBase=AI/render base (e.g. 0x01A3F4C0), targetAddr=target address (e.g. 0x00472C50), sortingDistance=float (e.g. 12.5), configFlag=overlay type (e.g. 1), screenPosition=out vec2 ptr, eventParam/extraParam1/extraParam2=optional (0)."
-	  }
-	},
+        {
+            "Native": {
+                "name": "EnablePlayerHit",
+                "address": "00416D80",
+                "signature": "int EnablePlayerHit()",
+                "note": "Set (0057BABC + 0xE1) value to 0 for Enable, 1 for Disable"
+            }
+        },
+        {
+            "Native": {
+                "name": "EnemyDetectorOverlay",
+                "address": "00470260",
+                "signature": "uint32_t EnemyDetectorOverlay(int contextBase, int targetAddr, float sortingDistance, int configFlag, int *screenPosition, int eventParam, int extraParam1, int extraParam2)",
+                "note": "Shows red box on enemy when using binoculars. Params: contextBase=AI/render base (e.g. 0x01A3F4C0), targetAddr=target address (e.g. 0x00472C50), sortingDistance=float (e.g. 12.5), configFlag=overlay type (e.g. 1), screenPosition=out vec2 ptr, eventParam/extraParam1/extraParam2=optional (0)."
+            }
+        },
         {
             "Native": {
                 "name": "SoldierExecute",
                 "address": "0045C440",
                 "signature": "void SoldierExecute(int ptr, int addr)",
                 "note": "Execute current soldier in level, Param: ptr = (addr+0x2EC) and soldier address."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_Patrol",
+                "address": "0044D0E0",
+                "signature": "void AIAction_Patrol(int path_id, int start_node, int end_node);",
+                "note": "Assigns patrol route path and node loop boundaries for AI guard entity."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_Combat",
+                "address": "0044D160",
+                "signature": "void AIAction_Combat(int target_id);",
+                "note": "Engages specified target entity in combat state."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_Dead",
+                "address": "0044D260",
+                "signature": "void AIAction_Dead(int killer_id);",
+                "note": "Triggers death state, animation, and drop weapon behavior."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_FallFlat",
+                "address": "0044D2C0",
+                "signature": "void AIAction_FallFlat(float duration, int anim_id);",
+                "note": "Forces AI guard to fall flat on ground for specified duration."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_Activate",
+                "address": "0044D420",
+                "signature": "void AIAction_Activate(int object_id, int action_id, float duration);",
+                "note": "Triggers interactable object activation (alarm button, door switch)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_WalkToNode",
+                "address": "0044D4A0",
+                "signature": "void AIAction_WalkToNode(int node_id, int speed);",
+                "note": "Orders guard AI to walk to a designated path node."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_RunToNode",
+                "address": "0044D510",
+                "signature": "void AIAction_RunToNode(int node_id, int speed);",
+                "note": "Orders guard AI to run to a designated path node."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_FireAtNode",
+                "address": "0044D580",
+                "signature": "void AIAction_FireAtNode(int node_id, int weapon_id, int burst_count, float delay, int aim_mode);",
+                "note": "Fires weapon at a specific world node location."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_FireAtTask",
+                "address": "0044D630",
+                "signature": "void AIAction_FireAtTask(int task_id, int weapon_id, int burst_count, float delay, int aim_mode);",
+                "note": "Fires weapon at target task object (player or camera)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_PlayAnimation",
+                "address": "0044D6E0",
+                "signature": "void AIAction_PlayAnimation(int anim_id, float speed);",
+                "note": "Plays skeletal animation sequence on AI guard model."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_PlaySound",
+                "address": "0044D750",
+                "signature": "void AIAction_PlaySound(int sound_id, float volume, float pitch);",
+                "note": "Triggers voice/sound playback on AI guard entity."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_MoveToEvent",
+                "address": "0044D7D0",
+                "signature": "void AIAction_MoveToEvent(int event_id, int speed);",
+                "note": "Orders AI to move toward detected sound or vision event location."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_LookAtEvent",
+                "address": "0044D870",
+                "signature": "void AIAction_LookAtEvent(int event_id, float duration);",
+                "note": "Rotates AI head/eyes to look at event origin."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_Stunned",
+                "address": "0044D8F0",
+                "signature": "void AIAction_Stunned(float duration, int anim_id);",
+                "note": "Puts AI into stunned reaction state (e.g. Flashbang)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_KickGrenade",
+                "address": "0044D960",
+                "signature": "void AIAction_KickGrenade(int grenade_id);",
+                "note": "Triggers grenade kick reaction sequence."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_RunPanicking",
+                "address": "0044DA00",
+                "signature": "void AIAction_RunPanicking(int target_node, float duration);",
+                "note": "Orders unarmed civilian/guard to run panicking away."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_Idle",
+                "address": "0044DA80",
+                "signature": "void AIAction_Idle(float duration);",
+                "note": "Puts AI guard in passive idle stance for specified time."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIAction_SetCombat",
+                "address": "0044DAE0",
+                "signature": "void AIAction_SetCombat(int combat_mode);",
+                "note": "Sets aggressive/defensive combat mode parameters."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_DefaultHandler",
+                "address": "0044E060",
+                "signature": "void AIFunction_DefaultHandler();",
+                "note": "Default fallback script event handler."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_RemoveAlarmActions",
+                "address": "0044DBC0",
+                "signature": "void AIFunction_RemoveAlarmActions();",
+                "note": "Clears pending alarm switch activation goals."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetViewLength",
+                "address": "0044DC40",
+                "signature": "void AIFunction_SetViewLength(float length);",
+                "note": "Sets primary acute vision cone sight distance."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetAlarmViewLength",
+                "address": "0044DCD0",
+                "signature": "void AIFunction_SetAlarmViewLength(float length);",
+                "note": "Sets sight distance while alarm is active."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetViewAlpha",
+                "address": "0044DD30",
+                "signature": "void AIFunction_SetViewAlpha(float alpha);",
+                "note": "Sets primary vision cone half-angle alpha."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetViewGamma",
+                "address": "0044DD90",
+                "signature": "void AIFunction_SetViewGamma(float gamma);",
+                "note": "Sets primary vision cone detection rate gamma."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetSecondaryViewLength",
+                "address": "0044DDF0",
+                "signature": "void AIFunction_SetSecondaryViewLength(float length);",
+                "note": "Sets secondary peripheral vision cone distance."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetSecondaryAlarmViewLength",
+                "address": "0044DE80",
+                "signature": "void AIFunction_SetSecondaryAlarmViewLength(float length);",
+                "note": "Sets secondary peripheral vision cone distance under alarm."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetSecondaryViewAlpha",
+                "address": "0044DEE0",
+                "signature": "void AIFunction_SetSecondaryViewAlpha(float alpha);",
+                "note": "Sets secondary vision cone angle."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetSecondaryViewGamma",
+                "address": "0044DF40",
+                "signature": "void AIFunction_SetSecondaryViewGamma(float gamma);",
+                "note": "Sets secondary vision cone detection rate."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetEventPriority",
+                "address": "0044E0C0",
+                "signature": "void AIFunction_SetEventPriority(int priority);",
+                "note": "Sets event queue evaluation priority for guard script."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetInvulnerability",
+                "address": "0044E150",
+                "signature": "void AIFunction_SetInvulnerability(int invulnerable);",
+                "note": "Sets invulnerability flag (1 = godmode / mission object)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetInstantDeath",
+                "address": "0044E1B0",
+                "signature": "void AIFunction_SetInstantDeath(int instant_death);",
+                "note": "Forces immediate death on single bullet hit."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetDeathAnimation",
+                "address": "0044E210",
+                "signature": "void AIFunction_SetDeathAnimation(int anim_id);",
+                "note": "Assigns specific death animation index."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetAlarmTriggerID",
+                "address": "0044E270",
+                "signature": "void AIFunction_SetAlarmTriggerID(int trigger_id);",
+                "note": "Links guard AI to alarm button task ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetAlarmControlID",
+                "address": "0044E2D0",
+                "signature": "void AIFunction_SetAlarmControlID(int control_id);",
+                "note": "Links guard AI to alarm control panel task ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetAlarmAccess",
+                "address": "0044E330",
+                "signature": "void AIFunction_SetAlarmAccess(int access_flags);",
+                "note": "Sets guard permission to trigger alarms."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetGunnerID",
+                "address": "0044E390",
+                "signature": "void AIFunction_SetGunnerID(int gunner_id);",
+                "note": "Links AI guard to stationary gun/turret task ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetScriptIntegerValue",
+                "address": "0044E6D0",
+                "signature": "void AIFunction_SetScriptIntegerValue(int key, int value);",
+                "note": "Sets internal integer script state variable."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetScriptRealValue",
+                "address": "0044E790",
+                "signature": "void AIFunction_SetScriptRealValue(int key, float value);",
+                "note": "Sets internal float script state variable."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetAlarmTriggerID",
+                "address": "0044E3F0",
+                "signature": "int AIFunction_GetAlarmTriggerID();",
+                "note": "Returns linked alarm trigger task ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetAlarmControlID",
+                "address": "0044E430",
+                "signature": "int AIFunction_GetAlarmControlID();",
+                "note": "Returns linked alarm control panel task ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetAlarmAccess",
+                "address": "0044E470",
+                "signature": "int AIFunction_GetAlarmAccess();",
+                "note": "Returns guard alarm access permissions."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetGunnerID",
+                "address": "0044E4B0",
+                "signature": "int AIFunction_GetGunnerID();",
+                "note": "Returns linked stationary gun task ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetAlarmControlStatus",
+                "address": "0044E4F0",
+                "signature": "int AIFunction_GetAlarmControlStatus();",
+                "note": "Queries if global level alarm is active (0 or 1)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetGunnerStatus",
+                "address": "0044E5E0",
+                "signature": "int AIFunction_GetGunnerStatus();",
+                "note": "Queries if linked gunner turret is occupied."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetScriptIntegerValue",
+                "address": "0044E740",
+                "signature": "int AIFunction_GetScriptIntegerValue(int key);",
+                "note": "Reads integer script state variable."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetCurrentEventType",
+                "address": "0044DFA0",
+                "signature": "int AIFunction_GetCurrentEventType();",
+                "note": "Returns active detected event type (Gunshot, Vision, Impact)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_IsEventBehind",
+                "address": "0044E860",
+                "signature": "int AIFunction_IsEventBehind();",
+                "note": "Returns 1 if detected sound/event originates behind guard."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetScriptRealValue",
+                "address": "0044E800",
+                "signature": "float AIFunction_GetScriptRealValue(int key);",
+                "note": "Reads float script state variable."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetRandomValue",
+                "address": "0044E000",
+                "signature": "float AIFunction_GetRandomValue(float max);",
+                "note": "Generates random float between 0.0 and max using PRNG 0x4B4740."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetEventDistance",
+                "address": "0044E930",
+                "signature": "float AIFunction_GetEventDistance();",
+                "note": "Returns distance to detected event origin."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetAlarmTriggerDistance",
+                "address": "0044E9B0",
+                "signature": "float AIFunction_GetAlarmTriggerDistance();",
+                "note": "Returns distance between guard and alarm switch."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SetAnimationInterval",
+                "address": "0044EAF0",
+                "signature": "void AIFunction_SetAnimationInterval(float min, float max);",
+                "note": "Sets min/max interval between ambient idle animations."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_AddAnimationEntry",
+                "address": "0044EBB0",
+                "signature": "void AIFunction_AddAnimationEntry(int anim_id, float weight);",
+                "note": "Adds weighted animation entry to idle animation pool."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_GetAnimationToPlay",
+                "address": "0044ECB0",
+                "signature": "int AIFunction_GetAnimationToPlay();",
+                "note": "Selects animation index from weighted idle pool."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIFunction_SendResponse",
+                "address": "0044EE40",
+                "signature": "void AIFunction_SendResponse();",
+                "note": "Sends AI response signal to event pump."
+            }
+        },
+        {
+            "Native": {
+                "name": "Flow_RequestEvent",
+                "address": "00401FC0",
+                "signature": "void Flow_RequestEvent(int event_id);",
+                "note": "Requests engine state transition (QUIT, INTRO, MAINMENU, GAME, RESTART_GAME)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Task_New",
+                "address": "004F0E50",
+                "signature": "void Task_New(int type_id, ...);",
+                "note": "Instantiates new task node in level task tree hierarchy."
+            }
+        },
+        {
+            "Native": {
+                "name": "Task_DeclareParameters",
+                "address": "004F0ED0",
+                "signature": "void Task_DeclareParameters(int type_id, ...);",
+                "note": "Declares parameter schema and value types for a task node type."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GetNumberOfPlayerProfiles",
+                "address": "00402FF0",
+                "signature": "int Config_GetNumberOfPlayerProfiles();",
+                "note": "Returns total count of registered player profiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GetActivePlayerProfileIndex",
+                "address": "00402FF0",
+                "signature": "int Config_GetActivePlayerProfileIndex();",
+                "note": "Returns active profile index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_SetActivePlayerProfileIndex",
+                "address": "00402FF0",
+                "signature": "void Config_SetActivePlayerProfileIndex(int index);",
+                "note": "Sets active player profile index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_CreateNewPlayerProfile",
+                "address": "00402FF0",
+                "signature": "int Config_CreateNewPlayerProfile(string name, int difficulty);",
+                "note": "Creates new player profile."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_DeletePlayerProfile",
+                "address": "00402FF0",
+                "signature": "int Config_DeletePlayerProfile(int index);",
+                "note": "Deletes player profile at index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_PlayerGetActiveMission",
+                "address": "00402FF0",
+                "signature": "int Config_PlayerGetActiveMission(int profile_index);",
+                "note": "Gets highest unlocked mission for profile."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_FillPlayerProfileListBox",
+                "address": "00402FF0",
+                "signature": "void Config_FillPlayerProfileListBox();",
+                "note": "Fills active menu list box with player profile names."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_FillRenderDeviceListBox",
+                "address": "00402FF0",
+                "signature": "void Config_FillRenderDeviceListBox();",
+                "note": "Fills list box with detected Direct3D/OpenGL render devices."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_FillScreenResolutionListBox",
+                "address": "00402FF0",
+                "signature": "void Config_FillScreenResolutionListBox();",
+                "note": "Fills list box with supported screen resolutions."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GraphicOptionsGetDevice",
+                "address": "00402FF0",
+                "signature": "int Config_GraphicOptionsGetDevice();",
+                "note": "Gets active graphics device index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GraphicOptionsSetDevice",
+                "address": "00402FF0",
+                "signature": "void Config_GraphicOptionsSetDevice(int device_index);",
+                "note": "Sets active graphics device index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GraphicOptionsGetResolution",
+                "address": "00402FF0",
+                "signature": "int Config_GraphicOptionsGetResolution();",
+                "note": "Gets active screen resolution index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GraphicOptionsSetResolution",
+                "address": "00402FF0",
+                "signature": "void Config_GraphicOptionsSetResolution(int res_index);",
+                "note": "Sets active screen resolution index."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GraphicOptionsGetGamma",
+                "address": "00402FF0",
+                "signature": "float Config_GraphicOptionsGetGamma();",
+                "note": "Gets active gamma slider value."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GraphicOptionsSetGamma",
+                "address": "00402FF0",
+                "signature": "void Config_GraphicOptionsSetGamma(float gamma);",
+                "note": "Sets active gamma slider value."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_SoundOptionsGetSoundsEffectsVolume",
+                "address": "00402FF0",
+                "signature": "float Config_SoundOptionsGetSoundsEffectsVolume();",
+                "note": "Gets sound effects volume level (0.0 to 1.0)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_SoundOptionsSetSoundsEffectsVolume",
+                "address": "00402FF0",
+                "signature": "void Config_SoundOptionsSetSoundsEffectsVolume(float volume);",
+                "note": "Sets sound effects volume level."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_SoundOptionsGetMusicVolume",
+                "address": "00402FF0",
+                "signature": "float Config_SoundOptionsGetMusicVolume();",
+                "note": "Gets music volume level (0.0 to 1.0)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_SoundOptionsSetMusicVolume",
+                "address": "00402FF0",
+                "signature": "void Config_SoundOptionsSetMusicVolume(float volume);",
+                "note": "Sets music volume level."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GameOptionsInputGetInvertMouse",
+                "address": "00402FF0",
+                "signature": "int Config_GameOptionsInputGetInvertMouse();",
+                "note": "Gets invert mouse pitch setting (0 or 1)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GameOptionsInputSetInvertMouse",
+                "address": "00402FF0",
+                "signature": "void Config_GameOptionsInputSetInvertMouse(int invert);",
+                "note": "Sets invert mouse pitch setting."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GameOptionsInputGetMouseSensitivity",
+                "address": "00402FF0",
+                "signature": "float Config_GameOptionsInputGetMouseSensitivity();",
+                "note": "Gets mouse look sensitivity multiplier."
+            }
+        },
+        {
+            "Native": {
+                "name": "Config_GameOptionsInputSetMouseSensitivity",
+                "address": "00402FF0",
+                "signature": "void Config_GameOptionsInputSetMouseSensitivity(float sensitivity);",
+                "note": "Sets mouse look sensitivity multiplier."
             }
         }
     ]
