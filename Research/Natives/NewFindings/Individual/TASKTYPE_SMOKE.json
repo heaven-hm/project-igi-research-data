@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_SMOKE",
+  "address": "0053C164",
+  "signature": "int TASKTYPE_SMOKE();",
+  "note": "Task type constant for smoke effects."
+}

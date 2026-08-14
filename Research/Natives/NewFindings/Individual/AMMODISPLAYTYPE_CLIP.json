@@ -1,0 +1,6 @@
+{
+  "name": "AMMODISPLAYTYPE_CLIP",
+  "address": "00539298",
+  "signature": "int AMMODISPLAYTYPE_CLIP();",
+  "note": "Ammo display type for gun clips."
+}

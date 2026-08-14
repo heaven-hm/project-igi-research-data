@@ -1,0 +1,6 @@
+{
+  "name": "WEAPON_ID_M16A2",
+  "address": "00538E1C",
+  "signature": "int WEAPON_ID_M16A2();",
+  "note": "Weapon ID constant for M16A2."
+}

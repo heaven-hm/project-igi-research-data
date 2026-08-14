@@ -1,0 +1,6 @@
+{
+  "name": "RigidDyncubeObjRead",
+  "address": "004C48E0",
+  "signature": "void RigidDynCubeObjRead(uint *cfg_file);",
+  "note": "Read rigid dynCube config file , Params: config file of rigid dynCube."
+}

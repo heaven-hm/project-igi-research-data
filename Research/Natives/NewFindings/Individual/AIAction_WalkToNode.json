@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_WalkToNode",
+  "address": "0044D4A0",
+  "signature": "void AIAction_WalkToNode(int node_id, int speed);",
+  "note": "Orders guard AI to walk to a designated path node."
+}

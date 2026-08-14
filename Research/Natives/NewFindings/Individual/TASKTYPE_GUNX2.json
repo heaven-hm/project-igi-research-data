@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_GUNX2",
+  "address": "0053FE6C",
+  "signature": "int TASKTYPE_GUNX2();",
+  "note": "Task type constant for double guns."
+}

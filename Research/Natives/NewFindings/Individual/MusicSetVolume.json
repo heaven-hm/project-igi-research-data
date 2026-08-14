@@ -1,0 +1,6 @@
+{
+  "name": "MusicSetVolume",
+  "address": "00495E70",
+  "signature": "void MusicSetVolume(float volume,float volume);",
+  "note": "Sets music volume., Params: volume range [0.0 - 1.0]"
+}

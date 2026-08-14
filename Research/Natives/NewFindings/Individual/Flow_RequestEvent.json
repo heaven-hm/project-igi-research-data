@@ -1,0 +1,6 @@
+{
+  "name": "Flow_RequestEvent",
+  "address": "00401FC0",
+  "signature": "void Flow_RequestEvent(int event_id);",
+  "note": "Requests engine state transition (QUIT, INTRO, MAINMENU, GAME, RESTART_GAME)."
+}

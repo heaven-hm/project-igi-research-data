@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_GetAlarmControlStatus",
+  "address": "0044E4F0",
+  "signature": "int AIFunction_GetAlarmControlStatus();",
+  "note": "Queries if global level alarm is active (0 or 1)."
+}

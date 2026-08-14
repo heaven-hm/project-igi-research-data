@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_GetAlarmControlID",
+  "address": "0044E430",
+  "signature": "int AIFunction_GetAlarmControlID();",
+  "note": "Returns linked alarm control panel task ID."
+}

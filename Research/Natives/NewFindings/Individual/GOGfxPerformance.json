@@ -1,0 +1,6 @@
+{
+  "name": "GOGfxPerformance",
+  "address": "00533294",
+  "signature": "int GOGfxPerformance();",
+  "note": "Game option: graphics performance level."
+}

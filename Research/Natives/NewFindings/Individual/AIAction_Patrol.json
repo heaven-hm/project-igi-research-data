@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_Patrol",
+  "address": "0044D0E0",
+  "signature": "void AIAction_Patrol(int path_id, int start_node, int end_node);",
+  "note": "Assigns patrol route path and node loop boundaries for AI guard entity."
+}

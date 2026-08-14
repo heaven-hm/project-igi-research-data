@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_CAR",
+  "address": "0053BE18",
+  "signature": "int TASKTYPE_CAR();",
+  "note": "Task type constant for cars."
+}

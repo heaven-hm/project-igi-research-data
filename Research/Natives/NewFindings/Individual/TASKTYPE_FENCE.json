@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_FENCE",
+  "address": "0053C500",
+  "signature": "int TASKTYPE_FENCE();",
+  "note": "Task type constant for fences."
+}

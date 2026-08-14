@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_GUNMOVINGPART",
+  "address": "00540754",
+  "signature": "int TASKTYPE_GUNMOVINGPART();",
+  "note": "Task type constant for moving gun parts."
+}

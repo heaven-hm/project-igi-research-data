@@ -1,0 +1,24 @@
+{
+  "category": "HumanAI",
+  "count": 3,
+  "natives": [
+    {
+      "name": "HumanAIConfigItem",
+      "address": "005383DC",
+      "signature": "void HumanAIConfigItem(int* task);",
+      "note": "Human AI config item registration."
+    },
+    {
+      "name": "HumanAIConfig",
+      "address": "005383F0",
+      "signature": "void HumanAIConfig(int* task);",
+      "note": "Human AI config task type."
+    },
+    {
+      "name": "HumanAI",
+      "address": "0053D404",
+      "signature": "void HumanAI(int* task);",
+      "note": "Human AI base task type."
+    }
+  ]
+}

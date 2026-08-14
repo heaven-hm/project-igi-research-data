@@ -1,0 +1,6 @@
+{
+  "name": "IsPlayerProfileActive",
+  "address": "00406220",
+  "signature": "char* IsPlayerProfileActive()",
+  "note": "Checks if current player profle is active."
+}

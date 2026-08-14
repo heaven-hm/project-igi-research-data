@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetSecondaryAlarmViewLength",
+  "address": "0044DE80",
+  "signature": "void AIFunction_SetSecondaryAlarmViewLength(float length);",
+  "note": "Sets secondary peripheral vision cone distance under alarm."
+}

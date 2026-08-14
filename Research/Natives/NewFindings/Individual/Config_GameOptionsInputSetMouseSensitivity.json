@@ -1,0 +1,6 @@
+{
+  "name": "Config_GameOptionsInputSetMouseSensitivity",
+  "address": "00402FF0",
+  "signature": "void Config_GameOptionsInputSetMouseSensitivity(float sensitivity);",
+  "note": "Sets mouse look sensitivity multiplier."
+}

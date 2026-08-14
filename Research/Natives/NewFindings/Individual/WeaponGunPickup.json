@@ -1,0 +1,6 @@
+{
+  "name": "WeaponGunPickup",
+  "address": "0045FFC0",
+  "signature": "void WeaponGunPickup(int param_ptr, int* type_ptr)",
+  "note": "Weapon pickup from ground, Param: param_ptr is in defined in Constants as 'gun_pickup_ptr', set Weapon Id in type_ptr like *(0x19F720) = 5"
+}

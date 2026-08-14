@@ -1,0 +1,6 @@
+{
+  "name": "GOGameDiff",
+  "address": "005332B4",
+  "signature": "int GOGameDiff();",
+  "note": "Game option: game difficulty."
+}

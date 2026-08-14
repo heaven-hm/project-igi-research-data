@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_LookAtEvent",
+  "address": "0044D870",
+  "signature": "void AIAction_LookAtEvent(int event_id, float duration);",
+  "note": "Rotates AI head/eyes to look at event origin."
+}

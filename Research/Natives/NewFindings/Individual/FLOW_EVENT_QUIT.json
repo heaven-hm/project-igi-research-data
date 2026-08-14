@@ -1,0 +1,6 @@
+{
+  "name": "FLOW_EVENT_QUIT",
+  "address": "00536264",
+  "signature": "int FLOW_EVENT_QUIT();",
+  "note": "Flow event: quit game."
+}

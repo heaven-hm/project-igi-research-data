@@ -1,0 +1,6 @@
+{
+  "name": "MemoryDealloc",
+  "address": "004B0BE0",
+  "signature": "uint MemDealloc(void);",
+  "note": "Deallocate allocated memory."
+}

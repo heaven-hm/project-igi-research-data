@@ -1,0 +1,6 @@
+{
+  "name": "FLOW_EVENT_GAME",
+  "address": "0053622C",
+  "signature": "int FLOW_EVENT_GAME();",
+  "note": "Flow event: start game (enter mission)."
+}

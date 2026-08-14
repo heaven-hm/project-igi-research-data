@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_GUN",
+  "address": "00540800",
+  "signature": "int TASKTYPE_GUN();",
+  "note": "Task type constant for generic guns."
+}

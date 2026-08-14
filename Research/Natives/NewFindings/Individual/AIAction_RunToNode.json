@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_RunToNode",
+  "address": "0044D510",
+  "signature": "void AIAction_RunToNode(int node_id, int speed);",
+  "note": "Orders guard AI to run to a designated path node."
+}

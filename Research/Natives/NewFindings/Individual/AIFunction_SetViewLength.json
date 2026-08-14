@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetViewLength",
+  "address": "0044DC40",
+  "signature": "void AIFunction_SetViewLength(float length);",
+  "note": "Sets primary acute vision cone sight distance."
+}

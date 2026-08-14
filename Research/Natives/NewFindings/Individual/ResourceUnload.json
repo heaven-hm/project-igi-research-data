@@ -1,0 +1,6 @@
+{
+  "name": "ResourceUnload",
+  "address": "004B6380",
+  "signature": "void ResourceUnload(int *resource_file);",
+  "note": "Unload resource loaded in memory, Params: resource file like 'sounds.qvm','AI/303.qvm'"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Config_GetNumberOfPlayerProfiles",
+  "address": "00402FF0",
+  "signature": "int Config_GetNumberOfPlayerProfiles();",
+  "note": "Returns total count of registered player profiles."
+}

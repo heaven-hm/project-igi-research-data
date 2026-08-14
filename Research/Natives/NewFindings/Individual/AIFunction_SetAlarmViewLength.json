@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetAlarmViewLength",
+  "address": "0044DCD0",
+  "signature": "void AIFunction_SetAlarmViewLength(float length);",
+  "note": "Sets sight distance while alarm is active."
+}

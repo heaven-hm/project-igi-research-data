@@ -1,0 +1,6 @@
+{
+  "name": "ResourceFlush",
+  "address": "004B63D0",
+  "signature": "void ResourceFlush(int* p1);",
+  "note": "Releases the current holding resources, Params: Params: p1 ??"
+}

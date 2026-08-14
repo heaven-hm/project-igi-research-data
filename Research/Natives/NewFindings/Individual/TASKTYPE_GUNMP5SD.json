@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_GUNMP5SD",
+  "address": "005404EC",
+  "signature": "int TASKTYPE_GUNMP5SD();",
+  "note": "Task type constant for MP5SD submachine gun."
+}

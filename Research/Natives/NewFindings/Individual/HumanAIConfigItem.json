@@ -1,0 +1,6 @@
+{
+  "name": "HumanAIConfigItem",
+  "address": "005383DC",
+  "signature": "void HumanAIConfigItem(int* task);",
+  "note": "Human AI config item registration."
+}

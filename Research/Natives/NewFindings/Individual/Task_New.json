@@ -1,0 +1,6 @@
+{
+  "name": "Task_New",
+  "address": "004F0E50",
+  "signature": "void Task_New(int type_id, ...);",
+  "note": "Instantiates new task node in level task tree hierarchy."
+}

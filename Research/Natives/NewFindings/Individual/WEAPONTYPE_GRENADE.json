@@ -1,0 +1,6 @@
+{
+  "name": "WEAPONTYPE_GRENADE",
+  "address": "0053935C",
+  "signature": "int WEAPONTYPE_GRENADE();",
+  "note": "Weapon type constant for grenades."
+}

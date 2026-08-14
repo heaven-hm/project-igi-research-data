@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_FireAtTask",
+  "address": "0044D630",
+  "signature": "void AIAction_FireAtTask(int task_id, int weapon_id, int burst_count, float delay, int aim_mode);",
+  "note": "Fires weapon at target task object (player or camera)."
+}

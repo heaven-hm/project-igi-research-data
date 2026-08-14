@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_ROCKETPOD",
+  "address": "0053BB40",
+  "signature": "int TASKTYPE_ROCKETPOD();",
+  "note": "Task type constant for rocket pods."
+}

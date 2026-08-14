@@ -1,0 +1,6 @@
+{
+  "name": "FLOW_EVENT_RESTART_GAME",
+  "address": "00536214",
+  "signature": "int FLOW_EVENT_RESTART_GAME();",
+  "note": "Flow event: restart current mission. Registered via Flow_RequestEvent."
+}

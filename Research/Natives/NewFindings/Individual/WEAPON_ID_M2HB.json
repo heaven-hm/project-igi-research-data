@@ -1,0 +1,6 @@
+{
+  "name": "WEAPON_ID_M2HB",
+  "address": "0054051C",
+  "signature": "int WEAPON_ID_M2HB();",
+  "note": "Weapon ID constant for M2HB heavy machine gun."
+}

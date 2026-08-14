@@ -1306,394 +1306,858 @@
         },
         {
             "Native": {
-                "name": "HumanSoldierTask_Register",
-                "address": "0045CAB0",
-                "signature": "void HumanSoldierTask_Register(void);",
-                "note": "Registers HumanSoldier task type object (3408 bytes) into level task tree."
+                "name": "TASKTYPE_CARDOOR",
+                "address": "0053BAC0",
+                "signature": "int TASKTYPE_CARDOOR();",
+                "note": "Task type constant for car doors. Registered via TasktypeSet."
             }
         },
         {
             "Native": {
-                "name": "HumanSoldier_InitStateDead",
-                "address": "004E8B80",
-                "signature": "void HumanSoldier_InitStateDead(State_s* state, QTask_s* task);",
-                "note": "Initializes dead state for human soldier task and updates death duration."
+                "name": "TASKTYPE_HELIWHEEL",
+                "address": "0053BAF8",
+                "signature": "int TASKTYPE_HELIWHEEL();",
+                "note": "Task type constant for helicopter wheels."
             }
         },
         {
             "Native": {
-                "name": "HumanTask_Register",
-                "address": "0045E450",
-                "signature": "void HumanTask_Register(void);",
-                "note": "Registers base Human task type object (3320 bytes)."
+                "name": "TASKTYPE_HELIDOOR",
+                "address": "0053BB1C",
+                "signature": "int TASKTYPE_HELIDOOR();",
+                "note": "Task type constant for helicopter doors."
             }
         },
         {
             "Native": {
-                "name": "HumanPlayerTask_Register",
-                "address": "0040FE30",
-                "signature": "void HumanPlayerTask_Register(void);",
-                "note": "Registers HumanPlayer task type object (3568 bytes)."
+                "name": "TASKTYPE_ROCKETPOD",
+                "address": "0053BB40",
+                "signature": "int TASKTYPE_ROCKETPOD();",
+                "note": "Task type constant for rocket pods."
             }
         },
         {
             "Native": {
-                "name": "HumanPlayerInputTask_Register",
-                "address": "0045DB70",
-                "signature": "void HumanPlayerInputTask_Register(void);",
-                "note": "Registers HumanPlayerInput task type object (484 bytes)."
+                "name": "TASKTYPE_HITZONE",
+                "address": "0053BB70",
+                "signature": "int TASKTYPE_HITZONE();",
+                "note": "Task type constant for hit zones (damage areas)."
             }
         },
         {
             "Native": {
-                "name": "HumanDamage_HitHandler",
-                "address": "0045D3C0",
-                "signature": "void HumanDamage_HitHandler(int* soldier_ptr, int damage_amount, int hit_zone);",
-                "note": "Applies damage multiplier by hit-zone table to soldier entity."
+                "name": "TASKTYPE_MISSILE",
+                "address": "0053BC6C",
+                "signature": "int TASKTYPE_MISSILE();",
+                "note": "Task type constant for missiles."
             }
         },
         {
             "Native": {
-                "name": "Human_GetDeadStateID",
-                "address": "004EBA80",
-                "signature": "short Human_GetDeadStateID(void);",
-                "note": "Returns global dead state ID (0x0054DB4A)."
+                "name": "TASKTYPE_AFTERBURNER",
+                "address": "0053BD44",
+                "signature": "int TASKTYPE_AFTERBURNER();",
+                "note": "Task type constant for afterburners (plane thrust)."
             }
         },
         {
             "Native": {
-                "name": "Vec3_Length",
-                "address": "004B3130",
-                "signature": "float Vec3_Length(void* vec_ptr);",
-                "note": "Computes 3D vector length/magnitude sqrt(x^2 + y^2 + z^2)."
+                "name": "TASKTYPE_ROTOR",
+                "address": "0053BD80",
+                "signature": "int TASKTYPE_ROTOR();",
+                "note": "Task type constant for rotors. Parsed by 0x42D9F0."
             }
         },
         {
             "Native": {
-                "name": "Timer_GetHighResTick",
-                "address": "00490370",
-                "signature": "int Timer_GetHighResTick(void);",
-                "note": "Returns elapsed game time in milliseconds since engine launch (GetTickCount() - ENGINE_STARTUP_TICK_MS)."
+                "name": "TASKTYPE_CAR",
+                "address": "0053BE18",
+                "signature": "int TASKTYPE_CAR();",
+                "note": "Task type constant for cars."
             }
         },
         {
             "Native": {
-                "name": "Sound_SetPacingLimit",
-                "address": "004E6030",
-                "signature": "void Sound_SetPacingLimit(int target_fps);",
-                "note": "Propagates target FPS frame pacing limit to sound/render subsystem."
+                "name": "TASKTYPE_WHEEL",
+                "address": "0053BE3C",
+                "signature": "int TASKTYPE_WHEEL();",
+                "note": "Task type constant for wheels."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_IsConeVisible",
-                "address": "00474F00",
-                "signature": "bool AIDetection_IsConeVisible(AIDetectionListItem_s* item);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_HELI",
+                "address": "0053BEC0",
+                "signature": "int TASKTYPE_HELI();",
+                "note": "Task type constant for helicopters. Registered by HeliTask_Register(0x4310F0)."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_IsFullVisible",
-                "address": "00474EE0",
-                "signature": "bool AIDetection_IsFullVisible(AIDetectionListItem_s* item);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_PLANE",
+                "address": "0053BFB4",
+                "signature": "int TASKTYPE_PLANE();",
+                "note": "Task type constant for planes."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_IsPositionInsideView",
-                "address": "00474390",
-                "signature": "char AIDetection_IsPositionInsideView(AIDetectionView_s* view, real64x3_t* position);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_COCKPITSHIELD",
+                "address": "0053BFD4",
+                "signature": "int TASKTYPE_COCKPITSHIELD();",
+                "note": "Task type constant for cockpit shields."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_IsQTaskInDetectionList",
-                "address": "004748A0",
-                "signature": "bool AIDetection_IsQTaskInDetectionList(QTask_s* task);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_GEAR",
+                "address": "0053BFFC",
+                "signature": "int TASKTYPE_GEAR();",
+                "note": "Task type constant for landing gear."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_GetQTaskMask",
-                "address": "00474870",
-                "signature": "ulong AIDetection_GetQTaskMask(unsigned short mask_id);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_HATCH",
+                "address": "0053C00C",
+                "signature": "int TASKTYPE_HATCH();",
+                "note": "Task type constant for hatches."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_GetDetectionList",
-                "address": "00474F20",
-                "signature": "QTaskList_s* AIDetection_GetDetectionList(void);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_RUDDER",
+                "address": "0053C074",
+                "signature": "int TASKTYPE_RUDDER();",
+                "note": "Task type constant for rudders."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_GetFirstFreeListItem",
-                "address": "004745E0",
-                "signature": "AIDetectionListItem_s* AIDetection_GetFirstFreeListItem(AIDetection_s* detection);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_SMOKE",
+                "address": "0053C164",
+                "signature": "int TASKTYPE_SMOKE();",
+                "note": "Task type constant for smoke effects."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_GetListItemFromQTask",
-                "address": "00474610",
-                "signature": "AIDetectionListItem_s* AIDetection_GetListItemFromQTask(AIDetection_s* detection, QTask_s* task);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_GUNSHOTEFFECT",
+                "address": "0053C1B4",
+                "signature": "int TASKTYPE_GUNSHOTEFFECT();",
+                "note": "Task type constant for gun shot effects (muzzle flash, tracers)."
             }
         },
         {
             "Native": {
-                "name": "AIDetection_FindMatchingListItem",
-                "address": "00474E90",
-                "signature": "AIDetectionListItem_s* AIDetection_FindMatchingListItem(AIDetection_s* detection, QTask_s* task);",
-                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+                "name": "TASKTYPE_ALARMLIGHTREFLECTOR",
+                "address": "0053C26C",
+                "signature": "int TASKTYPE_ALARMLIGHTREFLECTOR();",
+                "note": "Task type constant for alarm light reflectors."
             }
         },
         {
             "Native": {
-                "name": "HumanAI_GetTargetPosition",
-                "address": "00460EF0",
-                "signature": "void HumanAI_GetTargetPosition(real64x3_t* output, HumanAI_s* human_ai);",
-                "note": "Ghidra-resolved prototype. Writes to output; requires a valid HumanAI_s pointer. Runtime invocation not yet tested."
+                "name": "TASKTYPE_ALARMLIGHT",
+                "address": "0053C2A0",
+                "signature": "int TASKTYPE_ALARMLIGHT();",
+                "note": "Task type constant for alarm lights."
             }
         },
         {
             "Native": {
-                "name": "HumanAI_GetActivationStatus",
-                "address": "004634A0",
-                "signature": "bool HumanAI_GetActivationStatus(QTask_s* task);",
-                "note": "Ghidra-resolved prototype. Requires a valid task pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_EXPLODEMAGICOBJ",
+                "address": "0053C338",
+                "signature": "int TASKTYPE_EXPLODEMAGICOBJ();",
+                "note": "Task type constant for explosive magic objects."
             }
         },
         {
             "Native": {
-                "name": "HumanAI_IsRPGSoldier",
-                "address": "004647A0",
-                "signature": "bool HumanAI_IsRPGSoldier(HumanAI_s* human_ai);",
-                "note": "Ghidra-resolved prototype. Requires a valid HumanAI_s pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_GENERICPHYSICSMAGICOBJ",
+                "address": "0053C470",
+                "signature": "int TASKTYPE_GENERICPHYSICSMAGICOBJ();",
+                "note": "Task type constant for generic physics magic objects."
             }
         },
         {
             "Native": {
-                "name": "HumanSoldier_GetCheapHeadBonePosition",
-                "address": "004ECB00",
-                "signature": "void HumanSoldier_GetCheapHeadBonePosition(QTask_s* task, real32x3_t* local_position, real64x3_t* world_position);",
-                "note": "Ghidra-resolved prototype. Writes output structures; runtime invocation not yet tested."
+                "name": "TASKTYPE_GENERICPHYSICSOBJ",
+                "address": "0053C4AC",
+                "signature": "int TASKTYPE_GENERICPHYSICSOBJ();",
+                "note": "Task type constant for generic physics objects."
             }
         },
         {
             "Native": {
-                "name": "HumanSoldier_GetCheapCenterBonePosition",
-                "address": "004ECD90",
-                "signature": "void HumanSoldier_GetCheapCenterBonePosition(QTask_s* task, real32x3_t* local_position, real64x3_t* world_position);",
-                "note": "Ghidra-resolved prototype. Writes output structures; runtime invocation not yet tested."
+                "name": "TASKTYPE_FENCE",
+                "address": "0053C500",
+                "signature": "int TASKTYPE_FENCE();",
+                "note": "Task type constant for fences."
             }
         },
         {
             "Native": {
-                "name": "HumanSoldier_GetCurrentSectorQTask",
-                "address": "004ECFF0",
-                "signature": "QTask_s* HumanSoldier_GetCurrentSectorQTask(QTask_s* task);",
-                "note": "Ghidra-resolved prototype. Requires a valid soldier task pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_LADDER",
+                "address": "0053C528",
+                "signature": "int TASKTYPE_LADDER();",
+                "note": "Task type constant for ladders."
             }
         },
         {
             "Native": {
-                "name": "HumanSoldier_IsSeenDeadBySquad",
-                "address": "004ED020",
-                "signature": "bool HumanSoldier_IsSeenDeadBySquad(QTask_s* soldier, QTask_s* squad);",
-                "note": "Ghidra-resolved prototype. Requires valid task pointers; runtime invocation not yet tested."
+                "name": "TASKTYPE_SCAMERALENSVIEWCONE",
+                "address": "0053C5A0",
+                "signature": "int TASKTYPE_SCAMERALENSVIEWCONE();",
+                "note": "Task type constant for security camera view cones."
             }
         },
         {
             "Native": {
-                "name": "Game_GetGameStatus",
-                "address": "00408940",
-                "signature": "GameStatus_e Game_GetGameStatus(void);",
-                "note": "Ghidra-resolved prototype. Read-only status query; runtime invocation not yet tested."
+                "name": "TASKTYPE_DRAWER",
+                "address": "0053C6BC",
+                "signature": "int TASKTYPE_DRAWER();",
+                "note": "Task type constant for drawers."
             }
         },
         {
             "Native": {
-                "name": "Game_GetHumanCamera",
-                "address": "00409170",
-                "signature": "QTask_s* Game_GetHumanCamera(void);",
-                "note": "Ghidra-resolved prototype. Returns an engine task pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_BUILDING",
+                "address": "0053C814",
+                "signature": "int TASKTYPE_BUILDING();",
+                "note": "Task type constant for buildings."
             }
         },
         {
             "Native": {
-                "name": "Human_GetDeadStateID",
-                "address": "004EBA80",
-                "signature": "short Human_GetDeadStateID(void);",
-                "note": "Ghidra-resolved prototype. Read-only state query; runtime invocation not yet tested."
+                "name": "TASKTYPE_RADARDISH",
+                "address": "0053C834",
+                "signature": "int TASKTYPE_RADARDISH();",
+                "note": "Task type constant for radar dishes."
             }
         },
         {
             "Native": {
-                "name": "Vec3_Length",
-                "address": "004B3130",
-                "signature": "float Vec3_Length(void* vector);",
-                "note": "Ghidra-resolved prototype. Requires a valid vector pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_GLASS",
+                "address": "0053C868",
+                "signature": "int TASKTYPE_GLASS();",
+                "note": "Task type constant for breakable glass."
             }
         },
         {
             "Native": {
-                "name": "Timer_GetHighResTick",
-                "address": "00490370",
-                "signature": "int Timer_GetHighResTick(void);",
-                "note": "Ghidra-resolved prototype. Read-only timer query; runtime invocation not yet tested."
+                "name": "TASKTYPE_DEATHZONE",
+                "address": "0053F500",
+                "signature": "int TASKTYPE_DEATHZONE();",
+                "note": "Task type constant for death zones (instant kill areas)."
             }
         },
         {
             "Native": {
-                "name": "PlayerXPHit",
-                "address": "00416D80",
-                "signature": "uint PlayerXPHit(void);",
-                "note": "Ghidra-resolved prototype from the current analysis. Read-only query; runtime invocation not yet tested."
+                "name": "TASKTYPE_GUNX2",
+                "address": "0053FE6C",
+                "signature": "int TASKTYPE_GUNX2();",
+                "note": "Task type constant for double guns."
             }
         },
         {
             "Native": {
-                "name": "WeaponsCountGet",
-                "address": "00413BB0",
-                "signature": "int WeaponsCountGet(void);",
-                "note": "Ghidra-resolved prototype. Read-only query; runtime invocation not yet tested."
+                "name": "TASKTYPE_KNIFESTAB",
+                "address": "0053FE88",
+                "signature": "int TASKTYPE_KNIFESTAB();",
+                "note": "Task type constant for knife stab attacks."
             }
         },
         {
             "Native": {
-                "name": "HumanPlayer_GetPrimaryWeaponType",
-                "address": "0049E3D0",
-                "signature": "WeaponType_s* HumanPlayer_GetPrimaryWeaponType(void);",
-                "note": "Ghidra-resolved prototype. Returns an engine-owned pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_AISTATIONARYGUN",
+                "address": "0053FEC4",
+                "signature": "int TASKTYPE_AISTATIONARYGUN();",
+                "note": "Task type constant for AI stationary guns/turrets."
             }
         },
         {
             "Native": {
-                "name": "GunPickup_GetWeaponID",
-                "address": "0046C2A0",
-                "signature": "int GunPickup_GetWeaponID(QTask_s* pickup);",
-                "note": "Ghidra-resolved prototype. Requires a valid pickup task pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_MEDIPACK",
+                "address": "0053FEF0",
+                "signature": "int TASKTYPE_MEDIPACK();",
+                "note": "Task type constant for medipacks (health packs)."
             }
         },
         {
             "Native": {
-                "name": "StatusScreen_GetServerMessages",
-                "address": "00476F60",
-                "signature": "TextScroller_s* StatusScreen_GetServerMessages(void);",
-                "note": "Ghidra-resolved prototype. Returns an engine-owned pointer; runtime invocation not yet tested."
+                "name": "TASKTYPE_BINOCULAR",
+                "address": "0053FF58",
+                "signature": "int TASKTYPE_BINOCULAR();",
+                "note": "Task type constant for binoculars."
             }
         },
         {
             "Native": {
-                "name": "Human_GetWeaponTypeAnimPtr",
-                "address": "005037D0",
-                "signature": "QTask_s* Human_GetWeaponTypeAnimPtr(QTask_s* task);",
-                "note": "Ghidra-resolved prototype, with decompiler warnings. Do not invoke until a caller confirms the task argument."
+                "name": "TASKTYPE_CABARREL",
+                "address": "00540300",
+                "signature": "int TASKTYPE_CABARREL();",
+                "note": "Task type constant for ammo barrels."
             }
         },
         {
             "Native": {
-                "name": "PlayerTask_DestroyAll",
-                "address": "004082B0",
-                "signature": "void PlayerTask_DestroyAll(int clear_type);",
-                "note": "Iterates player task array at 0x569470-0x56E170 (step 0x268=616 bytes/entry), calls deallocator on each entry, then calls cleanup with 3 global byte values. 108 instructions."
+                "name": "TASKTYPE_CACLIP",
+                "address": "00540314",
+                "signature": "int TASKTYPE_CACLIP();",
+                "note": "Task type constant for ammo clips."
             }
         },
         {
             "Native": {
-                "name": "LevelCleanupEntities",
-                "address": "00408390",
-                "signature": "void LevelCleanupEntities(int count);",
-                "note": "Iterates entity array at 0x569210-0x56DF10, calls cleanup function fcn.004ce3e0 on each. Called from LevelStart. 44 instructions."
+                "name": "TASKTYPE_GUNSPAS12",
+                "address": "00540374",
+                "signature": "int TASKTYPE_GUNSPAS12();",
+                "note": "Task type constant for SPAS-12 shotgun."
             }
         },
         {
             "Native": {
-                "name": "WeaponSoundDispatch",
-                "address": "004083C0",
-                "signature": "void WeaponSoundDispatch(short player_id, void* weapon_config, float* pos, float* rot, int sound_type);",
-                "note": "Vtable dispatch for weapon sounds. Reads sound type from global 0x53851a, computes vtable index = type*3*128 + sound_type, calls handler through 0xa96ae0. 94 instructions."
+                "name": "TASKTYPE_GUNDRAGUNOV",
+                "address": "00540404",
+                "signature": "int TASKTYPE_GUNDRAGUNOV();",
+                "note": "Task type constant for Dragunov sniper rifle."
             }
         },
         {
             "Native": {
-                "name": "PlayerAirborneGateCheck",
-                "address": "00408420",
-                "signature": "void PlayerAirborneGateCheck(void* player);",
-                "note": "Checks if player should enter airborne state. Compares velocity +0x254 vs +0x258, calls PlayerXPHit check, if both pass sets byte +0xcf5=1 and ORs 0x20000 into +0x2f4 flags. Called from PlayerUpdate. 59 instructions."
+                "name": "TASKTYPE_GUNM16A2",
+                "address": "00540434",
+                "signature": "int TASKTYPE_GUNM16A2();",
+                "note": "Task type constant for M16A2 assault rifle."
             }
         },
         {
             "Native": {
-                "name": "PlayerAnimationFinished",
-                "address": "00408720",
-                "signature": "int PlayerAnimationFinished(void* player);",
-                "note": "Calls fcn.004f23d0 (check animation state), if zero calls fcn.00413c80 and returns signed byte from +0x6dc (animation ID). Returns 1 if animation system busy. 67 instructions."
+                "name": "TASKTYPE_GUNMP5SD",
+                "address": "005404EC",
+                "signature": "int TASKTYPE_GUNMP5SD();",
+                "note": "Task type constant for MP5SD submachine gun."
             }
         },
         {
             "Native": {
-                "name": "AirborneIntegrate_Revised",
-                "address": "00408460",
-                "signature": "void AirborneIntegrate(void* player);",
-                "note": "REVISED: 694 instructions (not 183). Per-tick airborne physics. Applies gravity 84.741692/tick to +0x66c velocity, reads movement input flags at +0x1b8-0x1c4, adds air control via basis matrix at +0x78-0x94. No damping, no terminal velocity. Checks flag bit 4 at +0x2f4 for airborne gate."
+                "name": "TASKTYPE_PROXIMITYMINE",
+                "address": "0054053C",
+                "signature": "int TASKTYPE_PROXIMITYMINE();",
+                "note": "Task type constant for proximity mines."
             }
         },
         {
             "Native": {
-                "name": "PlayerUpdate",
-                "address": "004109A0",
-                "signature": "void PlayerUpdate(void* player, int param);",
-                "note": "MAIN PER-TICK PLAYER UPDATE. 1480 instructions. Calls: AirborneGateCheck(0x408420), camera update(0x460cf0), view update(0x460ee0), check(0x46c060), WeaponState_Update(0x411000), WeaponCycler(0x40f760), WeaponStateMachine(0x4ec1e0) twice, animation state checks, ladder update(0x4113e0), system update(0x411770). This is the biggest player function."
+                "name": "TASKTYPE_MINE",
+                "address": "00540618",
+                "signature": "int TASKTYPE_MINE();",
+                "note": "Task type constant for mines."
             }
         },
         {
             "Native": {
-                "name": "PlayerLocomotionSwitch",
-                "address": "0040CD30",
-                "signature": "void PlayerLocomotionSwitch(void* player, int mode, int param);",
-                "note": "13-case movement mode dispatcher (510 instructions). Cases: 1=walk, 2=run, 3=crouch/swim, 4=jump, 5=fall, 6=climb, 7=slide, 8=idle, etc. Calls respective sub-handlers via jump table at 0x40cf30."
+                "name": "TASKTYPE_M203",
+                "address": "00540654",
+                "signature": "int TASKTYPE_M203();",
+                "note": "Task type constant for M203 grenade launcher."
             }
         },
         {
             "Native": {
-                "name": "HeliTask_Register",
-                "address": "004310F0",
-                "signature": "void HeliTask_Register(void);",
-                "note": "Registers 'Heli' task type with QTaskHashTable. 1096 instructions. Registers multiple callback functions: 0x431540 (update), 0x4316d0, 0x431ae0, 0x431b60, 0x432950, 0x432bb0, 0x432be0, 0x432bd0, 0x431b70. Sets task type ID at 0x53be58."
+                "name": "TASKTYPE_GRENADE",
+                "address": "005406B0",
+                "signature": "int TASKTYPE_GRENADE();",
+                "note": "Task type constant for grenades."
             }
         },
         {
             "Native": {
-                "name": "VehiclePhysics_Wheels",
-                "address": "00430D10",
-                "signature": "void VehiclePhysics_Wheels(void* vehicle, int wheel_idx, int gear, int mode);",
-                "note": "Per-wheel physics simulation. 983 instructions. Reads physics config from +0x1b4->+0x2d4, applies torque scaled by 0x53367c constant, checks gear state at +0x6d9, reads surface type, applies forces via cross-product calculations. Checks +0x758 for mass, +0x720 for throttle."
+                "name": "TASKTYPE_GUNMOVINGPART",
+                "address": "00540754",
+                "signature": "int TASKTYPE_GUNMOVINGPART();",
+                "note": "Task type constant for moving gun parts."
             }
         },
         {
             "Native": {
-                "name": "DoorTask_Register",
-                "address": "004464C0",
-                "signature": "void DoorTask_Register(void);",
-                "note": "Registers 'Door' task type with QTaskHashTable. 1072 instructions. Registers callbacks: 0x4468f0 (update), 0x446d10 (toggle), 0x446ac0, 0x447a80, 0x447830, 0x446b50, 0x447a90, 0x447be0. Sets task type ID at 0x57c1c0."
+                "name": "TASKTYPE_GUNCLIP",
+                "address": "0054076C",
+                "signature": "int TASKTYPE_GUNCLIP();",
+                "note": "Task type constant for gun clips."
             }
         },
         {
             "Native": {
-                "name": "Vehicle_ForceAppend",
-                "address": "004ECF50",
-                "signature": "void Vehicle_ForceAppend(ForceBuffer* buf, Vector3f* force);",
-                "note": "Appends a force vector to the vehicle force buffer. Reads write index from +0x5c, reads buffer base from +0x54, copies 6 floats (24 bytes) from source to buffer entry, increments write index. 39 instructions. Called from heli physics."
+                "name": "TASKTYPE_GUNFLAME",
+                "address": "00540780",
+                "signature": "int TASKTYPE_GUNFLAME();",
+                "note": "Task type constant for flame throwers."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUN",
+                "address": "00540800",
+                "signature": "int TASKTYPE_GUN();",
+                "note": "Task type constant for generic guns."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNSHOT",
+                "address": "0054087C",
+                "signature": "int TASKTYPE_GUNSHOT();",
+                "note": "Task type constant for gun shots (projectiles)."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_PROXIMITYMINE",
+                "address": "00538DF4",
+                "signature": "int WEAPON_ID_PROXIMITYMINE();",
+                "note": "Weapon ID constant for proximity mines."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_M16A2",
+                "address": "00538E1C",
+                "signature": "int WEAPON_ID_M16A2();",
+                "note": "Weapon ID constant for M16A2."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_BINOCULARS",
+                "address": "00538E40",
+                "signature": "int WEAPON_ID_BINOCULARS();",
+                "note": "Weapon ID constant for binoculars."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_PROXIMITYMINE",
+                "address": "00539314",
+                "signature": "int WEAPONTYPE_PROXIMITYMINE();",
+                "note": "Weapon type constant for proximity mines."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_MEDIPACK",
+                "address": "00539330",
+                "signature": "int WEAPONTYPE_MEDIPACK();",
+                "note": "Weapon type constant for medipacks."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_BINOCULAR",
+                "address": "00539344",
+                "signature": "int WEAPONTYPE_BINOCULAR();",
+                "note": "Weapon type constant for binoculars."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_GRENADE",
+                "address": "0053935C",
+                "signature": "int WEAPONTYPE_GRENADE();",
+                "note": "Weapon type constant for grenades."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_KNIFE",
+                "address": "00539370",
+                "signature": "int WEAPONTYPE_KNIFE();",
+                "note": "Weapon type constant for knives."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_SHOTGUN",
+                "address": "00539384",
+                "signature": "int WEAPONTYPE_SHOTGUN();",
+                "note": "Weapon type constant for shotguns."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_PISTOL",
+                "address": "00539398",
+                "signature": "int WEAPONTYPE_PISTOL();",
+                "note": "Weapon type constant for pistols."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_GUN",
+                "address": "005393AC",
+                "signature": "int WEAPONTYPE_GUN();",
+                "note": "Weapon type constant for generic guns."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_MEDIPACK",
+                "address": "0053FF10",
+                "signature": "int WEAPON_ID_MEDIPACK();",
+                "note": "Weapon ID constant for medipacks."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_SPAS12",
+                "address": "00540394",
+                "signature": "int WEAPON_ID_SPAS12();",
+                "note": "Weapon ID constant for SPAS-12 shotgun."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_MP5SD",
+                "address": "0054050C",
+                "signature": "int WEAPON_ID_MP5SD();",
+                "note": "Weapon ID constant for MP5SD submachine gun."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_M2HB",
+                "address": "0054051C",
+                "signature": "int WEAPON_ID_M2HB();",
+                "note": "Weapon ID constant for M2HB heavy machine gun."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMO_ID_M203",
+                "address": "00538E0C",
+                "signature": "int AMMO_ID_M203();",
+                "note": "Ammo type ID for M203 grenades."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMO_ID_MEDIPACK",
+                "address": "00538E2C",
+                "signature": "int AMMO_ID_MEDIPACK();",
+                "note": "Ammo type ID for medipacks (healing items)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_GRENADE",
+                "address": "00539250",
+                "signature": "int AMMODISPLAYTYPE_GRENADE();",
+                "note": "Ammo display type for grenades (thrown weapon icon)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_SHELL",
+                "address": "00539268",
+                "signature": "int AMMODISPLAYTYPE_SHELL();",
+                "note": "Ammo display type for shotgun shells."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_BARREL",
+                "address": "00539280",
+                "signature": "int AMMODISPLAYTYPE_BARREL();",
+                "note": "Ammo display type for ammo barrels."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_CLIP",
+                "address": "00539298",
+                "signature": "int AMMODISPLAYTYPE_CLIP();",
+                "note": "Ammo display type for gun clips."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_NORMAL",
+                "address": "005392B0",
+                "signature": "int AMMODISPLAYTYPE_NORMAL();",
+                "note": "Ammo display type for normal bullets."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_NONE",
+                "address": "005392C8",
+                "signature": "int AMMODISPLAYTYPE_NONE();",
+                "note": "Ammo display type for no ammo display."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_HIND_HELICOPTER",
+                "address": "0053BB90",
+                "signature": "int MISSILE_TYPE_HIND_HELICOPTER();",
+                "note": "Missile type for HIND helicopter."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_BOMB",
+                "address": "0053BBB0",
+                "signature": "int MISSILE_TYPE_BOMB();",
+                "note": "Missile type for bombs."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_KEYBOARD",
+                "address": "0053BBC4",
+                "signature": "int MISSILE_TYPE_MISSILE_KEYBOARD();",
+                "note": "Missile type for keyboard-controlled missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_ANTITANK",
+                "address": "0053BBE4",
+                "signature": "int MISSILE_TYPE_MISSILE_ANTITANK();",
+                "note": "Missile type for anti-tank missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_BALLISTIC",
+                "address": "0053BC04",
+                "signature": "int MISSILE_TYPE_MISSILE_BALLISTIC();",
+                "note": "Missile type for ballistic missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_DIRECT",
+                "address": "0053BC24",
+                "signature": "int MISSILE_TYPE_MISSILE_DIRECT();",
+                "note": "Missile type for direct-fire missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_SMOKE_NORMAL",
+                "address": "0053BC40",
+                "signature": "int MISSILE_SMOKE_NORMAL();",
+                "note": "Missile smoke trail type: normal."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_SMOKE_NONE",
+                "address": "0053BC58",
+                "signature": "int MISSILE_SMOKE_NONE();",
+                "note": "Missile smoke trail type: none."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_RESTART_GAME",
+                "address": "00536214",
+                "signature": "int FLOW_EVENT_RESTART_GAME();",
+                "note": "Flow event: restart current mission. Registered via Flow_RequestEvent."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_GAME",
+                "address": "0053622C",
+                "signature": "int FLOW_EVENT_GAME();",
+                "note": "Flow event: start game (enter mission)."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_MAINMENU",
+                "address": "0053623C",
+                "signature": "int FLOW_EVENT_MAINMENU();",
+                "note": "Flow event: return to main menu."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_INTRO",
+                "address": "00536250",
+                "signature": "int FLOW_EVENT_INTRO();",
+                "note": "Flow event: play intro sequence."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_QUIT",
+                "address": "00536264",
+                "signature": "int FLOW_EVENT_QUIT();",
+                "note": "Flow event: quit game."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOStart",
+                "address": "00533237",
+                "signature": "int GOStart();",
+                "note": "Game option: start game."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOPlayer",
+                "address": "00533240",
+                "signature": "int GOPlayer();",
+                "note": "Game option: player settings."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOInRemap",
+                "address": "0053324C",
+                "signature": "int GOInRemap();",
+                "note": "Game option: input remapping."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOInMouInv",
+                "address": "00533258",
+                "signature": "int GOInMouInv();",
+                "note": "Game option: mouse invert."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOInMouSens",
+                "address": "00533264",
+                "signature": "float GOInMouSens();",
+                "note": "Game option: mouse sensitivity."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxDisp",
+                "address": "00533270",
+                "signature": "int GOGfxDisp();",
+                "note": "Game option: graphics display mode."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxDevice",
+                "address": "0053327C",
+                "signature": "int GOGfxDevice();",
+                "note": "Game option: graphics device selection."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxGamma",
+                "address": "00533288",
+                "signature": "float GOGfxGamma();",
+                "note": "Game option: gamma correction."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxPerformance",
+                "address": "00533294",
+                "signature": "int GOGfxPerformance();",
+                "note": "Game option: graphics performance level."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGameLang",
+                "address": "005332A8",
+                "signature": "int GOGameLang();",
+                "note": "Game option: game language."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGameDiff",
+                "address": "005332B4",
+                "signature": "int GOGameDiff();",
+                "note": "Game option: game difficulty."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOIsBlood",
+                "address": "005332C0",
+                "signature": "int GOIsBlood();",
+                "note": "Game option: blood enabled."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOSoundSpeech",
+                "address": "005332CC",
+                "signature": "float GOSoundSpeech();",
+                "note": "Game option: speech volume."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOSoundMusic",
+                "address": "005332DC",
+                "signature": "float GOSoundMusic();",
+                "note": "Game option: music volume."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOSoundFX",
+                "address": "005332EC",
+                "signature": "float GOSoundFX();",
+                "note": "Game option: sound effects volume."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOActiveMission",
+                "address": "005332F8",
+                "signature": "int GOActiveMission();",
+                "note": "Game option: active mission ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOContentControlPW",
+                "address": "00533308",
+                "signature": "char* GOContentControlPW();",
+                "note": "Game option: content control password."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAIConfigItem",
+                "address": "005383DC",
+                "signature": "void HumanAIConfigItem(int* task);",
+                "note": "Human AI config item registration."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAIConfig",
+                "address": "005383F0",
+                "signature": "void HumanAIConfig(int* task);",
+                "note": "Human AI config task type."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAI",
+                "address": "0053D404",
+                "signature": "void HumanAI(int* task);",
+                "note": "Human AI base task type."
             }
         }
     ]

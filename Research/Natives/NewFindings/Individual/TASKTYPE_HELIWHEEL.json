@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_HELIWHEEL",
+  "address": "0053BAF8",
+  "signature": "int TASKTYPE_HELIWHEEL();",
+  "note": "Task type constant for helicopter wheels."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Config_GraphicOptionsGetDevice",
+  "address": "00402FF0",
+  "signature": "int Config_GraphicOptionsGetDevice();",
+  "note": "Gets active graphics device index."
+}

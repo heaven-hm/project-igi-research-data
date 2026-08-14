@@ -1,0 +1,42 @@
+{
+  "category": "SOUND",
+  "count": 6,
+  "natives": [
+    {
+      "name": "MusicDisable",
+      "address": "00415A60",
+      "signature": "void MusicDisable(char* buffer);",
+      "note": "Disable Game Music, Params:  Buffer of size 30."
+    },
+    {
+      "name": "MusicEnable",
+      "address": "00415A10",
+      "signature": "void MusicEnable(char* buffer);",
+      "note": "Enable Game Music, Params: Buffer of size 30."
+    },
+    {
+      "name": "MusicSetSfxVolume",
+      "address": "00495F30",
+      "signature": "void MusicSetSfxVolume(float volume);",
+      "note": "Sets sound effect volume, Params: volume range [0.0 - 1.0]"
+    },
+    {
+      "name": "MusicSetVolume",
+      "address": "00495E70",
+      "signature": "void MusicSetVolume(float volume,float volume);",
+      "note": "Sets music volume., Params: volume range [0.0 - 1.0]"
+    },
+    {
+      "name": "MusicUpdateVolume",
+      "address": "004158E0",
+      "signature": "void MusicUpdateVolume(char* buffer);",
+      "note": "Update current music volume, Params: Buffer of size 30."
+    },
+    {
+      "name": "SoundLoad",
+      "address": "004E68D0",
+      "signature": "void SoundLoad(char *sound_dir);",
+      "note": "Load all level sounds from path , Params: Path of sound like 'MISSION:sounds'"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_HITZONE",
+  "address": "0053BB70",
+  "signature": "int TASKTYPE_HITZONE();",
+  "note": "Task type constant for hit zones (damage areas)."
+}

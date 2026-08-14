@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_HATCH",
+  "address": "0053C00C",
+  "signature": "int TASKTYPE_HATCH();",
+  "note": "Task type constant for hatches."
+}

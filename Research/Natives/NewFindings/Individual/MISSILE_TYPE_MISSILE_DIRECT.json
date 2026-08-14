@@ -1,0 +1,6 @@
+{
+  "name": "MISSILE_TYPE_MISSILE_DIRECT",
+  "address": "0053BC24",
+  "signature": "int MISSILE_TYPE_MISSILE_DIRECT();",
+  "note": "Missile type for direct-fire missiles."
+}

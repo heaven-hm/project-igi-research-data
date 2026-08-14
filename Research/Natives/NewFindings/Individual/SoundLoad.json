@@ -1,0 +1,6 @@
+{
+  "name": "SoundLoad",
+  "address": "004E68D0",
+  "signature": "void SoundLoad(char *sound_dir);",
+  "note": "Load all level sounds from path , Params: Path of sound like 'MISSION:sounds'"
+}

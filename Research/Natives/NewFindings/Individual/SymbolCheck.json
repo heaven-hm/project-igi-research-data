@@ -1,0 +1,6 @@
+{
+  "name": "SymbolCheck",
+  "address": "004C0560",
+  "signature": "int * SymbolCheck(int *p1,int **symbol_name,int* p3);",
+  "note": "Check symbol in QTask list if already loaded, Params: symbol_name like 'TaskType_Set', p1,p3 ??"
+}

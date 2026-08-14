@@ -1,0 +1,6 @@
+{
+  "name": "MISSILE_TYPE_BOMB",
+  "address": "0053BBB0",
+  "signature": "int MISSILE_TYPE_BOMB();",
+  "note": "Missile type for bombs."
+}

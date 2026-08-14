@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_DRAWER",
+  "address": "0053C6BC",
+  "signature": "int TASKTYPE_DRAWER();",
+  "note": "Task type constant for drawers."
+}

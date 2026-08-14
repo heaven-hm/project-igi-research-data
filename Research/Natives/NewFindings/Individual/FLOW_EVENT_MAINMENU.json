@@ -1,0 +1,6 @@
+{
+  "name": "FLOW_EVENT_MAINMENU",
+  "address": "0053623C",
+  "signature": "int FLOW_EVENT_MAINMENU();",
+  "note": "Flow event: return to main menu."
+}

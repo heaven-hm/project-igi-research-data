@@ -1,0 +1,6 @@
+{
+  "name": "AnimTriggerLoad",
+  "address": "004EC0C0",
+  "signature": "void AnimTriggerLoad(char *path);",
+  "note": "Loads anim trigger objects from path, Params: Path 'LOCAL:animtrigger'"
+}

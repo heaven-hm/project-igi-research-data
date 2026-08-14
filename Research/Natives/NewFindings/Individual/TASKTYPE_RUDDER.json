@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_RUDDER",
+  "address": "0053C074",
+  "signature": "int TASKTYPE_RUDDER();",
+  "note": "Task type constant for rudders."
+}

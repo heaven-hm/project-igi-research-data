@@ -1,0 +1,6 @@
+{
+  "name": "QvmLoad",
+  "address": "004B80B0",
+  "signature": "int * QvmLoad(char *file_name);",
+  "note": "Compiles and Load any .qvm file into memory, Params: any qvm file name,  Returns filename loaded."
+}

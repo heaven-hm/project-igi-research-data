@@ -1,0 +1,6 @@
+{
+  "name": "QFileOpen",
+  "address": "004B1510",
+  "signature": "void* QFileOpen(const char* file,char *mode);",
+  "note": "Open Qfile (QSC,QVM) for reading or writing, Params: Check fopen() in c."
+}

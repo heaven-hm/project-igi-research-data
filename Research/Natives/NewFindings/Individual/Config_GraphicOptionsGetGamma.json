@@ -1,0 +1,6 @@
+{
+  "name": "Config_GraphicOptionsGetGamma",
+  "address": "00402FF0",
+  "signature": "float Config_GraphicOptionsGetGamma();",
+  "note": "Gets active gamma slider value."
+}

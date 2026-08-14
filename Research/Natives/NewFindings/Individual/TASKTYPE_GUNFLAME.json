@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_GUNFLAME",
+  "address": "00540780",
+  "signature": "int TASKTYPE_GUNFLAME();",
+  "note": "Task type constant for flame throwers."
+}

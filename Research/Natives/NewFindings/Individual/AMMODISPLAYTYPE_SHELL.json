@@ -1,0 +1,6 @@
+{
+  "name": "AMMODISPLAYTYPE_SHELL",
+  "address": "00539268",
+  "signature": "int AMMODISPLAYTYPE_SHELL();",
+  "note": "Ammo display type for shotgun shells."
+}

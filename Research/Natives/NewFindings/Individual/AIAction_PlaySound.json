@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_PlaySound",
+  "address": "0044D750",
+  "signature": "void AIAction_PlaySound(int sound_id, float volume, float pitch);",
+  "note": "Triggers voice/sound playback on AI guard entity."
+}

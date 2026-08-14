@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_GetAnimationToPlay",
+  "address": "0044ECB0",
+  "signature": "int AIFunction_GetAnimationToPlay();",
+  "note": "Selects animation index from weighted idle pool."
+}

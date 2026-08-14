@@ -1,0 +1,6 @@
+{
+  "name": "AMMO_ID_M203",
+  "address": "00538E0C",
+  "signature": "int AMMO_ID_M203();",
+  "note": "Ammo type ID for M203 grenades."
+}
