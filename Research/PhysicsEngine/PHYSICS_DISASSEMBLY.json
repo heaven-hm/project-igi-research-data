@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "binary": "D:\\IGI1\\igi.exe",
+    "analysis_date": "2026-06-14",
+    "method": "Ghidra 12.1.2 + r2mcp disassembly",
+    "function_map": "D:\\Ghidra projects\\IGI-Natives.json",
+    "ghidra_session": "4dbc28bd1fd0433b8e113891f510ebff"
+  },
+  "functions": {
+    "airborne_integrator": {
+      "address": "0x408460",
+      "signature": "void AirborneIntegrate(PlayerState* state)",
+      "description": "Per-tick airborne velocity integration. Applies gravity (84.741692/tick²) to Z velocity, adds air control from input flags. No damping, no terminal velocity.",
+      "constants": {
+        "0x5333ec": "0.0f (DAT_ZERO)",
+        "0x5333f0": "1.0f (DAT_ONE)",
+        "0x56e1f4": "gravity delta constant"
+      },
+      "offsets": {
+        "0x78-0x94": "Matrix3f body_basis (column-major)",
+        "0x1b8-0x1c4": "float[4] movement_input_flags",
+        "0x254": "Vector3f velocity",
+        "0x2f4": "byte state_flags (bit 2 = grounded)",
+        "0x664-0x66c": "Vector3f airborne_velocity"
+      },
+      "disassembly_50": "0x00408460: sub esp,0x54; push esi; mov esi,[esp+0x5c]; push edi; fld dword [esi+0x66c]; fsub dword [0x5333f0]; lea edi,[esi+0x254]; fst dword [esi+0x66c]; ..."
+    },
+    "move_and_collide": {
+      "address": "0x4614B0",
+      "signature": "void MoveAndCollide(PlayerState* state, Vector3d* start, Vector3d* end)",
+      "description": "Sums velocity (+1636) with root motion delta (+1312), then performs 3-pass collision: wall sweep, ground query, slope slide. 389 instructions.",
+      "offsets": {
+        "0x2f4": "byte state_flags",
+        "0x520-0x528": "Vector3f root_motion_delta",
+        "0x664-0x66c": "Vector3f velocity",
+        "0x6d8-0x6f8": "CollisionInfo collision_query"
+      }
+    },
+    "wall_sweep": {
+      "address": "0x461A70",
+      "signature": "void WallSweep(PlayerState* state, Vector3d* start, Vector3d* end, QueryResult* result)",
+      "description": "3-probe ray cast at ankle/mid/height. Up to 10 slide iterations. Wall = |normal.z| < 0.1. Flattens normal Z, renormalizes, projects destination onto wall plane. 500 instructions.",
+      "constants": {
+        "0x533980": "double epsilon value",
+        "call_0x48a340": "GetPlayerAABB()",
+        "call_0x4b3320": "WorldRayCast_Query()",
+        "call_0x4b3130": "Vec3_Length()",
+        "call_0x4b3100": "Vec3_Normalize()"
+      }
+    },
+    "ground_query": {
+      "address": "0x462390",
+      "signature": "void GroundQuery(PlayerState* state, Vector3d* position, QueryResult* result)",
+      "description": "Downward probe from feet. Snap to ground if within step-down budget (0/2048/8192). Material probe from 2048 above ground. Roof clearance check at 7372.8. 500 instructions.",
+      "constants": {
+        "0x533978": "double (ground probe offset)",
+        "0x533478": "double (ground probe offset 2)",
+        "0x533980": "double (epsilon)"
+      },
+      "offsets": {
+        "0x710": "float ground_distance",
+        "0x714": "float ground_angle",
+        "0x33d": "byte crouch_flag",
+        "0x800": "int ground_material"
+      }
+    },
+    "vehicle_heli_physics": {
+      "address": "0x431E30",
+      "signature": "void VehicleHeliPhysics(VehicleState* state)",
+      "description": "Per-30Hz-tick helicopter physics. Throttle comparison against threshold (0x533758), exponential torque smoothing on 3 axes, 3 directional force calls to 0x004ecf50, collective pitch adjustment, aerodynamic drag per surface. 200+ instructions.",
+      "constants": {
+        "0x533758": "double throttle_threshold",
+        "0x5336c0": "float min_speed",
+        "0x5333e0": "1.0f",
+        "0x5333ec": "0.0f",
+        "0x533588": "float ground_contact_threshold",
+        "0x533750": "float force_scale",
+        "0x53374c": "float force_scale_2",
+        "0x533748": "float force_scale_3",
+        "0x533740": "float force_scale_4"
+      },
+      "offsets": {
+        "0xf0": "Vector3f position",
+        "0x70": "Quaternion rotation",
+        "0x1b4": "PhysicsConfig* physics_config",
+        "0x1b8": "int gear_state",
+        "0x720": "float throttle",
+        "0x724": "float pitch_torque",
+        "0x728": "float yaw_torque",
+        "0x72c": "float roll_torque",
+        "0x730": "float target_torque",
+        "0x734": "float pitch_smoothing",
+        "0x738": "float yaw_smoothing",
+        "0x73c": "float roll_smoothing",
+        "0x748": "int gear_state_visual"
+      },
+      "algorithm": "1. Compare throttle (+0x720) to threshold (0x533758)\n2. Select torque config from physics definition (+0x1b4->+0x2d4->+0x20 or +0x24)\n3. Exponential smoothing: smoothed = current * factor + previous * (1-factor)\n4. Apply 3 directional forces via FUN_004ecf50\n5. Adjust collective pitch\n6. Apply aerodynamic drag per surface\n7. Update gear/hatch/door visual state"
+    },
+    "rotor_parser": {
+      "address": "0x42D9F0",
+      "signature": "void RotorParser(QvmStream* stream, RotorData* output)",
+      "description": "Parses QVM byte stream for rotor parameters: lift flag, tail rotor flag, blade samples, max tilt, phase step. 37 instructions.",
+      "constants": {
+        "0x5336f8": "double (pi/180 conversion)"
+      },
+      "calls": {
+        "0x4b8a20": "QvmStream_ReadByte()",
+        "0x4b8a50": "QvmStream_ReadFloat()",
+        "0x4b8a80": "QvmStream_ReadBytes()"
+      }
+    },
+    "idle_transitions": {
+      "address": "0x4087B0",
+      "signature": "void IdleTransitions(PlayerState* state)",
+      "description": "State priority chain for idle transitions: ground loss -> death -> movement -> jump -> turn. Uses timer at +0xdc0. 100+ instructions.",
+      "offsets": {
+        "0xdc0": "float idle_timer",
+        "0x10": "int next_state",
+        "0xc": "int prev_state",
+        "0x4": "State_handler* handler",
+        "0x14": "int handler_address"
+      }
+    },
+    "ladder_climb": {
+      "address": "0x40D6B0",
+      "signature": "void LadderClimb(PlayerState* state)",
+      "description": "4-state ladder machine: Climbing(37), GettingOnTop(38), GettingOffTop(39), SlidingDown(40). Uses animation 168 for climbing, 170 for top transitions. Animation event 8 commits rung. 100+ instructions.",
+      "offsets": {
+        "0x538": "int state_id (8=climbing)",
+        "0x540": "float climb_height",
+        "0x68": "Vector3f position",
+        "0xd80": "int step_counter",
+        "0xd84": "int previous_step",
+        "0xd88": "float target_height",
+        "0xd8c": "int direction",
+        "0xd80-0xd8c": "LadderState state"
+      },
+      "strings": ["walk_ladder_%d"]
+    },
+    "ladder_slide": {
+      "address": "0x40DBF0",
+      "signature": "void LadderSlide(PlayerState* state)",
+      "description": "State 40 ladder slide: gravity 44.600887/tick² with 0.99 drag. Plays wire_slide_1 sound. Clears velocity on ground contact. ~80 instructions.",
+      "constants": {
+        "0x53346c": "44.600887f (ladder gravity)",
+        "0x533470": "0.99f (ladder drag)"
+      },
+      "offsets": {
+        "0x664-0x66c": "Vector3f velocity",
+        "0xd7a": "byte slide_flag",
+        "0xdb4": "int sound_handle"
+      }
+    },
+    "weapon_action_dispatch": {
+      "address": "0x4137E0",
+      "signature": "void WeaponActionDispatch(PlayerState* state, int action_id)",
+      "description": "Switch-case dispatch for 10 weapon action types (1-9). Each case loads animation IDs from weapon config and calls animation play. Uses 0x3ecccccd (0.1f) for blend time.",
+      "constants": {
+        "0x3ecccccd": "0.1f (blend time)"
+      },
+      "offsets": {
+        "0x4c4": "WeaponConfig* weapon_config",
+        "0x4ec": "int weapon_entity",
+        "0xd58": "int current_action",
+        "0xd5c": "int previous_action",
+        "0x67c-0x6ac": "AnimationID[10] action_anims"
+      },
+      "calls": {
+        "0x489f00": "Animation_Play()",
+        "0x4f2060": "WeaponConfig_GetByIndex()",
+        "0x413c80": "WeaponConfig_GetAction()",
+        "0x4e6b00": "Animation_Set()"
+      }
+    },
+    "conditional_sound": {
+      "address": "0x4E7200",
+      "signature": "void ConditionalSound(PlayerState* state, SoundEvent* event)",
+      "description": "Iterates sound events, calls handler via vtable dispatch. Checks nPlayTick, isPlaying, isLastRun, isRun flags.",
+      "globals": {
+        "0xa5e60a": "byte sound_system_active",
+        "0xa5e610": "SoundEventList* event_list",
+        "0xa96ae0": "vtable[sound_type * 0x180]"
+      },
+      "calls": {
+        "0x4e6630": "SoundEvent_GetType()",
+        "0x4eba80": "Sound_GetDeadStateID()",
+        "0x4ead10": "Sound_GetCurrentStateID()",
+        "0x4e9eb0": "Sound_GetPreviousStateID()",
+        "0x4e6c00": "Sound_Stop()",
+        "0x4e6db0": "Sound_Play()"
+      }
+    },
+    "ai_vision_cone": {
+      "address": "0x4502F0",
+      "signature": "uint AIVisionCone(AISoldier* soldier, Vector3d* target_pos, byte use_alarm_cone)",
+      "description": "Two-cone detection test. Uses basis matrix at +0x58-0x78 for transform. Returns 0x101 if target within cone, 0 if not.",
+      "constants": {
+        "0x5333b0": "double cone_cos_threshold",
+        "0x5333ec": "0.0f"
+      },
+      "offsets": {
+        "0x18-0x28": "Vector3d eye_position",
+        "0x58-0x78": "Matrix3f view_basis",
+        "0x80-0x88": "double primary_cone_cos",
+        "0x90-0x98": "double primary_alarm_cone_cos",
+        "0xa0": "float primary_half_angle",
+        "0xb0": "double primary_alarm_distance"
+      }
+    }
+  },
+  "global_constants": {
+    "0x5333ec": {"type": "float", "value": 0.0, "description": "DAT_ZERO"},
+    "0x5333e0": {"type": "float", "value": 1.0, "description": "DAT_ONE"},
+    "0x5333f0": {"type": "float", "value": 1.0, "description": "DAT_ONE_ALT"},
+    "0x5333f4": {"type": "float", "value": "0x3b5a740e", "description": "small delta value"},
+    "0x5333e8": {"type": "float", "value": "unknown", "description": "used in airborne damping"},
+    "0x5333e4": {"type": "float", "value": "unknown", "description": "used in airborne damping"},
+    "0x5333bc": {"type": "float", "value": "unknown", "description": "used in airborne damping"},
+    "0x5333d8": {"type": "float", "value": "unknown", "description": "used in airborne velocity"},
+    "0x5333d0": {"type": "float", "value": "unknown", "description": "used in airborne threshold"},
+    "0x5333cc": {"type": "float", "value": "unknown", "description": "used in fall detection"},
+    "0x5333c8": {"type": "float", "value": "unknown", "description": "used in fall detection"},
+    "0x5333c4": {"type": "float", "value": "unknown", "description": "used in fall detection"},
+    "0x53346c": {"type": "float", "value": 44.600887, "description": "ladder slide gravity (9.8 m/s²)"},
+    "0x533470": {"type": "float", "value": 0.99, "description": "ladder slide drag"},
+    "0x533478": {"type": "double", "value": "unknown", "description": "ground probe offset"},
+    "0x533588": {"type": "float", "value": "unknown", "description": "ground contact threshold"},
+    "0x5336c0": {"type": "float", "value": "unknown", "description": "min vehicle speed"},
+    "0x5336f8": {"type": "double", "value": 0.018349392, "description": "pi/180 rotor tilt conversion"},
+    "0x533758": {"type": "double", "value": "unknown", "description": "throttle threshold"},
+    "0x533750": {"type": "float", "value": "unknown", "description": "force scale 1"},
+    "0x53374c": {"type": "float", "value": "unknown", "description": "force scale 2"},
+    "0x533748": {"type": "float", "value": "unknown", "description": "force scale 3"},
+    "0x533740": {"type": "float", "value": "unknown", "description": "force scale 4"},
+    "0x533714": {"type": "float", "value": "unknown", "description": "throttle flag threshold"},
+    "0x533978": {"type": "double", "value": "unknown", "description": "ground probe offset 1"},
+    "0x533980": {"type": "double", "value": "unknown", "description": "ground probe epsilon"},
+    "0x5333b0": {"type": "double", "value": "unknown", "description": "cone cosine threshold"},
+    "0x56e1f4": {"type": "float", "value": "unknown", "description": "gravity delta constant"},
+    "0x3ecccccd": {"type": "float", "value": 0.1, "description": "animation blend time"}
+  },
+  "notes": [
+    "Player physics (0x408460, 0x4614B0, 0x461A70, 0x462390, 0x4087B0, 0x40D6B0, 0x40DBF0) all verified EXACT match in C# port",
+    "Vehicle physics (0x431E30) NOT SIMULATED in C# port — data layer only in VehiclePhysicsRegistry.cs",
+    "Rotor parser (0x42D9F0) parsed but not consumed by any physics",
+    "ConditionalSound (0x4E7200) uses vtable dispatch — flags not fully modeled in C#",
+    "Weapon action dispatch (0x4137E0) is a 10-case switch — partially ported",
+    "AI vision cone (0x4502F0) is exact match in C# AiVision.cs"
+  ]
+}
