@@ -1,6 +1,0 @@
-{
-  "name": "MissionOpen",
-  "address": "00484E60",
-  "signature": "void MissionOpen(char **ptr_file);",
-  "note": "Open current mission file , Params: Pointer to mission file."
-}

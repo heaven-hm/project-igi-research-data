@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetInstantDeath",
-  "address": "0044E1B0",
-  "signature": "void AIFunction_SetInstantDeath(int instant_death);",
-  "note": "Forces immediate death on single bullet hit."
-}

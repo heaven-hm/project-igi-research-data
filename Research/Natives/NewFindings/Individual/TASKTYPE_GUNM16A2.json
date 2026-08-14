@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GUNM16A2",
-  "address": "00540434",
-  "signature": "int TASKTYPE_GUNM16A2();",
-  "note": "Task type constant for M16A2 assault rifle."
-}

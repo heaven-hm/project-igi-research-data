@@ -1,6 +1,0 @@
-{
-  "name": "GOInRemap",
-  "address": "0053324C",
-  "signature": "int GOInRemap();",
-  "note": "Game option: input remapping."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "HumanViewCam",
-  "address": "00463760",
-  "signature": "void HumanViewCam(int soldier_ptr,int cam_type)",
-  "note": "Camera view for Human Player/Soldier , Param: soldier_ptr is pointer to Entity you are changing and cam_type is [1-6]"
-}

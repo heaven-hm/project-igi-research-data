@@ -1,6 +1,0 @@
-{
-  "name": "IsResourceLoaded",
-  "address": "004B5B90",
-  "signature": "int IsResourceLoaded(char *res_file,int *res_file_ptr);",
-  "note": "Check where resource is in loaded in memory, Params: resource 'sounds.qvm','AI/303.qvm' and address of res file"
-}

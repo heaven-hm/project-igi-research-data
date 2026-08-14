@@ -1,6 +1,0 @@
-{
-  "name": "Config_GameOptionsInputGetInvertMouse",
-  "address": "00402FF0",
-  "signature": "int Config_GameOptionsInputGetInvertMouse();",
-  "note": "Gets invert mouse pitch setting (0 or 1)."
-}

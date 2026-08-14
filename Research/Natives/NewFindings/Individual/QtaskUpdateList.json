@@ -1,6 +1,0 @@
-{
-  "name": "QtaskUpdateList",
-  "address": "00401B20",
-  "signature": "void QtaskUpdateList(int* p1);",
-  "note": "Update all QTask list, Params: p1 ??"
-}

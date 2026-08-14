@@ -1,6 +1,0 @@
-{
-  "name": "QscCompile",
-  "address": "004B8410",
-  "signature": "void QscCompile(char* qsc_file);",
-  "note": "Compile QSC file to QVM, Params: QSC script file like 'LOCAL:objects.qsc'"
-}

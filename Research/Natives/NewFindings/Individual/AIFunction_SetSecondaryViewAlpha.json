@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetSecondaryViewAlpha",
-  "address": "0044DEE0",
-  "signature": "void AIFunction_SetSecondaryViewAlpha(float alpha);",
-  "note": "Sets secondary vision cone angle."
-}

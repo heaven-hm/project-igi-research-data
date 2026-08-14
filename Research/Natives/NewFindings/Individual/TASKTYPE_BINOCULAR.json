@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_BINOCULAR",
-  "address": "0053FF58",
-  "signature": "int TASKTYPE_BINOCULAR();",
-  "note": "Task type constant for binoculars."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_EXPLODEMAGICOBJ",
-  "address": "0053C338",
-  "signature": "int TASKTYPE_EXPLODEMAGICOBJ();",
-  "note": "Task type constant for explosive magic objects."
-}

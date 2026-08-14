@@ -1,6 +1,0 @@
-{
-  "name": "MusicSetSfxVolume",
-  "address": "00495F30",
-  "signature": "void MusicSetSfxVolume(float volume);",
-  "note": "Sets sound effect volume, Params: volume range [0.0 - 1.0]"
-}

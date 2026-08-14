@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GENERICPHYSICSMAGICOBJ",
-  "address": "0053C470",
-  "signature": "int TASKTYPE_GENERICPHYSICSMAGICOBJ();",
-  "note": "Task type constant for generic physics magic objects."
-}

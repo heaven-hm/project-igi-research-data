@@ -1,6 +1,0 @@
-{
-  "name": "Config_FillPlayerProfileListBox",
-  "address": "00402FF0",
-  "signature": "void Config_FillPlayerProfileListBox();",
-  "note": "Fills active menu list box with player profile names."
-}

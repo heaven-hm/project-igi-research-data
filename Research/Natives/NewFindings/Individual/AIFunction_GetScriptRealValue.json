@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetScriptRealValue",
-  "address": "0044E800",
-  "signature": "float AIFunction_GetScriptRealValue(int key);",
-  "note": "Reads float script state variable."
-}

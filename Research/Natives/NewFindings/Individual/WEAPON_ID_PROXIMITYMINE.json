@@ -1,6 +1,0 @@
-{
-  "name": "WEAPON_ID_PROXIMITYMINE",
-  "address": "00538DF4",
-  "signature": "int WEAPON_ID_PROXIMITYMINE();",
-  "note": "Weapon ID constant for proximity mines."
-}

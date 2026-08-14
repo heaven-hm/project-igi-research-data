@@ -1,0 +1,22 @@
+{
+  "HumanPlayer": [
+    {
+      "name": "HumanplayerLoad",
+      "address": "004137A0",
+      "signature": "void HumanplayerLoad(void);",
+      "note": "Load Humanplayer.qvm file to memory."
+    },
+    {
+      "name": "HumanViewCam",
+      "address": "00463760",
+      "signature": "void HumanViewCam(int soldier_ptr,int cam_type)",
+      "note": "Camera view for Human Player/Soldier , Param: soldier_ptr is pointer to Entity you are changing and cam_type is [1-6]"
+    },
+    {
+      "name": "HumanTaskViewReset",
+      "address": "004659E0",
+      "signature": "void HumanTaskViewReset(int human_ptr)",
+      "note": "Reset Human view angle after changing it by Zoom (Dragunov,Binoculars). "
+    }
+  ]
+}

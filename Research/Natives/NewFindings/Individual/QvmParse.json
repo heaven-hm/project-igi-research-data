@@ -1,6 +1,0 @@
-{
-  "name": "QvmParse",
-  "address": "004BBCB0",
-  "signature": "int QvmParse(char *file_name,int mem_alloc_addr);",
-  "note": "Parse Assembler source file, Params: any QAS file name and Memory allocated by Mem_Alloc(),  Returns status."
-}

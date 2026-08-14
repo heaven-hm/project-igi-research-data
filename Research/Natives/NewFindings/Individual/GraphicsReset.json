@@ -1,6 +1,0 @@
-{
-  "name": "GraphicsReset",
-  "address": "00403B70",
-  "signature": "void GraphicsReset(char* buffer);",
-  "note": "Reset Graphics options in settings, Params: Buffer of size 30."
-}

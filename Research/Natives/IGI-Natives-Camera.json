@@ -1,0 +1,52 @@
+{
+  "Camera": [
+    {
+      "name": "AIFunction_SetViewLength",
+      "address": "0044DC40",
+      "signature": "void AIFunction_SetViewLength(float length);",
+      "note": "Sets primary acute vision cone sight distance."
+    },
+    {
+      "name": "AIFunction_SetAlarmViewLength",
+      "address": "0044DCD0",
+      "signature": "void AIFunction_SetAlarmViewLength(float length);",
+      "note": "Sets sight distance while alarm is active."
+    },
+    {
+      "name": "AIFunction_SetViewAlpha",
+      "address": "0044DD30",
+      "signature": "void AIFunction_SetViewAlpha(float alpha);",
+      "note": "Sets primary vision cone half-angle alpha."
+    },
+    {
+      "name": "AIFunction_SetViewGamma",
+      "address": "0044DD90",
+      "signature": "void AIFunction_SetViewGamma(float gamma);",
+      "note": "Sets primary vision cone detection rate gamma."
+    },
+    {
+      "name": "AIFunction_SetSecondaryViewLength",
+      "address": "0044DDF0",
+      "signature": "void AIFunction_SetSecondaryViewLength(float length);",
+      "note": "Sets secondary peripheral vision cone distance."
+    },
+    {
+      "name": "AIFunction_SetSecondaryAlarmViewLength",
+      "address": "0044DE80",
+      "signature": "void AIFunction_SetSecondaryAlarmViewLength(float length);",
+      "note": "Sets secondary peripheral vision cone distance under alarm."
+    },
+    {
+      "name": "AIFunction_SetSecondaryViewAlpha",
+      "address": "0044DEE0",
+      "signature": "void AIFunction_SetSecondaryViewAlpha(float alpha);",
+      "note": "Sets secondary vision cone angle."
+    },
+    {
+      "name": "AIFunction_SetSecondaryViewGamma",
+      "address": "0044DF40",
+      "signature": "void AIFunction_SetSecondaryViewGamma(float gamma);",
+      "note": "Sets secondary vision cone detection rate."
+    }
+  ]
+}

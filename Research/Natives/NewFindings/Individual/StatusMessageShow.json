@@ -1,6 +1,0 @@
-{
-  "name": "StatusMessageShow",
-  "address": "00485970",
-  "signature": "int* StatusMessageShow(int status_timer,char* msg,char *sprite,char *status_byte);",
-  "note": "Show status message on screen, Params: msg to show, sprite of msg, status_timer 0xA758AC, status_byte &0x567C74."
-}

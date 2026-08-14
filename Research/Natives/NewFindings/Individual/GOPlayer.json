@@ -1,6 +1,0 @@
-{
-  "name": "GOPlayer",
-  "address": "00533240",
-  "signature": "int GOPlayer();",
-  "note": "Game option: player settings."
-}

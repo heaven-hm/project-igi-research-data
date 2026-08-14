@@ -1,6 +1,0 @@
-{
-  "name": "WEAPONTYPE_KNIFE",
-  "address": "00539370",
-  "signature": "int WEAPONTYPE_KNIFE();",
-  "note": "Weapon type constant for knives."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_DefaultHandler",
-  "address": "0044E060",
-  "signature": "void AIFunction_DefaultHandler();",
-  "note": "Default fallback script event handler."
-}

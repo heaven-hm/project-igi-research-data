@@ -1,6 +1,0 @@
-{
-  "name": "MemoryAlloc",
-  "address": "004B0C60",
-  "signature": "uint MemAlloc(int num, int size);",
-  "note": "Allocate memory for game, Params: Check calloc() in c."
-}

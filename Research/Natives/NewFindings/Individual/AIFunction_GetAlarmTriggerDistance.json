@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetAlarmTriggerDistance",
-  "address": "0044E9B0",
-  "signature": "float AIFunction_GetAlarmTriggerDistance();",
-  "note": "Returns distance between guard and alarm switch."
-}

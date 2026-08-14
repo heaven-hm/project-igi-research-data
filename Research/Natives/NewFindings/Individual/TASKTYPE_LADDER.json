@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_LADDER",
-  "address": "0053C528",
-  "signature": "int TASKTYPE_LADDER();",
-  "note": "Task type constant for ladders."
-}

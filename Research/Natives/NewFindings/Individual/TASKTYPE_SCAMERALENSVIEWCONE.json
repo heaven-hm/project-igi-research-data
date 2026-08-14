@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_SCAMERALENSVIEWCONE",
-  "address": "0053C5A0",
-  "signature": "int TASKTYPE_SCAMERALENSVIEWCONE();",
-  "note": "Task type constant for security camera view cones."
-}

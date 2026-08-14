@@ -1,6 +1,0 @@
-{
-  "name": "MusicDisable",
-  "address": "00415A60",
-  "signature": "void MusicDisable(char* buffer);",
-  "note": "Disable Game Music, Params:  Buffer of size 30."
-}

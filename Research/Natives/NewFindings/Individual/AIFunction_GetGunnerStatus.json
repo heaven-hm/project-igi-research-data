@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetGunnerStatus",
-  "address": "0044E5E0",
-  "signature": "int AIFunction_GetGunnerStatus();",
-  "note": "Queries if linked gunner turret is occupied."
-}

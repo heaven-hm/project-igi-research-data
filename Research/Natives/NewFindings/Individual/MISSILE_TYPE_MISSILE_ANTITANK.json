@@ -1,6 +1,0 @@
-{
-  "name": "MISSILE_TYPE_MISSILE_ANTITANK",
-  "address": "0053BBE4",
-  "signature": "int MISSILE_TYPE_MISSILE_ANTITANK();",
-  "note": "Missile type for anti-tank missiles."
-}

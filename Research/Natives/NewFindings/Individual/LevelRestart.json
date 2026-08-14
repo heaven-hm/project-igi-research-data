@@ -1,6 +1,0 @@
-{
-  "name": "LevelRestart",
-  "address": "00416FE0",
-  "signature": "void LevelRestart(void);",
-  "note": "Restarts current level."
-}

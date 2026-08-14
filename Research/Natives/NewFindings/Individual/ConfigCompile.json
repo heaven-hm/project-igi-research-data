@@ -1,6 +1,0 @@
-{
-  "name": "ConfigCompile",
-  "address": "004F0CF0",
-  "signature": "int ConfigCompile(int p1,char* cfg_file,int p3);",
-  "note": "Compile any config file, Params: Config: 'WEAPONS:weaponconfig.qsc' p1 ??, p3 ??"
-}

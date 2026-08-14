@@ -1,6 +1,0 @@
-{
-  "name": "InputEnable",
-  "address": "00415830",
-  "signature": "void InputEnable(char* buffer);",
-  "note": "Enable input of player., Params: Buffer of size 30."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "QtaskUpdate",
-  "address": "004F0E90",
-  "signature": "void QtaskUpdate(void);",
-  "note": "Update QTask hash table call before loading level."
-}

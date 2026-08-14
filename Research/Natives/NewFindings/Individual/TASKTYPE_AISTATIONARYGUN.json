@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_AISTATIONARYGUN",
-  "address": "0053FEC4",
-  "signature": "int TASKTYPE_AISTATIONARYGUN();",
-  "note": "Task type constant for AI stationary guns/turrets."
-}

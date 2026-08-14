@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_MISSILE",
-  "address": "0053BC6C",
-  "signature": "int TASKTYPE_MISSILE();",
-  "note": "Task type constant for missiles."
-}

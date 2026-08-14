@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_PROXIMITYMINE",
-  "address": "0054053C",
-  "signature": "int TASKTYPE_PROXIMITYMINE();",
-  "note": "Task type constant for proximity mines."
-}

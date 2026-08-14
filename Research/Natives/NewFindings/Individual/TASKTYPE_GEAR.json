@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GEAR",
-  "address": "0053BFFC",
-  "signature": "int TASKTYPE_GEAR();",
-  "note": "Task type constant for landing gear."
-}

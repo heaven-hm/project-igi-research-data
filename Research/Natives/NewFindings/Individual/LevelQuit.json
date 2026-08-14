@@ -1,6 +1,0 @@
-{
-  "name": "LevelQuit",
-  "address": "00416550",
-  "signature": "void LevelQuit(void);",
-  "note": "Quit current level to mainmenu."
-}

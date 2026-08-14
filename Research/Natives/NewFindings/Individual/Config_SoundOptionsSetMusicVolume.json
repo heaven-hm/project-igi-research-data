@@ -1,6 +1,0 @@
-{
-  "name": "Config_SoundOptionsSetMusicVolume",
-  "address": "00402FF0",
-  "signature": "void Config_SoundOptionsSetMusicVolume(float volume);",
-  "note": "Sets music volume level."
-}

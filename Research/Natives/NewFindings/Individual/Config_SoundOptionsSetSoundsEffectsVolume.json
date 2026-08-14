@@ -1,6 +1,0 @@
-{
-  "name": "Config_SoundOptionsSetSoundsEffectsVolume",
-  "address": "00402FF0",
-  "signature": "void Config_SoundOptionsSetSoundsEffectsVolume(float volume);",
-  "note": "Sets sound effects volume level."
-}

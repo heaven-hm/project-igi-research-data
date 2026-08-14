@@ -1,6 +1,0 @@
-{
-  "name": "Config_PlayerGetActiveMission",
-  "address": "00402FF0",
-  "signature": "int Config_PlayerGetActiveMission(int profile_index);",
-  "note": "Gets highest unlocked mission for profile."
-}

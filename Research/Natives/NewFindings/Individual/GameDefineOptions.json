@@ -1,6 +1,0 @@
-{
-  "name": "GameDefineOptions",
-  "address": "004B8890",
-  "signature": "void GameDefineOptions(int **option_str,int option_func_addr,int opt1,int opt2);",
-  "note": "Define game options constants , Params: opt_str (int**)'DefineAmmoType'"
-}

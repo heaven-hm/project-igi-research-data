@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetCurrentEventType",
-  "address": "0044DFA0",
-  "signature": "int AIFunction_GetCurrentEventType();",
-  "note": "Returns active detected event type (Gunshot, Vision, Impact)."
-}

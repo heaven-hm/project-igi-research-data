@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_CABARREL",
-  "address": "00540300",
-  "signature": "int TASKTYPE_CABARREL();",
-  "note": "Task type constant for ammo barrels."
-}

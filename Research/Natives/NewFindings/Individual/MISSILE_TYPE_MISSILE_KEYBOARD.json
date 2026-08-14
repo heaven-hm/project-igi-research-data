@@ -1,6 +1,0 @@
-{
-  "name": "MISSILE_TYPE_MISSILE_KEYBOARD",
-  "address": "0053BBC4",
-  "signature": "int MISSILE_TYPE_MISSILE_KEYBOARD();",
-  "note": "Missile type for keyboard-controlled missiles."
-}

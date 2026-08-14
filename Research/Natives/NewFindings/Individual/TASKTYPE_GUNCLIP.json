@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GUNCLIP",
-  "address": "0054076C",
-  "signature": "int TASKTYPE_GUNCLIP();",
-  "note": "Task type constant for gun clips."
-}

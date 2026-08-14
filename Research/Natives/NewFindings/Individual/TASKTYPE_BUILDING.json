@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_BUILDING",
-  "address": "0053C814",
-  "signature": "int TASKTYPE_BUILDING();",
-  "note": "Task type constant for buildings."
-}

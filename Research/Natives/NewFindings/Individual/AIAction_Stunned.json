@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_Stunned",
-  "address": "0044D8F0",
-  "signature": "void AIAction_Stunned(float duration, int anim_id);",
-  "note": "Puts AI into stunned reaction state (e.g. Flashbang)."
-}

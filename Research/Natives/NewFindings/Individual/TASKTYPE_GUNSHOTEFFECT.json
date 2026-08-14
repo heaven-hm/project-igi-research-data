@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GUNSHOTEFFECT",
-  "address": "0053C1B4",
-  "signature": "int TASKTYPE_GUNSHOTEFFECT();",
-  "note": "Task type constant for gun shot effects (muzzle flash, tracers)."
-}

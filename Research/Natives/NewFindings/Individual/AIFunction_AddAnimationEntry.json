@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_AddAnimationEntry",
-  "address": "0044EBB0",
-  "signature": "void AIFunction_AddAnimationEntry(int anim_id, float weight);",
-  "note": "Adds weighted animation entry to idle animation pool."
-}

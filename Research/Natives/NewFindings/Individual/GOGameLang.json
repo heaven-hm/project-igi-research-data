@@ -1,6 +1,0 @@
-{
-  "name": "GOGameLang",
-  "address": "005332A8",
-  "signature": "int GOGameLang();",
-  "note": "Game option: game language."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "AMMODISPLAYTYPE_BARREL",
-  "address": "00539280",
-  "signature": "int AMMODISPLAYTYPE_BARREL();",
-  "note": "Ammo display type for ammo barrels."
-}

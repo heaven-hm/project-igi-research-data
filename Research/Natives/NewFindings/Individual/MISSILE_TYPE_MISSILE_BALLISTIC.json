@@ -1,6 +1,0 @@
-{
-  "name": "MISSILE_TYPE_MISSILE_BALLISTIC",
-  "address": "0053BC04",
-  "signature": "int MISSILE_TYPE_MISSILE_BALLISTIC();",
-  "note": "Missile type for ballistic missiles."
-}

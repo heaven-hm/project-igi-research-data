@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_HELIDOOR",
-  "address": "0053BB1C",
-  "signature": "int TASKTYPE_HELIDOOR();",
-  "note": "Task type constant for helicopter doors."
-}

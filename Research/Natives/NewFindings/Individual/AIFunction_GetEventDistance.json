@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetEventDistance",
-  "address": "0044E930",
-  "signature": "float AIFunction_GetEventDistance();",
-  "note": "Returns distance to detected event origin."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "GOSoundSpeech",
-  "address": "005332CC",
-  "signature": "float GOSoundSpeech();",
-  "note": "Game option: speech volume."
-}

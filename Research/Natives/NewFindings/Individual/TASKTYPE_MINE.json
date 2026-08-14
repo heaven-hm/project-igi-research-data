@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_MINE",
-  "address": "00540618",
-  "signature": "int TASKTYPE_MINE();",
-  "note": "Task type constant for mines."
-}

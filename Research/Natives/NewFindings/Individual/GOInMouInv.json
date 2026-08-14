@@ -1,6 +1,0 @@
-{
-  "name": "GOInMouInv",
-  "address": "00533258",
-  "signature": "int GOInMouInv();",
-  "note": "Game option: mouse invert."
-}

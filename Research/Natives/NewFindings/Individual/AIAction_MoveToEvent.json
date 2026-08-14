@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_MoveToEvent",
-  "address": "0044D7D0",
-  "signature": "void AIAction_MoveToEvent(int event_id, int speed);",
-  "note": "Orders AI to move toward detected sound or vision event location."
-}

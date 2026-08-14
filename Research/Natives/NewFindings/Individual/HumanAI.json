@@ -1,6 +1,0 @@
-{
-  "name": "HumanAI",
-  "address": "0053D404",
-  "signature": "void HumanAI(int* task);",
-  "note": "Human AI base task type."
-}

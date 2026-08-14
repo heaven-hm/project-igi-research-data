@@ -1,6 +1,0 @@
-{
-  "name": "QvmAssemble",
-  "address": "004BB270",
-  "signature": "int QvmAssemble(char *file_out,char *file_in);",
-  "note": "Assemble QAS assembler file, Params: Assemler source file like 'objects.qas'"
-}

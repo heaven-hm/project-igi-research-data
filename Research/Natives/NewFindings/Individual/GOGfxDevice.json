@@ -1,6 +1,0 @@
-{
-  "name": "GOGfxDevice",
-  "address": "0053327C",
-  "signature": "int GOGfxDevice();",
-  "note": "Game option: graphics device selection."
-}

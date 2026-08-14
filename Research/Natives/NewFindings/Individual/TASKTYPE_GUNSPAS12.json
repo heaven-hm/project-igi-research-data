@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GUNSPAS12",
-  "address": "00540374",
-  "signature": "int TASKTYPE_GUNSPAS12();",
-  "note": "Task type constant for SPAS-12 shotgun."
-}

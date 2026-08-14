@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetRandomValue",
-  "address": "0044E000",
-  "signature": "float AIFunction_GetRandomValue(float max);",
-  "note": "Generates random float between 0.0 and max using PRNG 0x4B4740."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetGunnerID",
-  "address": "0044E390",
-  "signature": "void AIFunction_SetGunnerID(int gunner_id);",
-  "note": "Links AI guard to stationary gun/turret task ID."
-}

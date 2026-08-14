@@ -1,6 +1,0 @@
-{
-  "name": "GOStart",
-  "address": "00533237",
-  "signature": "int GOStart();",
-  "note": "Game option: start game."
-}

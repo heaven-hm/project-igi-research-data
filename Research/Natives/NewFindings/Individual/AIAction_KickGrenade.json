@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_KickGrenade",
-  "address": "0044D960",
-  "signature": "void AIAction_KickGrenade(int grenade_id);",
-  "note": "Triggers grenade kick reaction sequence."
-}

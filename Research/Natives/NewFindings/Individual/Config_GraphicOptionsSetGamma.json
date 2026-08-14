@@ -1,6 +1,0 @@
-{
-  "name": "Config_GraphicOptionsSetGamma",
-  "address": "00402FF0",
-  "signature": "void Config_GraphicOptionsSetGamma(float gamma);",
-  "note": "Sets active gamma slider value."
-}

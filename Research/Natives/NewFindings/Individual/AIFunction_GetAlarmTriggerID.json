@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetAlarmTriggerID",
-  "address": "0044E3F0",
-  "signature": "int AIFunction_GetAlarmTriggerID();",
-  "note": "Returns linked alarm trigger task ID."
-}

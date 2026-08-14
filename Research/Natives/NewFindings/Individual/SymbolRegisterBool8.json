@@ -1,6 +1,0 @@
-{
-  "name": "SymbolRegisterBool8",
-  "address": "004B7EE0",
-  "signature": "void SymbolRegisterBool8(int **sym_buf,int sym_addr);",
-  "note": "Register new symbol of type 'Boolean' for game like internal vairables,UI controls,timers etc."
-}

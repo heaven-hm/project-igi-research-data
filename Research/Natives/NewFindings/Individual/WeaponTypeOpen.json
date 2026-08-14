@@ -1,6 +1,0 @@
-{
-  "name": "WeaponTypeOpen",
-  "address": "00413B70",
-  "signature": "void WeaponTypeOpen(void);",
-  "note": "Open all weapons defined in .qsc file for Humanplayer."
-}

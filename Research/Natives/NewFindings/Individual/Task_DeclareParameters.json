@@ -1,6 +1,0 @@
-{
-  "name": "Task_DeclareParameters",
-  "address": "004F0ED0",
-  "signature": "void Task_DeclareParameters(int type_id, ...);",
-  "note": "Declares parameter schema and value types for a task node type."
-}

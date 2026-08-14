@@ -1,6 +1,0 @@
-{
-  "name": "Config_FillScreenResolutionListBox",
-  "address": "00402FF0",
-  "signature": "void Config_FillScreenResolutionListBox();",
-  "note": "Fills list box with supported screen resolutions."
-}

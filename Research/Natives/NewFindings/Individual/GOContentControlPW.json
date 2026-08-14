@@ -1,6 +1,0 @@
-{
-  "name": "GOContentControlPW",
-  "address": "00533308",
-  "signature": "char* GOContentControlPW();",
-  "note": "Game option: content control password."
-}

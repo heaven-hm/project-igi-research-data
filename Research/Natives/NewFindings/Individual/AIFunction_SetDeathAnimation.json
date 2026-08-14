@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetDeathAnimation",
-  "address": "0044E210",
-  "signature": "void AIFunction_SetDeathAnimation(int anim_id);",
-  "note": "Assigns specific death animation index."
-}

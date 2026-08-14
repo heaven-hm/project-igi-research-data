@@ -1,6 +1,0 @@
-{
-  "name": "GOIsBlood",
-  "address": "005332C0",
-  "signature": "int GOIsBlood();",
-  "note": "Game option: blood enabled."
-}

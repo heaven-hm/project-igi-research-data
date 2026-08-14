@@ -1,6 +1,0 @@
-{
-  "name": "AmmoTypeOpen",
-  "address": "0047CAB0",
-  "signature": "void AmmoTypeOpen(void);",
-  "note": "Open ammo qvm file to memory for all weapons loaded."
-}

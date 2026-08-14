@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_COCKPITSHIELD",
-  "address": "0053BFD4",
-  "signature": "int TASKTYPE_COCKPITSHIELD();",
-  "note": "Task type constant for cockpit shields."
-}

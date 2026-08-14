@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_GetAlarmAccess",
-  "address": "0044E470",
-  "signature": "int AIFunction_GetAlarmAccess();",
-  "note": "Returns guard alarm access permissions."
-}

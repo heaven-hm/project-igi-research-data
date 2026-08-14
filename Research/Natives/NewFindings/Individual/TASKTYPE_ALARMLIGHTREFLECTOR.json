@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_ALARMLIGHTREFLECTOR",
-  "address": "0053C26C",
-  "signature": "int TASKTYPE_ALARMLIGHTREFLECTOR();",
-  "note": "Task type constant for alarm light reflectors."
-}

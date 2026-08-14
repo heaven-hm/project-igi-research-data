@@ -1,6 +1,0 @@
-{
-  "name": "AMMODISPLAYTYPE_GRENADE",
-  "address": "00539250",
-  "signature": "int AMMODISPLAYTYPE_GRENADE();",
-  "note": "Ammo display type for grenades (thrown weapon icon)."
-}

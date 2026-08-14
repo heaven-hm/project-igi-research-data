@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_ALARMLIGHT",
-  "address": "0053C2A0",
-  "signature": "int TASKTYPE_ALARMLIGHT();",
-  "note": "Task type constant for alarm lights."
-}

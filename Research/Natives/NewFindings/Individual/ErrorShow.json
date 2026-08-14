@@ -1,6 +1,0 @@
-{
-  "name": "ErrorShow",
-  "address": "004AF7B0",
-  "signature": "void ErrorShow(char* err_msg);",
-  "note": "Show error message from game, Params: Error message."
-}

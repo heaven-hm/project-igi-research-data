@@ -1,0 +1,46 @@
+{
+  "Resources": [
+    {
+      "name": "QvmAssemble",
+      "address": "004BB270",
+      "signature": "int QvmAssemble(char *file_out,char *file_in);",
+      "note": "Assemble QAS assembler file, Params: Assemler source file like 'objects.qas'"
+    },
+    {
+      "name": "QvmCompile",
+      "address": "004B85B0",
+      "signature": "void QvmCompile(int file);",
+      "note": "Compile qvm file loaded in memory, Params: address of QVM file loaded from 'LoadResource' method."
+    },
+    {
+      "name": "QvmLoad",
+      "address": "004B80B0",
+      "signature": "int * QvmLoad(char *file_name);",
+      "note": "Compiles and Load any .qvm file into memory, Params: any qvm file name,  Returns filename loaded."
+    },
+    {
+      "name": "QvmParse",
+      "address": "004BBCB0",
+      "signature": "int QvmParse(char *file_name,int mem_alloc_addr);",
+      "note": "Parse Assembler source file, Params: any QAS file name and Memory allocated by Mem_Alloc(),  Returns status."
+    },
+    {
+      "name": "ResourceFlush",
+      "address": "004B63D0",
+      "signature": "void ResourceFlush(int* p1);",
+      "note": "Releases the current holding resources, Params: Params: p1 ??"
+    },
+    {
+      "name": "ResourcePackUnpack",
+      "address": "004B18B0",
+      "signature": "int ResourcePackUnpack(char *res_file,char **buffer);",
+      "note": "Packs and return address or Unpacks resource file into memory depending upon resource type, Params: resource 'sounds.res','terrain.res', and buffer."
+    },
+    {
+      "name": "ResourceUnpack",
+      "address": "004B16D0",
+      "signature": "void ResourceUnpack(int* res_ptr, int res_addr, int res_size);",
+      "note": "Unpacks resource file into memory, Params: Resource ptr, address where to unpack (Allocate using Mem_Alloc) and size of resource."
+    }
+  ]
+}

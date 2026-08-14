@@ -1,6 +1,0 @@
-{
-  "name": "LoadingScreenShow",
-  "address": "0048A440",
-  "signature": "void LoadingScreenShow(int loading_type);",
-  "note": "Show menu loading screen before loading level."
-}

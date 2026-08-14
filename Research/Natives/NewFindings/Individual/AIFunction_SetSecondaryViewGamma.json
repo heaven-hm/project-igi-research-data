@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetSecondaryViewGamma",
-  "address": "0044DF40",
-  "signature": "void AIFunction_SetSecondaryViewGamma(float gamma);",
-  "note": "Sets secondary vision cone detection rate."
-}

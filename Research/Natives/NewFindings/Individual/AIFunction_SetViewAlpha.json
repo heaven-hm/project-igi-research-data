@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetViewAlpha",
-  "address": "0044DD30",
-  "signature": "void AIFunction_SetViewAlpha(float alpha);",
-  "note": "Sets primary vision cone half-angle alpha."
-}

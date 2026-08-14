@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetAlarmControlID",
-  "address": "0044E2D0",
-  "signature": "void AIFunction_SetAlarmControlID(int control_id);",
-  "note": "Links guard AI to alarm control panel task ID."
-}

@@ -1,0 +1,58 @@
+{
+  "Ammo": [
+    {
+      "name": "AmmoTypeOpen",
+      "address": "0047CAB0",
+      "signature": "void AmmoTypeOpen(void);",
+      "note": "Open ammo qvm file to memory for all weapons loaded."
+    },
+    {
+      "name": "AMMO_ID_M203",
+      "address": "00538E0C",
+      "signature": "int AMMO_ID_M203();",
+      "note": "Ammo type ID for M203 grenades."
+    },
+    {
+      "name": "AMMO_ID_MEDIPACK",
+      "address": "00538E2C",
+      "signature": "int AMMO_ID_MEDIPACK();",
+      "note": "Ammo type ID for medipacks (healing items)."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_GRENADE",
+      "address": "00539250",
+      "signature": "int AMMODISPLAYTYPE_GRENADE();",
+      "note": "Ammo display type for grenades (thrown weapon icon)."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_SHELL",
+      "address": "00539268",
+      "signature": "int AMMODISPLAYTYPE_SHELL();",
+      "note": "Ammo display type for shotgun shells."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_BARREL",
+      "address": "00539280",
+      "signature": "int AMMODISPLAYTYPE_BARREL();",
+      "note": "Ammo display type for ammo barrels."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_CLIP",
+      "address": "00539298",
+      "signature": "int AMMODISPLAYTYPE_CLIP();",
+      "note": "Ammo display type for gun clips."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_NORMAL",
+      "address": "005392B0",
+      "signature": "int AMMODISPLAYTYPE_NORMAL();",
+      "note": "Ammo display type for normal bullets."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_NONE",
+      "address": "005392C8",
+      "signature": "int AMMODISPLAYTYPE_NONE();",
+      "note": "Ammo display type for no ammo display."
+    }
+  ]
+}

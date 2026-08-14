@@ -1,6 +1,0 @@
-{
-  "name": "ScriptBufInit",
-  "address": "004C0200",
-  "signature": "void ScriptBufInit(int *buff_arr1,int buff_arr2,int buff,int buff_size);",
-  "note": "Init buffer for scripts, Params: buffers with last param as size."
-}

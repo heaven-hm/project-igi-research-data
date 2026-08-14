@@ -1,6 +1,0 @@
-{
-  "name": "GOInMouSens",
-  "address": "00533264",
-  "signature": "float GOInMouSens();",
-  "note": "Game option: mouse sensitivity."
-}

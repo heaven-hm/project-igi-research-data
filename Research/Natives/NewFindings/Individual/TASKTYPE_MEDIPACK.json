@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_MEDIPACK",
-  "address": "0053FEF0",
-  "signature": "int TASKTYPE_MEDIPACK();",
-  "note": "Task type constant for medipacks (health packs)."
-}

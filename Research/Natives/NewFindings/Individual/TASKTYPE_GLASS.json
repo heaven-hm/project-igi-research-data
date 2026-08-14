@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GLASS",
-  "address": "0053C868",
-  "signature": "int TASKTYPE_GLASS();",
-  "note": "Task type constant for breakable glass."
-}

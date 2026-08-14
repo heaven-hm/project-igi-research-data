@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetScriptIntegerValue",
-  "address": "0044E6D0",
-  "signature": "void AIFunction_SetScriptIntegerValue(int key, int value);",
-  "note": "Sets internal integer script state variable."
-}

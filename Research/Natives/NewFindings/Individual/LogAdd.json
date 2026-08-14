@@ -1,6 +1,0 @@
-{
-  "name": "LogAdd",
-  "address": "004BBC30",
-  "signature": "void LogAdd(byte* log_msg);",
-  "note": "Add internal game log message., Params: message to log."
-}

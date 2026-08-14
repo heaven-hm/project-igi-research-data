@@ -1,6 +1,0 @@
-{
-  "name": "ScriptSetsymbolCxt",
-  "address": "004B8930",
-  "signature": "void ScriptSetsymbolCxt(byte *symbol_name,int** symbol_buf);",
-  "note": "Set symbol context before loading it, Params: symbol_name like 'TaskType_Set'."
-}

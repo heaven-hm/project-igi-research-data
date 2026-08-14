@@ -1,6 +1,0 @@
-{
-  "name": "GOSoundFX",
-  "address": "005332EC",
-  "signature": "float GOSoundFX();",
-  "note": "Game option: sound effects volume."
-}

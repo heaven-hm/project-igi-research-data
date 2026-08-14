@@ -1,6 +1,0 @@
-{
-  "name": "Config_DeletePlayerProfile",
-  "address": "00402FF0",
-  "signature": "int Config_DeletePlayerProfile(int index);",
-  "note": "Deletes player profile at index."
-}

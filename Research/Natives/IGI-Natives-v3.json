@@ -1,0 +1,1666 @@
+{
+  "Config": [
+    {
+      "name": "AnimTriggerRead",
+      "address": "004EC070",
+      "signature": "void AnimTriggerRead(uint* path);",
+      "note": "Read Config of AnimTrigger, Params: Path like: 'LOCAL:Animtrigger'"
+    },
+    {
+      "name": "ConfigCompile",
+      "address": "004F0CF0",
+      "signature": "int ConfigCompile(int p1,char* cfg_file,int p3);",
+      "note": "Compile any config file, Params: Config: 'WEAPONS:weaponconfig.qsc' p1 ??, p3 ??"
+    },
+    {
+      "name": "Config_GetNumberOfPlayerProfiles",
+      "address": "00402FF0",
+      "signature": "int Config_GetNumberOfPlayerProfiles();",
+      "note": "Returns total count of registered player profiles."
+    },
+    {
+      "name": "Config_GetActivePlayerProfileIndex",
+      "address": "00402FF0",
+      "signature": "int Config_GetActivePlayerProfileIndex();",
+      "note": "Returns active profile index."
+    },
+    {
+      "name": "Config_SetActivePlayerProfileIndex",
+      "address": "00402FF0",
+      "signature": "void Config_SetActivePlayerProfileIndex(int index);",
+      "note": "Sets active player profile index."
+    },
+    {
+      "name": "Config_CreateNewPlayerProfile",
+      "address": "00402FF0",
+      "signature": "int Config_CreateNewPlayerProfile(string name, int difficulty);",
+      "note": "Creates new player profile."
+    },
+    {
+      "name": "Config_DeletePlayerProfile",
+      "address": "00402FF0",
+      "signature": "int Config_DeletePlayerProfile(int index);",
+      "note": "Deletes player profile at index."
+    },
+    {
+      "name": "Config_PlayerGetActiveMission",
+      "address": "00402FF0",
+      "signature": "int Config_PlayerGetActiveMission(int profile_index);",
+      "note": "Gets highest unlocked mission for profile."
+    },
+    {
+      "name": "Config_FillPlayerProfileListBox",
+      "address": "00402FF0",
+      "signature": "void Config_FillPlayerProfileListBox();",
+      "note": "Fills active menu list box with player profile names."
+    },
+    {
+      "name": "Config_FillRenderDeviceListBox",
+      "address": "00402FF0",
+      "signature": "void Config_FillRenderDeviceListBox();",
+      "note": "Fills list box with detected Direct3D/OpenGL render devices."
+    },
+    {
+      "name": "Config_FillScreenResolutionListBox",
+      "address": "00402FF0",
+      "signature": "void Config_FillScreenResolutionListBox();",
+      "note": "Fills list box with supported screen resolutions."
+    },
+    {
+      "name": "Config_GraphicOptionsGetDevice",
+      "address": "00402FF0",
+      "signature": "int Config_GraphicOptionsGetDevice();",
+      "note": "Gets active graphics device index."
+    },
+    {
+      "name": "Config_GraphicOptionsSetDevice",
+      "address": "00402FF0",
+      "signature": "void Config_GraphicOptionsSetDevice(int device_index);",
+      "note": "Sets active graphics device index."
+    },
+    {
+      "name": "Config_GraphicOptionsGetResolution",
+      "address": "00402FF0",
+      "signature": "int Config_GraphicOptionsGetResolution();",
+      "note": "Gets active screen resolution index."
+    },
+    {
+      "name": "Config_GraphicOptionsSetResolution",
+      "address": "00402FF0",
+      "signature": "void Config_GraphicOptionsSetResolution(int res_index);",
+      "note": "Sets active screen resolution index."
+    },
+    {
+      "name": "Config_GraphicOptionsGetGamma",
+      "address": "00402FF0",
+      "signature": "float Config_GraphicOptionsGetGamma();",
+      "note": "Gets active gamma slider value."
+    },
+    {
+      "name": "Config_GraphicOptionsSetGamma",
+      "address": "00402FF0",
+      "signature": "void Config_GraphicOptionsSetGamma(float gamma);",
+      "note": "Sets active gamma slider value."
+    },
+    {
+      "name": "Config_SoundOptionsGetSoundsEffectsVolume",
+      "address": "00402FF0",
+      "signature": "float Config_SoundOptionsGetSoundsEffectsVolume();",
+      "note": "Gets sound effects volume level (0.0 to 1.0)."
+    },
+    {
+      "name": "Config_SoundOptionsSetSoundsEffectsVolume",
+      "address": "00402FF0",
+      "signature": "void Config_SoundOptionsSetSoundsEffectsVolume(float volume);",
+      "note": "Sets sound effects volume level."
+    },
+    {
+      "name": "Config_SoundOptionsGetMusicVolume",
+      "address": "00402FF0",
+      "signature": "float Config_SoundOptionsGetMusicVolume();",
+      "note": "Gets music volume level (0.0 to 1.0)."
+    },
+    {
+      "name": "Config_SoundOptionsSetMusicVolume",
+      "address": "00402FF0",
+      "signature": "void Config_SoundOptionsSetMusicVolume(float volume);",
+      "note": "Sets music volume level."
+    },
+    {
+      "name": "Config_GameOptionsInputGetInvertMouse",
+      "address": "00402FF0",
+      "signature": "int Config_GameOptionsInputGetInvertMouse();",
+      "note": "Gets invert mouse pitch setting (0 or 1)."
+    },
+    {
+      "name": "Config_GameOptionsInputSetInvertMouse",
+      "address": "00402FF0",
+      "signature": "void Config_GameOptionsInputSetInvertMouse(int invert);",
+      "note": "Sets invert mouse pitch setting."
+    },
+    {
+      "name": "Config_GameOptionsInputGetMouseSensitivity",
+      "address": "00402FF0",
+      "signature": "float Config_GameOptionsInputGetMouseSensitivity();",
+      "note": "Gets mouse look sensitivity multiplier."
+    },
+    {
+      "name": "Config_GameOptionsInputSetMouseSensitivity",
+      "address": "00402FF0",
+      "signature": "void Config_GameOptionsInputSetMouseSensitivity(float sensitivity);",
+      "note": "Sets mouse look sensitivity multiplier."
+    }
+  ],
+  "Other": [
+    {
+      "name": "CompilerCleanup",
+      "address": "004B83D0",
+      "signature": "void CompileCleanUp(int* file);",
+      "note": "Cleanup files after compiling, Params: File passed to CompileQVM"
+    },
+    {
+      "name": "ConfigRead",
+      "address": "00405850",
+      "signature": "int ConfigRead(char* cfg_file);",
+      "note": "Read game config file, Params:  File: 'LOCAL:config.qsc'"
+    },
+    {
+      "name": "ConfigWrite",
+      "address": "00405BD0",
+      "signature": "void ConfigWrite(char* cfg_file);",
+      "note": "Write game config file, Params: File: 'LOCAL:config.qsc'"
+    },
+    {
+      "name": "CutsceneDelete",
+      "address": "00415AB0",
+      "signature": "void CutsceneDelete(char* buffer);",
+      "note": "Delete current cutscene, Params: Buffer of size 30."
+    },
+    {
+      "name": "ErrorShow",
+      "address": "004AF7B0",
+      "signature": "void ErrorShow(char* err_msg);",
+      "note": "Show error message from game, Params: Error message."
+    },
+    {
+      "name": "FramesSet",
+      "address": "00402820",
+      "signature": "void FramesSet(int frames);",
+      "note": "Set game frames, Params: 30,60 max 240FPS."
+    },
+    {
+      "name": "GameMaterialLoad",
+      "address": "00408350",
+      "signature": "void GameMaterialLoad(void);",
+      "note": "Load game material.qvm to memory."
+    },
+    {
+      "name": "GraphOpen",
+      "address": "004F9FF0",
+      "signature": "void GraphOpen(uint level,char* graph_str);",
+      "note": "Open graph of level,Params: with str 'Graph4019.dat'"
+    },
+    {
+      "name": "LogAdd",
+      "address": "004BBC30",
+      "signature": "void LogAdd(byte* log_msg);",
+      "note": "Add internal game log message., Params: message to log."
+    },
+    {
+      "name": "LevelLoad",
+      "address": "004F0E10",
+      "signature": "void LevelLoad(int level_path,int level_len);",
+      "note": "Load current level from level_path,Params: path: 0057B568, len: 0x1E."
+    },
+    {
+      "name": "LevelQuit",
+      "address": "00416550",
+      "signature": "void LevelQuit(void);",
+      "note": "Quit current level to mainmenu."
+    },
+    {
+      "name": "LevelRestart",
+      "address": "00416FE0",
+      "signature": "void LevelRestart(void);",
+      "note": "Restarts current level."
+    },
+    {
+      "name": "LevelStart",
+      "address": "00415B30",
+      "signature": "void LevelStart(int p1);",
+      "note": "Start new level, Params:  p1: 0057BABC"
+    },
+    {
+      "name": "MusicDisable",
+      "address": "00415A60",
+      "signature": "void MusicDisable(char* buffer);",
+      "note": "Disable Game Music, Params:  Buffer of size 30."
+    },
+    {
+      "name": "MusicEnable",
+      "address": "00415A10",
+      "signature": "void MusicEnable(char* buffer);",
+      "note": "Enable Game Music, Params: Buffer of size 30."
+    },
+    {
+      "name": "MusicSetSfxVolume",
+      "address": "00495F30",
+      "signature": "void MusicSetSfxVolume(float volume);",
+      "note": "Sets sound effect volume, Params: volume range [0.0 - 1.0]"
+    },
+    {
+      "name": "MusicSetVolume",
+      "address": "00495E70",
+      "signature": "void MusicSetVolume(float volume,float volume);",
+      "note": "Sets music volume., Params: volume range [0.0 - 1.0]"
+    },
+    {
+      "name": "MusicUpdateVolume",
+      "address": "004158E0",
+      "signature": "void MusicUpdateVolume(char* buffer);",
+      "note": "Update current music volume, Params: Buffer of size 30."
+    },
+    {
+      "name": "QhashInit",
+      "address": "004B0D60",
+      "signature": "void QHashInit(char hash_val);",
+      "note": "Init hash table value, Params: hash value 0 or 1."
+    },
+    {
+      "name": "QhashReset",
+      "address": "004B0D90",
+      "signature": "void QHashReset(void);",
+      "note": "Reset QTask type hash table."
+    },
+    {
+      "name": "QscCompile",
+      "address": "004B8410",
+      "signature": "void QscCompile(char* qsc_file);",
+      "note": "Compile QSC file to QVM, Params: QSC script file like 'LOCAL:objects.qsc'"
+    },
+    {
+      "name": "QtaskUpdate",
+      "address": "004F0E90",
+      "signature": "void QtaskUpdate(void);",
+      "note": "Update QTask hash table call before loading level."
+    },
+    {
+      "name": "QtaskUpdateList",
+      "address": "00401B20",
+      "signature": "void QtaskUpdateList(int* p1);",
+      "note": "Update all QTask list, Params: p1 ??"
+    },
+    {
+      "name": "ScriptInit",
+      "address": "004F0E50",
+      "signature": "void ScriptInit(char* file_name,int p2,int p3,int p4);",
+      "note": "Init script buffer for Assembler, Params: Use QvmLoad(file_name) first."
+    },
+    {
+      "name": "ScriptSetsymbolCxt",
+      "address": "004B8930",
+      "signature": "void ScriptSetsymbolCxt(byte *symbol_name,int** symbol_buf);",
+      "note": "Set symbol context before loading it, Params: symbol_name like 'TaskType_Set'."
+    },
+    {
+      "name": "StatusMessageClear",
+      "address": "00485AD0",
+      "signature": "void StatusMessageClear (char* buffer);",
+      "note": "Clear current status message from screen not from memory, Params: Buffer of size 30."
+    },
+    {
+      "name": "StatusMessageShow",
+      "address": "00485970",
+      "signature": "int* StatusMessageShow(int status_timer,char* msg,char *sprite,char *status_byte);",
+      "note": "Show status message on screen, Params: msg to show, sprite of msg, status_timer 0xA758AC, status_byte &0x567C74."
+    },
+    {
+      "name": "SymbolRemove",
+      "address": "004C0460",
+      "signature": "void SymbolRemove(int *p1,int *symbol_name);",
+      "note": "Remove symbol from memory, Params: symbol_name like 'TaskType_Set', p1 pointer ??"
+    },
+    {
+      "name": "TasktypeSet",
+      "address": "004B8810",
+      "signature": "void TasktypeSet(int** task_str,int task_id);",
+      "note": "Defines new constants for game and scripts ,Params: task_str (int**)WEAPONTYPE_PISTOL, task_id"
+    },
+    {
+      "name": "WarningShow",
+      "address": "004AF810",
+      "signature": "void WarningShow(char* warn_msg);",
+      "note": "Show warning message, Params: message to show."
+    },
+    {
+      "name": "SymbolCheck",
+      "address": "004C0560",
+      "signature": "int * SymbolCheck(int *p1,int **symbol_name,int* p3);",
+      "note": "Check symbol in QTask list if already loaded, Params: symbol_name like 'TaskType_Set', p1,p3 ??"
+    },
+    {
+      "name": "ScriptBufInit",
+      "address": "004C0200",
+      "signature": "void ScriptBufInit(int *buff_arr1,int buff_arr2,int buff,int buff_size);",
+      "note": "Init buffer for scripts, Params: buffers with last param as size."
+    },
+    {
+      "name": "SoundLoad",
+      "address": "004E68D0",
+      "signature": "void SoundLoad(char *sound_dir);",
+      "note": "Load all level sounds from path , Params: Path of sound like 'MISSION:sounds'"
+    },
+    {
+      "name": "MemoryAlloc",
+      "address": "004B0C60",
+      "signature": "uint MemAlloc(int num, int size);",
+      "note": "Allocate memory for game, Params: Check calloc() in c."
+    },
+    {
+      "name": "MemoryDealloc",
+      "address": "004B0BE0",
+      "signature": "uint MemDealloc(void);",
+      "note": "Deallocate allocated memory."
+    },
+    {
+      "name": "MissionOpen",
+      "address": "00484E60",
+      "signature": "void MissionOpen(char **ptr_file);",
+      "note": "Open current mission file , Params: Pointer to mission file."
+    },
+    {
+      "name": "FileOpen",
+      "address": "004A5350",
+      "signature": "void* FileOpen(const char* file,char *mode);",
+      "note": "Open file for reading or writing, Params: Check fopen() in c."
+    },
+    {
+      "name": "QFileOpen",
+      "address": "004B1510",
+      "signature": "void* QFileOpen(const char* file,char *mode);",
+      "note": "Open Qfile (QSC,QVM) for reading or writing, Params: Check fopen() in c."
+    },
+    {
+      "name": "RigidDyncubeObjRead",
+      "address": "004C48E0",
+      "signature": "void RigidDynCubeObjRead(uint *cfg_file);",
+      "note": "Read rigid dynCube config file , Params: config file of rigid dynCube."
+    },
+    {
+      "name": "MagicObjLoad",
+      "address": "004C4930",
+      "signature": "void MagicObjLoad(char *path);",
+      "note": "Loads magic objects from path, Params: Path 'LOCAL:magicobj'"
+    },
+    {
+      "name": "GameDataSymbolLoad",
+      "address": "004A53B3",
+      "signature": "int GameDataSymbolLoad(char* sym_buf,char* sym_path,char* sym_name);",
+      "note": "Load game data symbol to buffer for game like internal vairables,UI controls,timers etc. Params: like (buf,'LOCAL:models/%s.mef','000_02_1')"
+    },
+    {
+      "name": "GameDataSymbolRemove",
+      "address": "004B80A0",
+      "signature": "void GameDataSymbolRemove(char* sym_buf);",
+      "note": "Removes game data symbol for game like internal vairables,UI controls,timers etc."
+    },
+    {
+      "name": "SymbolRegisterBool8",
+      "address": "004B7EE0",
+      "signature": "void SymbolRegisterBool8(int **sym_buf,int sym_addr);",
+      "note": "Register new symbol of type 'Boolean' for game like internal vairables,UI controls,timers etc."
+    },
+    {
+      "name": "SymbolRegisterInt16",
+      "address": "004B7E80",
+      "signature": "void SymbolRegisterInt16(int **sym_buf,int sym_addr);",
+      "note": "Register new symbol of type 'Int16' for game like internal vairables,UI controls,timers etc."
+    },
+    {
+      "name": "SymbolRegisterInt32",
+      "address": "004B7FA0",
+      "signature": "void SymbolRegisterInt16(int **sym_buf,int sym_addr);",
+      "note": "Register new symbol of type 'Int32' for game like internal vairables,UI controls,timers etc."
+    },
+    {
+      "name": "SymbolRegisterReal32",
+      "address": "004B7FC0",
+      "signature": "void SymbolRegisterReal32(int **sym_buf,int sym_addr);",
+      "note": "Register new symbol of type 'Real32 aka Float' for game like internal vairables,UI controls,timers etc."
+    },
+    {
+      "name": "LoadingScreenShow",
+      "address": "0048A440",
+      "signature": "void LoadingScreenShow(int loading_type);",
+      "note": "Show menu loading screen before loading level."
+    },
+    {
+      "name": "QTaskHashTableSet",
+      "address": "004BAAC0",
+      "signature": "void QTaskHashTableSet(int **symbol,int ptr_func,int symbol_val,int p4,int p5,int p6,int p7)",
+      "note": "Main Hash Table for QTasks types for Objects(Guns,Ammo,Scripts,Variables etc) in whole game. HashTable is 70bytes long for each QTask."
+    },
+    {
+      "name": "AIAction_Dead",
+      "address": "0044D260",
+      "signature": "void AIAction_Dead(int killer_id);",
+      "note": "Triggers death state, animation, and drop weapon behavior."
+    },
+    {
+      "name": "AIAction_Activate",
+      "address": "0044D420",
+      "signature": "void AIAction_Activate(int object_id, int action_id, float duration);",
+      "note": "Triggers interactable object activation (alarm button, door switch)."
+    },
+    {
+      "name": "AIAction_FireAtNode",
+      "address": "0044D580",
+      "signature": "void AIAction_FireAtNode(int node_id, int weapon_id, int burst_count, float delay, int aim_mode);",
+      "note": "Fires weapon at a specific world node location."
+    },
+    {
+      "name": "AIAction_FireAtTask",
+      "address": "0044D630",
+      "signature": "void AIAction_FireAtTask(int task_id, int weapon_id, int burst_count, float delay, int aim_mode);",
+      "note": "Fires weapon at target task object (player or camera)."
+    },
+    {
+      "name": "AIAction_KickGrenade",
+      "address": "0044D960",
+      "signature": "void AIAction_KickGrenade(int grenade_id);",
+      "note": "Triggers grenade kick reaction sequence."
+    },
+    {
+      "name": "AIAction_RunPanicking",
+      "address": "0044DA00",
+      "signature": "void AIAction_RunPanicking(int target_node, float duration);",
+      "note": "Orders unarmed civilian/guard to run panicking away."
+    },
+    {
+      "name": "AIFunction_DefaultHandler",
+      "address": "0044E060",
+      "signature": "void AIFunction_DefaultHandler();",
+      "note": "Default fallback script event handler."
+    },
+    {
+      "name": "AIFunction_RemoveAlarmActions",
+      "address": "0044DBC0",
+      "signature": "void AIFunction_RemoveAlarmActions();",
+      "note": "Clears pending alarm switch activation goals."
+    },
+    {
+      "name": "AIFunction_SetEventPriority",
+      "address": "0044E0C0",
+      "signature": "void AIFunction_SetEventPriority(int priority);",
+      "note": "Sets event queue evaluation priority for guard script."
+    },
+    {
+      "name": "AIFunction_SetInvulnerability",
+      "address": "0044E150",
+      "signature": "void AIFunction_SetInvulnerability(int invulnerable);",
+      "note": "Sets invulnerability flag (1 = godmode / mission object)."
+    },
+    {
+      "name": "AIFunction_SetInstantDeath",
+      "address": "0044E1B0",
+      "signature": "void AIFunction_SetInstantDeath(int instant_death);",
+      "note": "Forces immediate death on single bullet hit."
+    },
+    {
+      "name": "AIFunction_SetAlarmAccess",
+      "address": "0044E330",
+      "signature": "void AIFunction_SetAlarmAccess(int access_flags);",
+      "note": "Sets guard permission to trigger alarms."
+    },
+    {
+      "name": "AIFunction_SetScriptIntegerValue",
+      "address": "0044E6D0",
+      "signature": "void AIFunction_SetScriptIntegerValue(int key, int value);",
+      "note": "Sets internal integer script state variable."
+    },
+    {
+      "name": "AIFunction_SetScriptRealValue",
+      "address": "0044E790",
+      "signature": "void AIFunction_SetScriptRealValue(int key, float value);",
+      "note": "Sets internal float script state variable."
+    },
+    {
+      "name": "AIFunction_GetAlarmTriggerID",
+      "address": "0044E3F0",
+      "signature": "int AIFunction_GetAlarmTriggerID();",
+      "note": "Returns linked alarm trigger task ID."
+    },
+    {
+      "name": "AIFunction_GetAlarmControlID",
+      "address": "0044E430",
+      "signature": "int AIFunction_GetAlarmControlID();",
+      "note": "Returns linked alarm control panel task ID."
+    },
+    {
+      "name": "AIFunction_GetAlarmAccess",
+      "address": "0044E470",
+      "signature": "int AIFunction_GetAlarmAccess();",
+      "note": "Returns guard alarm access permissions."
+    },
+    {
+      "name": "AIFunction_GetGunnerID",
+      "address": "0044E4B0",
+      "signature": "int AIFunction_GetGunnerID();",
+      "note": "Returns linked stationary gun task ID."
+    },
+    {
+      "name": "AIFunction_GetAlarmControlStatus",
+      "address": "0044E4F0",
+      "signature": "int AIFunction_GetAlarmControlStatus();",
+      "note": "Queries if global level alarm is active (0 or 1)."
+    },
+    {
+      "name": "AIFunction_GetGunnerStatus",
+      "address": "0044E5E0",
+      "signature": "int AIFunction_GetGunnerStatus();",
+      "note": "Queries if linked gunner turret is occupied."
+    },
+    {
+      "name": "AIFunction_GetScriptIntegerValue",
+      "address": "0044E740",
+      "signature": "int AIFunction_GetScriptIntegerValue(int key);",
+      "note": "Reads integer script state variable."
+    },
+    {
+      "name": "AIFunction_GetCurrentEventType",
+      "address": "0044DFA0",
+      "signature": "int AIFunction_GetCurrentEventType();",
+      "note": "Returns active detected event type (Gunshot, Vision, Impact)."
+    },
+    {
+      "name": "AIFunction_IsEventBehind",
+      "address": "0044E860",
+      "signature": "int AIFunction_IsEventBehind();",
+      "note": "Returns 1 if detected sound/event originates behind guard."
+    },
+    {
+      "name": "AIFunction_GetScriptRealValue",
+      "address": "0044E800",
+      "signature": "float AIFunction_GetScriptRealValue(int key);",
+      "note": "Reads float script state variable."
+    },
+    {
+      "name": "AIFunction_GetRandomValue",
+      "address": "0044E000",
+      "signature": "float AIFunction_GetRandomValue(float max);",
+      "note": "Generates random float between 0.0 and max using PRNG 0x4B4740."
+    },
+    {
+      "name": "AIFunction_GetEventDistance",
+      "address": "0044E930",
+      "signature": "float AIFunction_GetEventDistance();",
+      "note": "Returns distance to detected event origin."
+    },
+    {
+      "name": "AIFunction_GetAlarmTriggerDistance",
+      "address": "0044E9B0",
+      "signature": "float AIFunction_GetAlarmTriggerDistance();",
+      "note": "Returns distance between guard and alarm switch."
+    },
+    {
+      "name": "Task_New",
+      "address": "004F0E50",
+      "signature": "void Task_New(int type_id, ...);",
+      "note": "Instantiates new task node in level task tree hierarchy."
+    },
+    {
+      "name": "Task_DeclareParameters",
+      "address": "004F0ED0",
+      "signature": "void Task_DeclareParameters(int type_id, ...);",
+      "note": "Declares parameter schema and value types for a task node type."
+    }
+  ],
+  "Graphics": [
+    {
+      "name": "GraphicsReset",
+      "address": "00403B70",
+      "signature": "void GraphicsReset(char* buffer);",
+      "note": "Reset Graphics options in settings, Params: Buffer of size 30."
+    }
+  ],
+  "HumanPlayer": [
+    {
+      "name": "HumanplayerLoad",
+      "address": "004137A0",
+      "signature": "void HumanplayerLoad(void);",
+      "note": "Load Humanplayer.qvm file to memory."
+    },
+    {
+      "name": "HumanViewCam",
+      "address": "00463760",
+      "signature": "void HumanViewCam(int soldier_ptr,int cam_type)",
+      "note": "Camera view for Human Player/Soldier , Param: soldier_ptr is pointer to Entity you are changing and cam_type is [1-6]"
+    },
+    {
+      "name": "HumanTaskViewReset",
+      "address": "004659E0",
+      "signature": "void HumanTaskViewReset(int human_ptr)",
+      "note": "Reset Human view angle after changing it by Zoom (Dragunov,Binoculars). "
+    }
+  ],
+  "Input": [
+    {
+      "name": "InputDisable",
+      "address": "004157D0",
+      "signature": "void InputDisable(char* buffer);",
+      "note": "Disable input of player., Params: Buffer of size 30."
+    },
+    {
+      "name": "InputEnable",
+      "address": "00415830",
+      "signature": "void InputEnable(char* buffer);",
+      "note": "Enable input of player., Params: Buffer of size 30."
+    }
+  ],
+  "Menu": [
+    {
+      "name": "MenuManager",
+      "address": "00418B00",
+      "signature": "int* MenuManager(int p1,char *menu_str,char p3,char p4,int p5);",
+      "note": "MenuManager load for inagame or Mainmenu,Params:  p1: 0057BABC ,p3,p4,p5: 0."
+    }
+  ],
+  "Physics": [
+    {
+      "name": "PhysicsObjTypeRead",
+      "address": "004EDFE0",
+      "signature": "void PhysicsObjTypeRead(char* cfg_file);",
+      "note": "Read Physics obj config file, Params: config file."
+    },
+    {
+      "name": "PhysicsObjLoad",
+      "address": "004EE030",
+      "signature": "void PhysicsObjLoad(char *path);",
+      "note": "Loads physics objects from path, Params: Path 'LOCAL:physicsobj'"
+    }
+  ],
+  "Resources": [
+    {
+      "name": "QvmAssemble",
+      "address": "004BB270",
+      "signature": "int QvmAssemble(char *file_out,char *file_in);",
+      "note": "Assemble QAS assembler file, Params: Assemler source file like 'objects.qas'"
+    },
+    {
+      "name": "QvmCompile",
+      "address": "004B85B0",
+      "signature": "void QvmCompile(int file);",
+      "note": "Compile qvm file loaded in memory, Params: address of QVM file loaded from 'LoadResource' method."
+    },
+    {
+      "name": "QvmLoad",
+      "address": "004B80B0",
+      "signature": "int * QvmLoad(char *file_name);",
+      "note": "Compiles and Load any .qvm file into memory, Params: any qvm file name,  Returns filename loaded."
+    },
+    {
+      "name": "QvmParse",
+      "address": "004BBCB0",
+      "signature": "int QvmParse(char *file_name,int mem_alloc_addr);",
+      "note": "Parse Assembler source file, Params: any QAS file name and Memory allocated by Mem_Alloc(),  Returns status."
+    },
+    {
+      "name": "ResourceFlush",
+      "address": "004B63D0",
+      "signature": "void ResourceFlush(int* p1);",
+      "note": "Releases the current holding resources, Params: Params: p1 ??"
+    },
+    {
+      "name": "ResourcePackUnpack",
+      "address": "004B18B0",
+      "signature": "int ResourcePackUnpack(char *res_file,char **buffer);",
+      "note": "Packs and return address or Unpacks resource file into memory depending upon resource type, Params: resource 'sounds.res','terrain.res', and buffer."
+    },
+    {
+      "name": "ResourceUnpack",
+      "address": "004B16D0",
+      "signature": "void ResourceUnpack(int* res_ptr, int res_addr, int res_size);",
+      "note": "Unpacks resource file into memory, Params: Resource ptr, address where to unpack (Allocate using Mem_Alloc) and size of resource."
+    }
+  ],
+  "AI": [
+    {
+      "name": "ResourceLoad",
+      "address": "004B5F00",
+      "signature": "int * ResourceLoad(char *resource_file,char **buffer)",
+      "note": "Load resource in Memory and Returns address of file., Params: resource file like 'sounds.res','AI/303.qvm'"
+    },
+    {
+      "name": "ResourceUnload",
+      "address": "004B6380",
+      "signature": "void ResourceUnload(int *resource_file);",
+      "note": "Unload resource loaded in memory, Params: resource file like 'sounds.qvm','AI/303.qvm'"
+    },
+    {
+      "name": "IsResourceLoaded",
+      "address": "004B5B90",
+      "signature": "int IsResourceLoaded(char *res_file,int *res_file_ptr);",
+      "note": "Check where resource is in loaded in memory, Params: resource 'sounds.qvm','AI/303.qvm' and address of res file"
+    },
+    {
+      "name": "EnemyDetectorOverlay",
+      "address": "00470260",
+      "signature": "uint32_t EnemyDetectorOverlay(int contextBase, int targetAddr, float sortingDistance, int configFlag, int *screenPosition, int eventParam, int extraParam1, int extraParam2)",
+      "note": "Shows red box on enemy when using binoculars. Params: contextBase=AI/render base (e.g. 0x01A3F4C0), targetAddr=target address (e.g. 0x00472C50), sortingDistance=float (e.g. 12.5), configFlag=overlay type (e.g. 1), screenPosition=out vec2 ptr, eventParam/extraParam1/extraParam2=optional (0)."
+    },
+    {
+      "name": "AIAction_Patrol",
+      "address": "0044D0E0",
+      "signature": "void AIAction_Patrol(int path_id, int start_node, int end_node);",
+      "note": "Assigns patrol route path and node loop boundaries for AI guard entity."
+    },
+    {
+      "name": "AIAction_FallFlat",
+      "address": "0044D2C0",
+      "signature": "void AIAction_FallFlat(float duration, int anim_id);",
+      "note": "Forces AI guard to fall flat on ground for specified duration."
+    },
+    {
+      "name": "AIAction_WalkToNode",
+      "address": "0044D4A0",
+      "signature": "void AIAction_WalkToNode(int node_id, int speed);",
+      "note": "Orders guard AI to walk to a designated path node."
+    },
+    {
+      "name": "AIAction_RunToNode",
+      "address": "0044D510",
+      "signature": "void AIAction_RunToNode(int node_id, int speed);",
+      "note": "Orders guard AI to run to a designated path node."
+    },
+    {
+      "name": "AIAction_PlayAnimation",
+      "address": "0044D6E0",
+      "signature": "void AIAction_PlayAnimation(int anim_id, float speed);",
+      "note": "Plays skeletal animation sequence on AI guard model."
+    },
+    {
+      "name": "AIAction_PlaySound",
+      "address": "0044D750",
+      "signature": "void AIAction_PlaySound(int sound_id, float volume, float pitch);",
+      "note": "Triggers voice/sound playback on AI guard entity."
+    },
+    {
+      "name": "AIAction_MoveToEvent",
+      "address": "0044D7D0",
+      "signature": "void AIAction_MoveToEvent(int event_id, int speed);",
+      "note": "Orders AI to move toward detected sound or vision event location."
+    },
+    {
+      "name": "AIAction_LookAtEvent",
+      "address": "0044D870",
+      "signature": "void AIAction_LookAtEvent(int event_id, float duration);",
+      "note": "Rotates AI head/eyes to look at event origin."
+    },
+    {
+      "name": "AIAction_Stunned",
+      "address": "0044D8F0",
+      "signature": "void AIAction_Stunned(float duration, int anim_id);",
+      "note": "Puts AI into stunned reaction state (e.g. Flashbang)."
+    },
+    {
+      "name": "AIAction_Idle",
+      "address": "0044DA80",
+      "signature": "void AIAction_Idle(float duration);",
+      "note": "Puts AI guard in passive idle stance for specified time."
+    },
+    {
+      "name": "AIFunction_SetAlarmTriggerID",
+      "address": "0044E270",
+      "signature": "void AIFunction_SetAlarmTriggerID(int trigger_id);",
+      "note": "Links guard AI to alarm button task ID."
+    },
+    {
+      "name": "AIFunction_SetAlarmControlID",
+      "address": "0044E2D0",
+      "signature": "void AIFunction_SetAlarmControlID(int control_id);",
+      "note": "Links guard AI to alarm control panel task ID."
+    },
+    {
+      "name": "AIFunction_SetGunnerID",
+      "address": "0044E390",
+      "signature": "void AIFunction_SetGunnerID(int gunner_id);",
+      "note": "Links AI guard to stationary gun/turret task ID."
+    },
+    {
+      "name": "AIFunction_SendResponse",
+      "address": "0044EE40",
+      "signature": "void AIFunction_SendResponse();",
+      "note": "Sends AI response signal to event pump."
+    },
+    {
+      "name": "HumanAIConfigItem",
+      "address": "005383DC",
+      "signature": "void HumanAIConfigItem(int* task);",
+      "note": "Human AI config item registration."
+    },
+    {
+      "name": "HumanAIConfig",
+      "address": "005383F0",
+      "signature": "void HumanAIConfig(int* task);",
+      "note": "Human AI config task type."
+    },
+    {
+      "name": "HumanAI",
+      "address": "0053D404",
+      "signature": "void HumanAI(int* task);",
+      "note": "Human AI base task type."
+    }
+  ],
+  "Weapons": [
+    {
+      "name": "WeaponConfigRead",
+      "address": "004071E0",
+      "signature": "int WeaponConfigRead(int p1,char *cfg_file);",
+      "note": "Read weapon config file into memory, Params: p1 is 0, cfg_file is 'weaponconfig.qvm'"
+    },
+    {
+      "name": "WeaponTypeOpen",
+      "address": "00413B70",
+      "signature": "void WeaponTypeOpen(void);",
+      "note": "Open all weapons defined in .qsc file for Humanplayer."
+    },
+    {
+      "name": "WeaponsCountGet",
+      "address": "00413BB0",
+      "signature": "int WeaponsCountGet()",
+      "note": "Get total number of Weapons in game."
+    },
+    {
+      "name": "WeaponGunPickup",
+      "address": "0045FFC0",
+      "signature": "void WeaponGunPickup(int param_ptr, int* type_ptr)",
+      "note": "Weapon pickup from ground, Param: param_ptr is in defined in Constants as 'gun_pickup_ptr', set Weapon Id in type_ptr like *(0x19F720) = 5"
+    },
+    {
+      "name": "WeaponAmmoPickup",
+      "address": "0045FF80",
+      "signature": "void WeaponAmmoPickup(int param_ptr, int* type_ptr)",
+      "note": "Ammo pickup from ground, Param: param_ptr is in defined in Constants as 'gun_pickup_ptr', set Ammo Id in type_ptr like *(0x19F820) = 3"
+    },
+    {
+      "name": "WEAPON_ID_PROXIMITYMINE",
+      "address": "00538DF4",
+      "signature": "int WEAPON_ID_PROXIMITYMINE();",
+      "note": "Weapon ID constant for proximity mines."
+    },
+    {
+      "name": "WEAPON_ID_M16A2",
+      "address": "00538E1C",
+      "signature": "int WEAPON_ID_M16A2();",
+      "note": "Weapon ID constant for M16A2."
+    },
+    {
+      "name": "WEAPON_ID_BINOCULARS",
+      "address": "00538E40",
+      "signature": "int WEAPON_ID_BINOCULARS();",
+      "note": "Weapon ID constant for binoculars."
+    },
+    {
+      "name": "WEAPONTYPE_PROXIMITYMINE",
+      "address": "00539314",
+      "signature": "int WEAPONTYPE_PROXIMITYMINE();",
+      "note": "Weapon type constant for proximity mines."
+    },
+    {
+      "name": "WEAPONTYPE_MEDIPACK",
+      "address": "00539330",
+      "signature": "int WEAPONTYPE_MEDIPACK();",
+      "note": "Weapon type constant for medipacks."
+    },
+    {
+      "name": "WEAPONTYPE_BINOCULAR",
+      "address": "00539344",
+      "signature": "int WEAPONTYPE_BINOCULAR();",
+      "note": "Weapon type constant for binoculars."
+    },
+    {
+      "name": "WEAPONTYPE_GRENADE",
+      "address": "0053935C",
+      "signature": "int WEAPONTYPE_GRENADE();",
+      "note": "Weapon type constant for grenades."
+    },
+    {
+      "name": "WEAPONTYPE_KNIFE",
+      "address": "00539370",
+      "signature": "int WEAPONTYPE_KNIFE();",
+      "note": "Weapon type constant for knives."
+    },
+    {
+      "name": "WEAPONTYPE_SHOTGUN",
+      "address": "00539384",
+      "signature": "int WEAPONTYPE_SHOTGUN();",
+      "note": "Weapon type constant for shotguns."
+    },
+    {
+      "name": "WEAPONTYPE_PISTOL",
+      "address": "00539398",
+      "signature": "int WEAPONTYPE_PISTOL();",
+      "note": "Weapon type constant for pistols."
+    },
+    {
+      "name": "WEAPONTYPE_GUN",
+      "address": "005393AC",
+      "signature": "int WEAPONTYPE_GUN();",
+      "note": "Weapon type constant for generic guns."
+    },
+    {
+      "name": "WEAPON_ID_MEDIPACK",
+      "address": "0053FF10",
+      "signature": "int WEAPON_ID_MEDIPACK();",
+      "note": "Weapon ID constant for medipacks."
+    },
+    {
+      "name": "WEAPON_ID_SPAS12",
+      "address": "00540394",
+      "signature": "int WEAPON_ID_SPAS12();",
+      "note": "Weapon ID constant for SPAS-12 shotgun."
+    },
+    {
+      "name": "WEAPON_ID_MP5SD",
+      "address": "0054050C",
+      "signature": "int WEAPON_ID_MP5SD();",
+      "note": "Weapon ID constant for MP5SD submachine gun."
+    },
+    {
+      "name": "WEAPON_ID_M2HB",
+      "address": "0054051C",
+      "signature": "int WEAPON_ID_M2HB();",
+      "note": "Weapon ID constant for M2HB heavy machine gun."
+    }
+  ],
+  "Define": [
+    {
+      "name": "GameDefineOptions",
+      "address": "004B8890",
+      "signature": "void GameDefineOptions(int **option_str,int option_func_addr,int opt1,int opt2);",
+      "note": "Define game options constants , Params: opt_str (int**)'DefineAmmoType'"
+    }
+  ],
+  "Animation": [
+    {
+      "name": "AnimTriggerLoad",
+      "address": "004EC0C0",
+      "signature": "void AnimTriggerLoad(char *path);",
+      "note": "Loads anim trigger objects from path, Params: Path 'LOCAL:animtrigger'"
+    },
+    {
+      "name": "AIFunction_SetDeathAnimation",
+      "address": "0044E210",
+      "signature": "void AIFunction_SetDeathAnimation(int anim_id);",
+      "note": "Assigns specific death animation index."
+    },
+    {
+      "name": "AIFunction_SetAnimationInterval",
+      "address": "0044EAF0",
+      "signature": "void AIFunction_SetAnimationInterval(float min, float max);",
+      "note": "Sets min/max interval between ambient idle animations."
+    },
+    {
+      "name": "AIFunction_AddAnimationEntry",
+      "address": "0044EBB0",
+      "signature": "void AIFunction_AddAnimationEntry(int anim_id, float weight);",
+      "note": "Adds weighted animation entry to idle animation pool."
+    },
+    {
+      "name": "AIFunction_GetAnimationToPlay",
+      "address": "0044ECB0",
+      "signature": "int AIFunction_GetAnimationToPlay();",
+      "note": "Selects animation index from weighted idle pool."
+    }
+  ],
+  "Ammo": [
+    {
+      "name": "AmmoTypeOpen",
+      "address": "0047CAB0",
+      "signature": "void AmmoTypeOpen(void);",
+      "note": "Open ammo qvm file to memory for all weapons loaded."
+    },
+    {
+      "name": "AMMO_ID_M203",
+      "address": "00538E0C",
+      "signature": "int AMMO_ID_M203();",
+      "note": "Ammo type ID for M203 grenades."
+    },
+    {
+      "name": "AMMO_ID_MEDIPACK",
+      "address": "00538E2C",
+      "signature": "int AMMO_ID_MEDIPACK();",
+      "note": "Ammo type ID for medipacks (healing items)."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_GRENADE",
+      "address": "00539250",
+      "signature": "int AMMODISPLAYTYPE_GRENADE();",
+      "note": "Ammo display type for grenades (thrown weapon icon)."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_SHELL",
+      "address": "00539268",
+      "signature": "int AMMODISPLAYTYPE_SHELL();",
+      "note": "Ammo display type for shotgun shells."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_BARREL",
+      "address": "00539280",
+      "signature": "int AMMODISPLAYTYPE_BARREL();",
+      "note": "Ammo display type for ammo barrels."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_CLIP",
+      "address": "00539298",
+      "signature": "int AMMODISPLAYTYPE_CLIP();",
+      "note": "Ammo display type for gun clips."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_NORMAL",
+      "address": "005392B0",
+      "signature": "int AMMODISPLAYTYPE_NORMAL();",
+      "note": "Ammo display type for normal bullets."
+    },
+    {
+      "name": "AMMODISPLAYTYPE_NONE",
+      "address": "005392C8",
+      "signature": "int AMMODISPLAYTYPE_NONE();",
+      "note": "Ammo display type for no ammo display."
+    }
+  ],
+  "DamageHealth": [
+    {
+      "name": "PlayerXPHit",
+      "address": "00416D80",
+      "signature": "uint PlayerXPHit()",
+      "note": "Get Player XP Hit damage for current health."
+    },
+    {
+      "name": "EnablePlayerHit",
+      "address": "00416D80",
+      "signature": "int EnablePlayerHit()",
+      "note": "Set (0057BABC + 0xE1) value to 0 for Enable, 1 for Disable"
+    }
+  ],
+  "PlayerPhysics": [
+    {
+      "name": "IsPlayerProfileActive",
+      "address": "00406220",
+      "signature": "char* IsPlayerProfileActive()",
+      "note": "Checks if current player profle is active."
+    }
+  ],
+  "AIBehavior": [
+    {
+      "name": "SoldierExecute",
+      "address": "0045C440",
+      "signature": "void SoldierExecute(int ptr, int addr)",
+      "note": "Execute current soldier in level, Param: ptr = (addr+0x2EC) and soldier address."
+    },
+    {
+      "name": "AIAction_Combat",
+      "address": "0044D160",
+      "signature": "void AIAction_Combat(int target_id);",
+      "note": "Engages specified target entity in combat state."
+    },
+    {
+      "name": "AIAction_SetCombat",
+      "address": "0044DAE0",
+      "signature": "void AIAction_SetCombat(int combat_mode);",
+      "note": "Sets aggressive/defensive combat mode parameters."
+    }
+  ],
+  "Camera": [
+    {
+      "name": "AIFunction_SetViewLength",
+      "address": "0044DC40",
+      "signature": "void AIFunction_SetViewLength(float length);",
+      "note": "Sets primary acute vision cone sight distance."
+    },
+    {
+      "name": "AIFunction_SetAlarmViewLength",
+      "address": "0044DCD0",
+      "signature": "void AIFunction_SetAlarmViewLength(float length);",
+      "note": "Sets sight distance while alarm is active."
+    },
+    {
+      "name": "AIFunction_SetViewAlpha",
+      "address": "0044DD30",
+      "signature": "void AIFunction_SetViewAlpha(float alpha);",
+      "note": "Sets primary vision cone half-angle alpha."
+    },
+    {
+      "name": "AIFunction_SetViewGamma",
+      "address": "0044DD90",
+      "signature": "void AIFunction_SetViewGamma(float gamma);",
+      "note": "Sets primary vision cone detection rate gamma."
+    },
+    {
+      "name": "AIFunction_SetSecondaryViewLength",
+      "address": "0044DDF0",
+      "signature": "void AIFunction_SetSecondaryViewLength(float length);",
+      "note": "Sets secondary peripheral vision cone distance."
+    },
+    {
+      "name": "AIFunction_SetSecondaryAlarmViewLength",
+      "address": "0044DE80",
+      "signature": "void AIFunction_SetSecondaryAlarmViewLength(float length);",
+      "note": "Sets secondary peripheral vision cone distance under alarm."
+    },
+    {
+      "name": "AIFunction_SetSecondaryViewAlpha",
+      "address": "0044DEE0",
+      "signature": "void AIFunction_SetSecondaryViewAlpha(float alpha);",
+      "note": "Sets secondary vision cone angle."
+    },
+    {
+      "name": "AIFunction_SetSecondaryViewGamma",
+      "address": "0044DF40",
+      "signature": "void AIFunction_SetSecondaryViewGamma(float gamma);",
+      "note": "Sets secondary vision cone detection rate."
+    }
+  ],
+  "FlowEvents": [
+    {
+      "name": "Flow_RequestEvent",
+      "address": "00401FC0",
+      "signature": "void Flow_RequestEvent(int event_id);",
+      "note": "Requests engine state transition (QUIT, INTRO, MAINMENU, GAME, RESTART_GAME)."
+    },
+    {
+      "name": "FLOW_EVENT_RESTART_GAME",
+      "address": "00536214",
+      "signature": "int FLOW_EVENT_RESTART_GAME();",
+      "note": "Flow event: restart current mission. Registered via Flow_RequestEvent."
+    },
+    {
+      "name": "FLOW_EVENT_GAME",
+      "address": "0053622C",
+      "signature": "int FLOW_EVENT_GAME();",
+      "note": "Flow event: start game (enter mission)."
+    },
+    {
+      "name": "FLOW_EVENT_MAINMENU",
+      "address": "0053623C",
+      "signature": "int FLOW_EVENT_MAINMENU();",
+      "note": "Flow event: return to main menu."
+    },
+    {
+      "name": "FLOW_EVENT_INTRO",
+      "address": "00536250",
+      "signature": "int FLOW_EVENT_INTRO();",
+      "note": "Flow event: play intro sequence."
+    },
+    {
+      "name": "FLOW_EVENT_QUIT",
+      "address": "00536264",
+      "signature": "int FLOW_EVENT_QUIT();",
+      "note": "Flow event: quit game."
+    }
+  ],
+  "TaskTypes": [
+    {
+      "name": "TASKTYPE_CARDOOR",
+      "address": "0053BAC0",
+      "signature": "int TASKTYPE_CARDOOR();",
+      "note": "Task type constant for car doors. Registered via TasktypeSet."
+    },
+    {
+      "name": "TASKTYPE_HELIWHEEL",
+      "address": "0053BAF8",
+      "signature": "int TASKTYPE_HELIWHEEL();",
+      "note": "Task type constant for helicopter wheels."
+    },
+    {
+      "name": "TASKTYPE_HELIDOOR",
+      "address": "0053BB1C",
+      "signature": "int TASKTYPE_HELIDOOR();",
+      "note": "Task type constant for helicopter doors."
+    },
+    {
+      "name": "TASKTYPE_ROCKETPOD",
+      "address": "0053BB40",
+      "signature": "int TASKTYPE_ROCKETPOD();",
+      "note": "Task type constant for rocket pods."
+    },
+    {
+      "name": "TASKTYPE_HITZONE",
+      "address": "0053BB70",
+      "signature": "int TASKTYPE_HITZONE();",
+      "note": "Task type constant for hit zones (damage areas)."
+    },
+    {
+      "name": "TASKTYPE_MISSILE",
+      "address": "0053BC6C",
+      "signature": "int TASKTYPE_MISSILE();",
+      "note": "Task type constant for missiles."
+    },
+    {
+      "name": "TASKTYPE_AFTERBURNER",
+      "address": "0053BD44",
+      "signature": "int TASKTYPE_AFTERBURNER();",
+      "note": "Task type constant for afterburners (plane thrust)."
+    },
+    {
+      "name": "TASKTYPE_ROTOR",
+      "address": "0053BD80",
+      "signature": "int TASKTYPE_ROTOR();",
+      "note": "Task type constant for rotors. Parsed by 0x42D9F0."
+    },
+    {
+      "name": "TASKTYPE_CAR",
+      "address": "0053BE18",
+      "signature": "int TASKTYPE_CAR();",
+      "note": "Task type constant for cars."
+    },
+    {
+      "name": "TASKTYPE_WHEEL",
+      "address": "0053BE3C",
+      "signature": "int TASKTYPE_WHEEL();",
+      "note": "Task type constant for wheels."
+    },
+    {
+      "name": "TASKTYPE_HELI",
+      "address": "0053BEC0",
+      "signature": "int TASKTYPE_HELI();",
+      "note": "Task type constant for helicopters. Registered by HeliTask_Register(0x4310F0)."
+    },
+    {
+      "name": "TASKTYPE_PLANE",
+      "address": "0053BFB4",
+      "signature": "int TASKTYPE_PLANE();",
+      "note": "Task type constant for planes."
+    },
+    {
+      "name": "TASKTYPE_COCKPITSHIELD",
+      "address": "0053BFD4",
+      "signature": "int TASKTYPE_COCKPITSHIELD();",
+      "note": "Task type constant for cockpit shields."
+    },
+    {
+      "name": "TASKTYPE_GEAR",
+      "address": "0053BFFC",
+      "signature": "int TASKTYPE_GEAR();",
+      "note": "Task type constant for landing gear."
+    },
+    {
+      "name": "TASKTYPE_HATCH",
+      "address": "0053C00C",
+      "signature": "int TASKTYPE_HATCH();",
+      "note": "Task type constant for hatches."
+    },
+    {
+      "name": "TASKTYPE_RUDDER",
+      "address": "0053C074",
+      "signature": "int TASKTYPE_RUDDER();",
+      "note": "Task type constant for rudders."
+    },
+    {
+      "name": "TASKTYPE_SMOKE",
+      "address": "0053C164",
+      "signature": "int TASKTYPE_SMOKE();",
+      "note": "Task type constant for smoke effects."
+    },
+    {
+      "name": "TASKTYPE_GUNSHOTEFFECT",
+      "address": "0053C1B4",
+      "signature": "int TASKTYPE_GUNSHOTEFFECT();",
+      "note": "Task type constant for gun shot effects (muzzle flash, tracers)."
+    },
+    {
+      "name": "TASKTYPE_ALARMLIGHTREFLECTOR",
+      "address": "0053C26C",
+      "signature": "int TASKTYPE_ALARMLIGHTREFLECTOR();",
+      "note": "Task type constant for alarm light reflectors."
+    },
+    {
+      "name": "TASKTYPE_ALARMLIGHT",
+      "address": "0053C2A0",
+      "signature": "int TASKTYPE_ALARMLIGHT();",
+      "note": "Task type constant for alarm lights."
+    },
+    {
+      "name": "TASKTYPE_EXPLODEMAGICOBJ",
+      "address": "0053C338",
+      "signature": "int TASKTYPE_EXPLODEMAGICOBJ();",
+      "note": "Task type constant for explosive magic objects."
+    },
+    {
+      "name": "TASKTYPE_GENERICPHYSICSMAGICOBJ",
+      "address": "0053C470",
+      "signature": "int TASKTYPE_GENERICPHYSICSMAGICOBJ();",
+      "note": "Task type constant for generic physics magic objects."
+    },
+    {
+      "name": "TASKTYPE_GENERICPHYSICSOBJ",
+      "address": "0053C4AC",
+      "signature": "int TASKTYPE_GENERICPHYSICSOBJ();",
+      "note": "Task type constant for generic physics objects."
+    },
+    {
+      "name": "TASKTYPE_FENCE",
+      "address": "0053C500",
+      "signature": "int TASKTYPE_FENCE();",
+      "note": "Task type constant for fences."
+    },
+    {
+      "name": "TASKTYPE_LADDER",
+      "address": "0053C528",
+      "signature": "int TASKTYPE_LADDER();",
+      "note": "Task type constant for ladders."
+    },
+    {
+      "name": "TASKTYPE_SCAMERALENSVIEWCONE",
+      "address": "0053C5A0",
+      "signature": "int TASKTYPE_SCAMERALENSVIEWCONE();",
+      "note": "Task type constant for security camera view cones."
+    },
+    {
+      "name": "TASKTYPE_DRAWER",
+      "address": "0053C6BC",
+      "signature": "int TASKTYPE_DRAWER();",
+      "note": "Task type constant for drawers."
+    },
+    {
+      "name": "TASKTYPE_BUILDING",
+      "address": "0053C814",
+      "signature": "int TASKTYPE_BUILDING();",
+      "note": "Task type constant for buildings."
+    },
+    {
+      "name": "TASKTYPE_RADARDISH",
+      "address": "0053C834",
+      "signature": "int TASKTYPE_RADARDISH();",
+      "note": "Task type constant for radar dishes."
+    },
+    {
+      "name": "TASKTYPE_GLASS",
+      "address": "0053C868",
+      "signature": "int TASKTYPE_GLASS();",
+      "note": "Task type constant for breakable glass."
+    },
+    {
+      "name": "TASKTYPE_DEATHZONE",
+      "address": "0053F500",
+      "signature": "int TASKTYPE_DEATHZONE();",
+      "note": "Task type constant for death zones (instant kill areas)."
+    },
+    {
+      "name": "TASKTYPE_GUNX2",
+      "address": "0053FE6C",
+      "signature": "int TASKTYPE_GUNX2();",
+      "note": "Task type constant for double guns."
+    },
+    {
+      "name": "TASKTYPE_KNIFESTAB",
+      "address": "0053FE88",
+      "signature": "int TASKTYPE_KNIFESTAB();",
+      "note": "Task type constant for knife stab attacks."
+    },
+    {
+      "name": "TASKTYPE_AISTATIONARYGUN",
+      "address": "0053FEC4",
+      "signature": "int TASKTYPE_AISTATIONARYGUN();",
+      "note": "Task type constant for AI stationary guns/turrets."
+    },
+    {
+      "name": "TASKTYPE_MEDIPACK",
+      "address": "0053FEF0",
+      "signature": "int TASKTYPE_MEDIPACK();",
+      "note": "Task type constant for medipacks (health packs)."
+    },
+    {
+      "name": "TASKTYPE_BINOCULAR",
+      "address": "0053FF58",
+      "signature": "int TASKTYPE_BINOCULAR();",
+      "note": "Task type constant for binoculars."
+    },
+    {
+      "name": "TASKTYPE_CABARREL",
+      "address": "00540300",
+      "signature": "int TASKTYPE_CABARREL();",
+      "note": "Task type constant for ammo barrels."
+    },
+    {
+      "name": "TASKTYPE_CACLIP",
+      "address": "00540314",
+      "signature": "int TASKTYPE_CACLIP();",
+      "note": "Task type constant for ammo clips."
+    },
+    {
+      "name": "TASKTYPE_GUNSPAS12",
+      "address": "00540374",
+      "signature": "int TASKTYPE_GUNSPAS12();",
+      "note": "Task type constant for SPAS-12 shotgun."
+    },
+    {
+      "name": "TASKTYPE_GUNDRAGUNOV",
+      "address": "00540404",
+      "signature": "int TASKTYPE_GUNDRAGUNOV();",
+      "note": "Task type constant for Dragunov sniper rifle."
+    },
+    {
+      "name": "TASKTYPE_GUNM16A2",
+      "address": "00540434",
+      "signature": "int TASKTYPE_GUNM16A2();",
+      "note": "Task type constant for M16A2 assault rifle."
+    },
+    {
+      "name": "TASKTYPE_GUNMP5SD",
+      "address": "005404EC",
+      "signature": "int TASKTYPE_GUNMP5SD();",
+      "note": "Task type constant for MP5SD submachine gun."
+    },
+    {
+      "name": "TASKTYPE_PROXIMITYMINE",
+      "address": "0054053C",
+      "signature": "int TASKTYPE_PROXIMITYMINE();",
+      "note": "Task type constant for proximity mines."
+    },
+    {
+      "name": "TASKTYPE_MINE",
+      "address": "00540618",
+      "signature": "int TASKTYPE_MINE();",
+      "note": "Task type constant for mines."
+    },
+    {
+      "name": "TASKTYPE_M203",
+      "address": "00540654",
+      "signature": "int TASKTYPE_M203();",
+      "note": "Task type constant for M203 grenade launcher."
+    },
+    {
+      "name": "TASKTYPE_GRENADE",
+      "address": "005406B0",
+      "signature": "int TASKTYPE_GRENADE();",
+      "note": "Task type constant for grenades."
+    },
+    {
+      "name": "TASKTYPE_GUNMOVINGPART",
+      "address": "00540754",
+      "signature": "int TASKTYPE_GUNMOVINGPART();",
+      "note": "Task type constant for moving gun parts."
+    },
+    {
+      "name": "TASKTYPE_GUNCLIP",
+      "address": "0054076C",
+      "signature": "int TASKTYPE_GUNCLIP();",
+      "note": "Task type constant for gun clips."
+    },
+    {
+      "name": "TASKTYPE_GUNFLAME",
+      "address": "00540780",
+      "signature": "int TASKTYPE_GUNFLAME();",
+      "note": "Task type constant for flame throwers."
+    },
+    {
+      "name": "TASKTYPE_GUN",
+      "address": "00540800",
+      "signature": "int TASKTYPE_GUN();",
+      "note": "Task type constant for generic guns."
+    },
+    {
+      "name": "TASKTYPE_GUNSHOT",
+      "address": "0054087C",
+      "signature": "int TASKTYPE_GUNSHOT();",
+      "note": "Task type constant for gun shots (projectiles)."
+    }
+  ],
+  "Missiles": [
+    {
+      "name": "MISSILE_TYPE_HIND_HELICOPTER",
+      "address": "0053BB90",
+      "signature": "int MISSILE_TYPE_HIND_HELICOPTER();",
+      "note": "Missile type for HIND helicopter."
+    },
+    {
+      "name": "MISSILE_TYPE_BOMB",
+      "address": "0053BBB0",
+      "signature": "int MISSILE_TYPE_BOMB();",
+      "note": "Missile type for bombs."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_KEYBOARD",
+      "address": "0053BBC4",
+      "signature": "int MISSILE_TYPE_MISSILE_KEYBOARD();",
+      "note": "Missile type for keyboard-controlled missiles."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_ANTITANK",
+      "address": "0053BBE4",
+      "signature": "int MISSILE_TYPE_MISSILE_ANTITANK();",
+      "note": "Missile type for anti-tank missiles."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_BALLISTIC",
+      "address": "0053BC04",
+      "signature": "int MISSILE_TYPE_MISSILE_BALLISTIC();",
+      "note": "Missile type for ballistic missiles."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_DIRECT",
+      "address": "0053BC24",
+      "signature": "int MISSILE_TYPE_MISSILE_DIRECT();",
+      "note": "Missile type for direct-fire missiles."
+    },
+    {
+      "name": "MISSILE_SMOKE_NORMAL",
+      "address": "0053BC40",
+      "signature": "int MISSILE_SMOKE_NORMAL();",
+      "note": "Missile smoke trail type: normal."
+    },
+    {
+      "name": "MISSILE_SMOKE_NONE",
+      "address": "0053BC58",
+      "signature": "int MISSILE_SMOKE_NONE();",
+      "note": "Missile smoke trail type: none."
+    }
+  ],
+  "GameOptions": [
+    {
+      "name": "GOStart",
+      "address": "00533237",
+      "signature": "int GOStart();",
+      "note": "Game option: start game."
+    },
+    {
+      "name": "GOPlayer",
+      "address": "00533240",
+      "signature": "int GOPlayer();",
+      "note": "Game option: player settings."
+    },
+    {
+      "name": "GOInRemap",
+      "address": "0053324C",
+      "signature": "int GOInRemap();",
+      "note": "Game option: input remapping."
+    },
+    {
+      "name": "GOInMouInv",
+      "address": "00533258",
+      "signature": "int GOInMouInv();",
+      "note": "Game option: mouse invert."
+    },
+    {
+      "name": "GOInMouSens",
+      "address": "00533264",
+      "signature": "float GOInMouSens();",
+      "note": "Game option: mouse sensitivity."
+    },
+    {
+      "name": "GOGfxDisp",
+      "address": "00533270",
+      "signature": "int GOGfxDisp();",
+      "note": "Game option: graphics display mode."
+    },
+    {
+      "name": "GOGfxDevice",
+      "address": "0053327C",
+      "signature": "int GOGfxDevice();",
+      "note": "Game option: graphics device selection."
+    },
+    {
+      "name": "GOGfxGamma",
+      "address": "00533288",
+      "signature": "float GOGfxGamma();",
+      "note": "Game option: gamma correction."
+    },
+    {
+      "name": "GOGfxPerformance",
+      "address": "00533294",
+      "signature": "int GOGfxPerformance();",
+      "note": "Game option: graphics performance level."
+    },
+    {
+      "name": "GOGameLang",
+      "address": "005332A8",
+      "signature": "int GOGameLang();",
+      "note": "Game option: game language."
+    },
+    {
+      "name": "GOGameDiff",
+      "address": "005332B4",
+      "signature": "int GOGameDiff();",
+      "note": "Game option: game difficulty."
+    },
+    {
+      "name": "GOIsBlood",
+      "address": "005332C0",
+      "signature": "int GOIsBlood();",
+      "note": "Game option: blood enabled."
+    },
+    {
+      "name": "GOActiveMission",
+      "address": "005332F8",
+      "signature": "int GOActiveMission();",
+      "note": "Game option: active mission ID."
+    },
+    {
+      "name": "GOContentControlPW",
+      "address": "00533308",
+      "signature": "char* GOContentControlPW();",
+      "note": "Game option: content control password."
+    }
+  ],
+  "Sound": [
+    {
+      "name": "GOSoundSpeech",
+      "address": "005332CC",
+      "signature": "float GOSoundSpeech();",
+      "note": "Game option: speech volume."
+    },
+    {
+      "name": "GOSoundMusic",
+      "address": "005332DC",
+      "signature": "float GOSoundMusic();",
+      "note": "Game option: music volume."
+    },
+    {
+      "name": "GOSoundFX",
+      "address": "005332EC",
+      "signature": "float GOSoundFX();",
+      "note": "Game option: sound effects volume."
+    }
+  ]
+}

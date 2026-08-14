@@ -1,6 +1,0 @@
-{
-  "name": "Config_SoundOptionsGetMusicVolume",
-  "address": "00402FF0",
-  "signature": "float Config_SoundOptionsGetMusicVolume();",
-  "note": "Gets music volume level (0.0 to 1.0)."
-}

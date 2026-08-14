@@ -1,6 +1,0 @@
-{
-  "name": "Config_GetActivePlayerProfileIndex",
-  "address": "00402FF0",
-  "signature": "int Config_GetActivePlayerProfileIndex();",
-  "note": "Returns active profile index."
-}

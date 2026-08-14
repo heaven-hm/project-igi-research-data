@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_SetCombat",
-  "address": "0044DAE0",
-  "signature": "void AIAction_SetCombat(int combat_mode);",
-  "note": "Sets aggressive/defensive combat mode parameters."
-}

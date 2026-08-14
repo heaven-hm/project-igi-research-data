@@ -1,6 +1,0 @@
-{
-  "name": "TasktypeSet",
-  "address": "004B8810",
-  "signature": "void TasktypeSet(int** task_str,int task_id);",
-  "note": "Defines new constants for game and scripts ,Params: task_str (int**)WEAPONTYPE_PISTOL, task_id"
-}

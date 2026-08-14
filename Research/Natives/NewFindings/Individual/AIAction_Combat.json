@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_Combat",
-  "address": "0044D160",
-  "signature": "void AIAction_Combat(int target_id);",
-  "note": "Engages specified target entity in combat state."
-}

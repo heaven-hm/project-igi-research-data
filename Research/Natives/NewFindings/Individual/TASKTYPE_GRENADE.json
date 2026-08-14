@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GRENADE",
-  "address": "005406B0",
-  "signature": "int TASKTYPE_GRENADE();",
-  "note": "Task type constant for grenades."
-}

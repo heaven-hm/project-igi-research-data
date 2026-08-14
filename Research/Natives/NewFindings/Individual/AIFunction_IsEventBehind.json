@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_IsEventBehind",
-  "address": "0044E860",
-  "signature": "int AIFunction_IsEventBehind();",
-  "note": "Returns 1 if detected sound/event originates behind guard."
-}

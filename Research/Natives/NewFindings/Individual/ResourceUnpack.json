@@ -1,6 +1,0 @@
-{
-  "name": "ResourceUnpack",
-  "address": "004B16D0",
-  "signature": "void ResourceUnpack(int* res_ptr, int res_addr, int res_size);",
-  "note": "Unpacks resource file into memory, Params: Resource ptr, address where to unpack (Allocate using Mem_Alloc) and size of resource."
-}

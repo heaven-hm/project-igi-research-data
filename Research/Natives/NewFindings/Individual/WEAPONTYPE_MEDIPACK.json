@@ -1,6 +1,0 @@
-{
-  "name": "WEAPONTYPE_MEDIPACK",
-  "address": "00539330",
-  "signature": "int WEAPONTYPE_MEDIPACK();",
-  "note": "Weapon type constant for medipacks."
-}

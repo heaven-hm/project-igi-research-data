@@ -1,6 +1,0 @@
-{
-  "name": "CutsceneDelete",
-  "address": "00415AB0",
-  "signature": "void CutsceneDelete(char* buffer);",
-  "note": "Delete current cutscene, Params: Buffer of size 30."
-}

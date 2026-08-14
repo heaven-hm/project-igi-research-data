@@ -1,6 +1,0 @@
-{
-  "name": "ResourceLoad",
-  "address": "004B5F00",
-  "signature": "int * ResourceLoad(char *resource_file,char **buffer)",
-  "note": "Load resource in Memory and Returns address of file., Params: resource file like 'sounds.res','AI/303.qvm'"
-}

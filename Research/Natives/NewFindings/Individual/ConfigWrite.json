@@ -1,6 +1,0 @@
-{
-  "name": "ConfigWrite",
-  "address": "00405BD0",
-  "signature": "void ConfigWrite(char* cfg_file);",
-  "note": "Write game config file, Params: File: 'LOCAL:config.qsc'"
-}

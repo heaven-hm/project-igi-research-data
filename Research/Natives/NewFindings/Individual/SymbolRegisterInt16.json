@@ -1,6 +1,0 @@
-{
-  "name": "SymbolRegisterInt16",
-  "address": "004B7E80",
-  "signature": "void SymbolRegisterInt16(int **sym_buf,int sym_addr);",
-  "note": "Register new symbol of type 'Int16' for game like internal vairables,UI controls,timers etc."
-}

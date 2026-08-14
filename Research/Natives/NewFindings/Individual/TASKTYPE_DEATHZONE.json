@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_DEATHZONE",
-  "address": "0053F500",
-  "signature": "int TASKTYPE_DEATHZONE();",
-  "note": "Task type constant for death zones (instant kill areas)."
-}

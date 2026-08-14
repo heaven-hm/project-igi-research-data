@@ -1,6 +1,0 @@
-{
-  "name": "HumanTaskViewReset",
-  "address": "004659E0",
-  "signature": "void HumanTaskViewReset(int human_ptr)",
-  "note": "Reset Human view angle after changing it by Zoom (Dragunov,Binoculars). "
-}

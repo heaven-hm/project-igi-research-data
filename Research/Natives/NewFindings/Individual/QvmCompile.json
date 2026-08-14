@@ -1,6 +1,0 @@
-{
-  "name": "QvmCompile",
-  "address": "004B85B0",
-  "signature": "void QvmCompile(int file);",
-  "note": "Compile qvm file loaded in memory, Params: address of QVM file loaded from 'LoadResource' method."
-}

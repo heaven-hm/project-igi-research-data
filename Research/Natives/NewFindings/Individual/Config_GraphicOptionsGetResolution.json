@@ -1,6 +1,0 @@
-{
-  "name": "Config_GraphicOptionsGetResolution",
-  "address": "00402FF0",
-  "signature": "int Config_GraphicOptionsGetResolution();",
-  "note": "Gets active screen resolution index."
-}

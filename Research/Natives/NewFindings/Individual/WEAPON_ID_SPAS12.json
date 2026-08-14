@@ -1,6 +1,0 @@
-{
-  "name": "WEAPON_ID_SPAS12",
-  "address": "00540394",
-  "signature": "int WEAPON_ID_SPAS12();",
-  "note": "Weapon ID constant for SPAS-12 shotgun."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_M203",
-  "address": "00540654",
-  "signature": "int TASKTYPE_M203();",
-  "note": "Task type constant for M203 grenade launcher."
-}

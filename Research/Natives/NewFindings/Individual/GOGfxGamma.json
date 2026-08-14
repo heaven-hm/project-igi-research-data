@@ -1,6 +1,0 @@
-{
-  "name": "GOGfxGamma",
-  "address": "00533288",
-  "signature": "float GOGfxGamma();",
-  "note": "Game option: gamma correction."
-}

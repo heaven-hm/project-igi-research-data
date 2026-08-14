@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SendResponse",
-  "address": "0044EE40",
-  "signature": "void AIFunction_SendResponse();",
-  "note": "Sends AI response signal to event pump."
-}

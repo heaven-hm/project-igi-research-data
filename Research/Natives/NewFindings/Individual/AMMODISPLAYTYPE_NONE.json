@@ -1,6 +1,0 @@
-{
-  "name": "AMMODISPLAYTYPE_NONE",
-  "address": "005392C8",
-  "signature": "int AMMODISPLAYTYPE_NONE();",
-  "note": "Ammo display type for no ammo display."
-}

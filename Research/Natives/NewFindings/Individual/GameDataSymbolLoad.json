@@ -1,6 +1,0 @@
-{
-  "name": "GameDataSymbolLoad",
-  "address": "004A53B3",
-  "signature": "int GameDataSymbolLoad(char* sym_buf,char* sym_path,char* sym_name);",
-  "note": "Load game data symbol to buffer for game like internal vairables,UI controls,timers etc. Params: like (buf,'LOCAL:models/%s.mef','000_02_1')"
-}

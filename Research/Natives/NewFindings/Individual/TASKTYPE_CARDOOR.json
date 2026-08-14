@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_CARDOOR",
-  "address": "0053BAC0",
-  "signature": "int TASKTYPE_CARDOOR();",
-  "note": "Task type constant for car doors. Registered via TasktypeSet."
-}

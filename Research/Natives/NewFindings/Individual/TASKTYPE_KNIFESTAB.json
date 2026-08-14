@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_KNIFESTAB",
-  "address": "0053FE88",
-  "signature": "int TASKTYPE_KNIFESTAB();",
-  "note": "Task type constant for knife stab attacks."
-}

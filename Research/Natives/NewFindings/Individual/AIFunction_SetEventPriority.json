@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetEventPriority",
-  "address": "0044E0C0",
-  "signature": "void AIFunction_SetEventPriority(int priority);",
-  "note": "Sets event queue evaluation priority for guard script."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_Idle",
-  "address": "0044DA80",
-  "signature": "void AIAction_Idle(float duration);",
-  "note": "Puts AI guard in passive idle stance for specified time."
-}

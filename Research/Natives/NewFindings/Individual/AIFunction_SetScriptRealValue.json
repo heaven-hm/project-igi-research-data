@@ -1,6 +1,0 @@
-{
-  "name": "AIFunction_SetScriptRealValue",
-  "address": "0044E790",
-  "signature": "void AIFunction_SetScriptRealValue(int key, float value);",
-  "note": "Sets internal float script state variable."
-}

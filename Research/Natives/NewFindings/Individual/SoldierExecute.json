@@ -1,6 +1,0 @@
-{
-  "name": "SoldierExecute",
-  "address": "0045C440",
-  "signature": "void SoldierExecute(int ptr, int addr)",
-  "note": "Execute current soldier in level, Param: ptr = (addr+0x2EC) and soldier address."
-}

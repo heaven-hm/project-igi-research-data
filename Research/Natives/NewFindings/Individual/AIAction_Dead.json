@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_Dead",
-  "address": "0044D260",
-  "signature": "void AIAction_Dead(int killer_id);",
-  "note": "Triggers death state, animation, and drop weapon behavior."
-}

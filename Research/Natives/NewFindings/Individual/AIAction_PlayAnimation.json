@@ -1,6 +1,0 @@
-{
-  "name": "AIAction_PlayAnimation",
-  "address": "0044D6E0",
-  "signature": "void AIAction_PlayAnimation(int anim_id, float speed);",
-  "note": "Plays skeletal animation sequence on AI guard model."
-}

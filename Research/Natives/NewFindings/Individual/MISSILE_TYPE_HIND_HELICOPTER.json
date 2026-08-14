@@ -1,6 +1,0 @@
-{
-  "name": "MISSILE_TYPE_HIND_HELICOPTER",
-  "address": "0053BB90",
-  "signature": "int MISSILE_TYPE_HIND_HELICOPTER();",
-  "note": "Missile type for HIND helicopter."
-}

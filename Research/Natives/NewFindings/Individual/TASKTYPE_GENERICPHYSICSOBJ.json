@@ -1,6 +1,0 @@
-{
-  "name": "TASKTYPE_GENERICPHYSICSOBJ",
-  "address": "0053C4AC",
-  "signature": "int TASKTYPE_GENERICPHYSICSOBJ();",
-  "note": "Task type constant for generic physics objects."
-}

@@ -1,6 +1,0 @@
-{
-  "name": "WEAPON_ID_MP5SD",
-  "address": "0054050C",
-  "signature": "int WEAPON_ID_MP5SD();",
-  "note": "Weapon ID constant for MP5SD submachine gun."
-}
