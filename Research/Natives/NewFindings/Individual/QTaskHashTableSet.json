@@ -1,0 +1,6 @@
+{
+  "name": "QTaskHashTableSet",
+  "address": "004BAAC0",
+  "signature": "void QTaskHashTableSet(int **symbol,int ptr_func,int symbol_val,int p4,int p5,int p6,int p7)",
+  "note": "Main Hash Table for QTasks types for Objects(Guns,Ammo,Scripts,Variables etc) in whole game. HashTable is 70bytes long for each QTask."
+}

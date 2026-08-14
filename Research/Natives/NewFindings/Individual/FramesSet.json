@@ -1,0 +1,6 @@
+{
+  "name": "FramesSet",
+  "address": "00402820",
+  "signature": "void FramesSet(int frames);",
+  "note": "Set game frames, Params: 30,60 max 240FPS."
+}

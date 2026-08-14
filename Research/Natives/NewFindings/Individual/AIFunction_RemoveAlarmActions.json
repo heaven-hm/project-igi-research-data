@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_RemoveAlarmActions",
+  "address": "0044DBC0",
+  "signature": "void AIFunction_RemoveAlarmActions();",
+  "note": "Clears pending alarm switch activation goals."
+}

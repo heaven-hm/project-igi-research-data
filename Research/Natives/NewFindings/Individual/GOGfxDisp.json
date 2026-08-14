@@ -1,0 +1,6 @@
+{
+  "name": "GOGfxDisp",
+  "address": "00533270",
+  "signature": "int GOGfxDisp();",
+  "note": "Game option: graphics display mode."
+}

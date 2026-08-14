@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_RunPanicking",
+  "address": "0044DA00",
+  "signature": "void AIAction_RunPanicking(int target_node, float duration);",
+  "note": "Orders unarmed civilian/guard to run panicking away."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "WeaponsCountGet",
+  "address": "00413BB0",
+  "signature": "int WeaponsCountGet()",
+  "note": "Get total number of Weapons in game."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PlayerXPHit",
+  "address": "00416D80",
+  "signature": "uint PlayerXPHit()",
+  "note": "Get Player XP Hit damage for current health."
+}

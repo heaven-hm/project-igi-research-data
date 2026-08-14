@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetViewGamma",
+  "address": "0044DD90",
+  "signature": "void AIFunction_SetViewGamma(float gamma);",
+  "note": "Sets primary vision cone detection rate gamma."
+}

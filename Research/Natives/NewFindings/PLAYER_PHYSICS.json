@@ -1,0 +1,60 @@
+{
+  "category": "PLAYER_PHYSICS",
+  "count": 9,
+  "natives": [
+    {
+      "name": "HumanplayerLoad",
+      "address": "004137A0",
+      "signature": "void HumanplayerLoad(void);",
+      "note": "Load Humanplayer.qvm file to memory."
+    },
+    {
+      "name": "PhysicsObjTypeRead",
+      "address": "004EDFE0",
+      "signature": "void PhysicsObjTypeRead(char* cfg_file);",
+      "note": "Read Physics obj config file, Params: config file."
+    },
+    {
+      "name": "PhysicsObjLoad",
+      "address": "004EE030",
+      "signature": "void PhysicsObjLoad(char *path);",
+      "note": "Loads physics objects from path, Params: Path 'LOCAL:physicsobj'"
+    },
+    {
+      "name": "PlayerXPHit",
+      "address": "00416D80",
+      "signature": "uint PlayerXPHit()",
+      "note": "Get Player XP Hit damage for current health."
+    },
+    {
+      "name": "HumanViewCam",
+      "address": "00463760",
+      "signature": "void HumanViewCam(int soldier_ptr,int cam_type)",
+      "note": "Camera view for Human Player/Soldier , Param: soldier_ptr is pointer to Entity you are changing and cam_type is [1-6]"
+    },
+    {
+      "name": "HumanTaskViewReset",
+      "address": "004659E0",
+      "signature": "void HumanTaskViewReset(int human_ptr)",
+      "note": "Reset Human view angle after changing it by Zoom (Dragunov,Binoculars). "
+    },
+    {
+      "name": "IsPlayerProfileActive",
+      "address": "00406220",
+      "signature": "char* IsPlayerProfileActive()",
+      "note": "Checks if current player profle is active."
+    },
+    {
+      "name": "EnablePlayerHit",
+      "address": "00416D80",
+      "signature": "int EnablePlayerHit()",
+      "note": "Set (0057BABC + 0xE1) value to 0 for Enable, 1 for Disable"
+    },
+    {
+      "name": "AIAction_FallFlat",
+      "address": "0044D2C0",
+      "signature": "void AIAction_FallFlat(float duration, int anim_id);",
+      "note": "Forces AI guard to fall flat on ground for specified duration."
+    }
+  ]
+}

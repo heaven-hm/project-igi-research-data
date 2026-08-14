@@ -1,0 +1,6 @@
+{
+  "name": "HumanplayerLoad",
+  "address": "004137A0",
+  "signature": "void HumanplayerLoad(void);",
+  "note": "Load Humanplayer.qvm file to memory."
+}

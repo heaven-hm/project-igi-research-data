@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetAlarmTriggerID",
+  "address": "0044E270",
+  "signature": "void AIFunction_SetAlarmTriggerID(int trigger_id);",
+  "note": "Links guard AI to alarm button task ID."
+}

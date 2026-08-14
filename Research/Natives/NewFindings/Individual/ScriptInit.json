@@ -1,0 +1,6 @@
+{
+  "name": "ScriptInit",
+  "address": "004F0E50",
+  "signature": "void ScriptInit(char* file_name,int p2,int p3,int p4);",
+  "note": "Init script buffer for Assembler, Params: Use QvmLoad(file_name) first."
+}

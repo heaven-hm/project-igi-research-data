@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_RADARDISH",
+  "address": "0053C834",
+  "signature": "int TASKTYPE_RADARDISH();",
+  "note": "Task type constant for radar dishes."
+}

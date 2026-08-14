@@ -1,0 +1,6 @@
+{
+  "name": "WEAPON_ID_BINOCULARS",
+  "address": "00538E40",
+  "signature": "int WEAPON_ID_BINOCULARS();",
+  "note": "Weapon ID constant for binoculars."
+}

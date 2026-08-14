@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetAnimationInterval",
+  "address": "0044EAF0",
+  "signature": "void AIFunction_SetAnimationInterval(float min, float max);",
+  "note": "Sets min/max interval between ambient idle animations."
+}

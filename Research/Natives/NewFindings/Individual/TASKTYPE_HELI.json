@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_HELI",
+  "address": "0053BEC0",
+  "signature": "int TASKTYPE_HELI();",
+  "note": "Task type constant for helicopters. Registered by HeliTask_Register(0x4310F0)."
+}

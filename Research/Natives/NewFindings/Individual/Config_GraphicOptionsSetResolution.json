@@ -1,0 +1,6 @@
+{
+  "name": "Config_GraphicOptionsSetResolution",
+  "address": "00402FF0",
+  "signature": "void Config_GraphicOptionsSetResolution(int res_index);",
+  "note": "Sets active screen resolution index."
+}

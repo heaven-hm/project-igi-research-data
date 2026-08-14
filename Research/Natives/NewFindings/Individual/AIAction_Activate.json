@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_Activate",
+  "address": "0044D420",
+  "signature": "void AIAction_Activate(int object_id, int action_id, float duration);",
+  "note": "Triggers interactable object activation (alarm button, door switch)."
+}

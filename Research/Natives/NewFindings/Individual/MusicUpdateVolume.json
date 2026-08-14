@@ -1,0 +1,6 @@
+{
+  "name": "MusicUpdateVolume",
+  "address": "004158E0",
+  "signature": "void MusicUpdateVolume(char* buffer);",
+  "note": "Update current music volume, Params: Buffer of size 30."
+}

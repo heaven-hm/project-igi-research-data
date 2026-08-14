@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_CACLIP",
+  "address": "00540314",
+  "signature": "int TASKTYPE_CACLIP();",
+  "note": "Task type constant for ammo clips."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_PLANE",
+  "address": "0053BFB4",
+  "signature": "int TASKTYPE_PLANE();",
+  "note": "Task type constant for planes."
+}

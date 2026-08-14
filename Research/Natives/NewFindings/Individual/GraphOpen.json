@@ -1,0 +1,6 @@
+{
+  "name": "GraphOpen",
+  "address": "004F9FF0",
+  "signature": "void GraphOpen(uint level,char* graph_str);",
+  "note": "Open graph of level,Params: with str 'Graph4019.dat'"
+}

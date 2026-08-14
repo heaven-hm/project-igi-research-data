@@ -1,0 +1,6 @@
+{
+  "name": "LevelLoad",
+  "address": "004F0E10",
+  "signature": "void LevelLoad(int level_path,int level_len);",
+  "note": "Load current level from level_path,Params: path: 0057B568, len: 0x1E."
+}

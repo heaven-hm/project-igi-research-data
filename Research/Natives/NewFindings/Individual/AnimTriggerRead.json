@@ -1,0 +1,6 @@
+{
+  "name": "AnimTriggerRead",
+  "address": "004EC070",
+  "signature": "void AnimTriggerRead(uint* path);",
+  "note": "Read Config of AnimTrigger, Params: Path like: 'LOCAL:Animtrigger'"
+}

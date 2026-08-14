@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_FireAtNode",
+  "address": "0044D580",
+  "signature": "void AIAction_FireAtNode(int node_id, int weapon_id, int burst_count, float delay, int aim_mode);",
+  "note": "Fires weapon at a specific world node location."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PhysicsObjLoad",
+  "address": "004EE030",
+  "signature": "void PhysicsObjLoad(char *path);",
+  "note": "Loads physics objects from path, Params: Path 'LOCAL:physicsobj'"
+}

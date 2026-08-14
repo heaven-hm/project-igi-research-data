@@ -1,0 +1,6 @@
+{
+  "name": "StatusMessageClear",
+  "address": "00485AD0",
+  "signature": "void StatusMessageClear (char* buffer);",
+  "note": "Clear current status message from screen not from memory, Params: Buffer of size 30."
+}

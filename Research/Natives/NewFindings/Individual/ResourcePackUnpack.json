@@ -1,0 +1,6 @@
+{
+  "name": "ResourcePackUnpack",
+  "address": "004B18B0",
+  "signature": "int ResourcePackUnpack(char *res_file,char **buffer);",
+  "note": "Packs and return address or Unpacks resource file into memory depending upon resource type, Params: resource 'sounds.res','terrain.res', and buffer."
+}

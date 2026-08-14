@@ -1,0 +1,6 @@
+{
+  "name": "MISSILE_SMOKE_NORMAL",
+  "address": "0053BC40",
+  "signature": "int MISSILE_SMOKE_NORMAL();",
+  "note": "Missile smoke trail type: normal."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "CompilerCleanup",
+  "address": "004B83D0",
+  "signature": "void CompileCleanUp(int* file);",
+  "note": "Cleanup files after compiling, Params: File passed to CompileQVM"
+}

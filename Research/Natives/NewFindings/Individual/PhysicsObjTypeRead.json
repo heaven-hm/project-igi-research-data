@@ -1,0 +1,6 @@
+{
+  "name": "PhysicsObjTypeRead",
+  "address": "004EDFE0",
+  "signature": "void PhysicsObjTypeRead(char* cfg_file);",
+  "note": "Read Physics obj config file, Params: config file."
+}

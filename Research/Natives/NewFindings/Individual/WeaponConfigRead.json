@@ -1,0 +1,6 @@
+{
+  "name": "WeaponConfigRead",
+  "address": "004071E0",
+  "signature": "int WeaponConfigRead(int p1,char *cfg_file);",
+  "note": "Read weapon config file into memory, Params: p1 is 0, cfg_file is 'weaponconfig.qvm'"
+}

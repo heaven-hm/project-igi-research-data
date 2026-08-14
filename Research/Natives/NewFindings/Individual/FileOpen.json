@@ -1,0 +1,6 @@
+{
+  "name": "FileOpen",
+  "address": "004A5350",
+  "signature": "void* FileOpen(const char* file,char *mode);",
+  "note": "Open file for reading or writing, Params: Check fopen() in c."
+}

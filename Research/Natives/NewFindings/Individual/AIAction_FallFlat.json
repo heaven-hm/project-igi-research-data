@@ -1,0 +1,6 @@
+{
+  "name": "AIAction_FallFlat",
+  "address": "0044D2C0",
+  "signature": "void AIAction_FallFlat(float duration, int anim_id);",
+  "note": "Forces AI guard to fall flat on ground for specified duration."
+}

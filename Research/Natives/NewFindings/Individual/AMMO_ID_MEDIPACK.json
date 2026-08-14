@@ -1,0 +1,6 @@
+{
+  "name": "AMMO_ID_MEDIPACK",
+  "address": "00538E2C",
+  "signature": "int AMMO_ID_MEDIPACK();",
+  "note": "Ammo type ID for medipacks (healing items)."
+}

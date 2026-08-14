@@ -1,0 +1,6 @@
+{
+  "name": "MISSILE_SMOKE_NONE",
+  "address": "0053BC58",
+  "signature": "int MISSILE_SMOKE_NONE();",
+  "note": "Missile smoke trail type: none."
+}

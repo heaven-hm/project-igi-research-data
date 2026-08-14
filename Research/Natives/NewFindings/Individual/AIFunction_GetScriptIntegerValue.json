@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_GetScriptIntegerValue",
+  "address": "0044E740",
+  "signature": "int AIFunction_GetScriptIntegerValue(int key);",
+  "note": "Reads integer script state variable."
+}

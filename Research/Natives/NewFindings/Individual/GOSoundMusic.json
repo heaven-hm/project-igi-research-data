@@ -1,0 +1,6 @@
+{
+  "name": "GOSoundMusic",
+  "address": "005332DC",
+  "signature": "float GOSoundMusic();",
+  "note": "Game option: music volume."
+}

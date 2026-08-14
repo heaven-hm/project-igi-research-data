@@ -1,0 +1,6 @@
+{
+  "name": "Config_SetActivePlayerProfileIndex",
+  "address": "00402FF0",
+  "signature": "void Config_SetActivePlayerProfileIndex(int index);",
+  "note": "Sets active player profile index."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_AFTERBURNER",
+  "address": "0053BD44",
+  "signature": "int TASKTYPE_AFTERBURNER();",
+  "note": "Task type constant for afterburners (plane thrust)."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "GameDataSymbolRemove",
+  "address": "004B80A0",
+  "signature": "void GameDataSymbolRemove(char* sym_buf);",
+  "note": "Removes game data symbol for game like internal vairables,UI controls,timers etc."
+}

@@ -1,0 +1,54 @@
+{
+  "category": "MISSILE",
+  "count": 8,
+  "natives": [
+    {
+      "name": "MISSILE_TYPE_HIND_HELICOPTER",
+      "address": "0053BB90",
+      "signature": "int MISSILE_TYPE_HIND_HELICOPTER();",
+      "note": "Missile type for HIND helicopter."
+    },
+    {
+      "name": "MISSILE_TYPE_BOMB",
+      "address": "0053BBB0",
+      "signature": "int MISSILE_TYPE_BOMB();",
+      "note": "Missile type for bombs."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_KEYBOARD",
+      "address": "0053BBC4",
+      "signature": "int MISSILE_TYPE_MISSILE_KEYBOARD();",
+      "note": "Missile type for keyboard-controlled missiles."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_ANTITANK",
+      "address": "0053BBE4",
+      "signature": "int MISSILE_TYPE_MISSILE_ANTITANK();",
+      "note": "Missile type for anti-tank missiles."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_BALLISTIC",
+      "address": "0053BC04",
+      "signature": "int MISSILE_TYPE_MISSILE_BALLISTIC();",
+      "note": "Missile type for ballistic missiles."
+    },
+    {
+      "name": "MISSILE_TYPE_MISSILE_DIRECT",
+      "address": "0053BC24",
+      "signature": "int MISSILE_TYPE_MISSILE_DIRECT();",
+      "note": "Missile type for direct-fire missiles."
+    },
+    {
+      "name": "MISSILE_SMOKE_NORMAL",
+      "address": "0053BC40",
+      "signature": "int MISSILE_SMOKE_NORMAL();",
+      "note": "Missile smoke trail type: normal."
+    },
+    {
+      "name": "MISSILE_SMOKE_NONE",
+      "address": "0053BC58",
+      "signature": "int MISSILE_SMOKE_NONE();",
+      "note": "Missile smoke trail type: none."
+    }
+  ]
+}

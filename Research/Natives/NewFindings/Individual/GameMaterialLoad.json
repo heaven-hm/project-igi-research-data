@@ -1,0 +1,6 @@
+{
+  "name": "GameMaterialLoad",
+  "address": "00408350",
+  "signature": "void GameMaterialLoad(void);",
+  "note": "Load game material.qvm to memory."
+}

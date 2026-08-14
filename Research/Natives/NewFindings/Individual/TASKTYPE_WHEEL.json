@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_WHEEL",
+  "address": "0053BE3C",
+  "signature": "int TASKTYPE_WHEEL();",
+  "note": "Task type constant for wheels."
+}

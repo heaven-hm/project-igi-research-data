@@ -1,0 +1,6 @@
+{
+  "name": "WarningShow",
+  "address": "004AF810",
+  "signature": "void WarningShow(char* warn_msg);",
+  "note": "Show warning message, Params: message to show."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetAlarmAccess",
+  "address": "0044E330",
+  "signature": "void AIFunction_SetAlarmAccess(int access_flags);",
+  "note": "Sets guard permission to trigger alarms."
+}

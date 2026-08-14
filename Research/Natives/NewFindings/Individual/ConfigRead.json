@@ -1,0 +1,6 @@
+{
+  "name": "ConfigRead",
+  "address": "00405850",
+  "signature": "int ConfigRead(char* cfg_file);",
+  "note": "Read game config file, Params:  File: 'LOCAL:config.qsc'"
+}

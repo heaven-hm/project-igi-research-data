@@ -1,0 +1,6 @@
+{
+  "name": "Config_FillRenderDeviceListBox",
+  "address": "00402FF0",
+  "signature": "void Config_FillRenderDeviceListBox();",
+  "note": "Fills list box with detected Direct3D/OpenGL render devices."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_GetGunnerID",
+  "address": "0044E4B0",
+  "signature": "int AIFunction_GetGunnerID();",
+  "note": "Returns linked stationary gun task ID."
+}

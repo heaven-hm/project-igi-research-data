@@ -1,0 +1,6 @@
+{
+  "name": "Config_GraphicOptionsSetDevice",
+  "address": "00402FF0",
+  "signature": "void Config_GraphicOptionsSetDevice(int device_index);",
+  "note": "Sets active graphics device index."
+}

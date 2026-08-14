@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_GUNDRAGUNOV",
+  "address": "00540404",
+  "signature": "int TASKTYPE_GUNDRAGUNOV();",
+  "note": "Task type constant for Dragunov sniper rifle."
+}

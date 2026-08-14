@@ -1,0 +1,6 @@
+{
+  "name": "SymbolRegisterReal32",
+  "address": "004B7FC0",
+  "signature": "void SymbolRegisterReal32(int **sym_buf,int sym_addr);",
+  "note": "Register new symbol of type 'Real32 aka Float' for game like internal vairables,UI controls,timers etc."
+}

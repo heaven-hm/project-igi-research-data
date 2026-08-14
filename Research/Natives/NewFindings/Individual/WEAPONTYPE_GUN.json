@@ -1,0 +1,6 @@
+{
+  "name": "WEAPONTYPE_GUN",
+  "address": "005393AC",
+  "signature": "int WEAPONTYPE_GUN();",
+  "note": "Weapon type constant for generic guns."
+}

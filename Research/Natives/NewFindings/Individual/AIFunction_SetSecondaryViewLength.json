@@ -1,0 +1,6 @@
+{
+  "name": "AIFunction_SetSecondaryViewLength",
+  "address": "0044DDF0",
+  "signature": "void AIFunction_SetSecondaryViewLength(float length);",
+  "note": "Sets secondary peripheral vision cone distance."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TASKTYPE_ROTOR",
+  "address": "0053BD80",
+  "signature": "int TASKTYPE_ROTOR();",
+  "note": "Task type constant for rotors. Parsed by 0x42D9F0."
+}

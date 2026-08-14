@@ -1,0 +1,6 @@
+{
+  "name": "Config_GameOptionsInputSetInvertMouse",
+  "address": "00402FF0",
+  "signature": "void Config_GameOptionsInputSetInvertMouse(int invert);",
+  "note": "Sets invert mouse pitch setting."
+}

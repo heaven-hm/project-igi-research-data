@@ -1,0 +1,6 @@
+{
+  "name": "GOActiveMission",
+  "address": "005332F8",
+  "signature": "int GOActiveMission();",
+  "note": "Game option: active mission ID."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "QhashReset",
+  "address": "004B0D90",
+  "signature": "void QHashReset(void);",
+  "note": "Reset QTask type hash table."
+}

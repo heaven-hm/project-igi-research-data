@@ -1,0 +1,6 @@
+{
+  "name": "Config_CreateNewPlayerProfile",
+  "address": "00402FF0",
+  "signature": "int Config_CreateNewPlayerProfile(string name, int difficulty);",
+  "note": "Creates new player profile."
+}

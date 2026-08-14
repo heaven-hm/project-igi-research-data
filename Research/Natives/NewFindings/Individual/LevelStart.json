@@ -1,0 +1,6 @@
+{
+  "name": "LevelStart",
+  "address": "00415B30",
+  "signature": "void LevelStart(int p1);",
+  "note": "Start new level, Params:  p1: 0057BABC"
+}

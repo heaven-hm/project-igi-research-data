@@ -1,0 +1,6 @@
+{
+  "name": "SymbolRemove",
+  "address": "004C0460",
+  "signature": "void SymbolRemove(int *p1,int *symbol_name);",
+  "note": "Remove symbol from memory, Params: symbol_name like 'TaskType_Set', p1 pointer ??"
+}

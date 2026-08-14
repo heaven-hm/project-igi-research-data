@@ -1,0 +1,6 @@
+{
+  "name": "QhashInit",
+  "address": "004B0D60",
+  "signature": "void QHashInit(char hash_val);",
+  "note": "Init hash table value, Params: hash value 0 or 1."
+}

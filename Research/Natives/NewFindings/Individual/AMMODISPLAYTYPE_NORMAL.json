@@ -1,0 +1,6 @@
+{
+  "name": "AMMODISPLAYTYPE_NORMAL",
+  "address": "005392B0",
+  "signature": "int AMMODISPLAYTYPE_NORMAL();",
+  "note": "Ammo display type for normal bullets."
+}

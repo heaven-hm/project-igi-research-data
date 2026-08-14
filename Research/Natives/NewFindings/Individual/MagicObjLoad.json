@@ -1,0 +1,6 @@
+{
+  "name": "MagicObjLoad",
+  "address": "004C4930",
+  "signature": "void MagicObjLoad(char *path);",
+  "note": "Loads magic objects from path, Params: Path 'LOCAL:magicobj'"
+}
