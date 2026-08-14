@@ -2,15 +2,19 @@
 
 Auto-generated consolidation of 6 research files.
 
+
 ---
+
 
 ## README.md
 
 Welcome to the **Q Script** documentation for the **Project IGI** game. This documentation provides detailed information on the scripting methods used within the game's AI and event handling.
 
+
 ## Overview 🌟
 
 *Project IGI* uses Game Script for its Propietary Game Engine (*JSF Game Engine*) that use **Q Script** that is a part of the game's AI system that dictates the behavior of in-game entities and events. **Q Script** is used for the Q System, which functions as a *Virtual Machine* (also known as **QVM**). This system is borrowed from the Quake game. While the mechanism works similarly, the opcodes and instructions in Q Script are different from those in Quake.
+
 
 ## Script Methods 🛠️
 There are total *30* script methods known however there is no official documentation for this.
@@ -60,6 +64,7 @@ The script methods are categorized into different types based on their functiona
 ### Utility Functions ⚙️
 - General-purpose functions used throughout the game scripts.
 
+
 ## Method Documentation 📖
 
 Each method in the Q Script is documented with the following details:
@@ -76,7 +81,9 @@ Signature: `int AIFunction_GetCurrentEventType()`
 Description: Retrieves the current event type being processed by the AI.
 ```
 
+
 ---
+
 
 ## igi_script_docs.cpp
 
@@ -352,7 +359,9 @@ else
     AIFunction_DefaultHandler();
 }
 
+
 ---
+
 
 ## igi_script_methods.csv
 
@@ -388,7 +397,9 @@ SetViewGamma,void AIFunction_SetViewGamma(int),Sets the gamma value for the AI c
 SetViewLength,void AIFunction_SetViewLength(int),Sets the view length for the AI character.,
 GetAnimationToPlay,void AIFunction_GetAnimationToPlay(),Gets the animation to play based on the current AI context.,
 
+
 ---
+
 
 ## igi_script_methods.json
 
@@ -548,11 +559,15 @@ GetAnimationToPlay,void AIFunction_GetAnimationToPlay(),Gets the animation to pl
   }
 ]
 
+
 ---
+
 
 ## igi_script_methods.md
 
+
 ## Table of Methods
+
 
 | Method                  | Signature                                      | Description                                                                        | Parameter Values                                                                                                                                                                                                                                                                                                                                                                                                  |
 |:------------------------|:-----------------------------------------------|:-----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -587,7 +602,9 @@ GetAnimationToPlay,void AIFunction_GetAnimationToPlay(),Gets the animation to pl
 | SetViewLength           | void AIFunction_SetViewLength(int)             | Sets the view length for the AI character.                                         | nan                                                                                                                                                                                                                                                                                                                                                                                                               |
 | GetAnimationToPlay      | void AIFunction_GetAnimationToPlay()           | Gets the animation to play based on the current AI context.                        | nan                                                                                                                                                                                                                                                                                                                                                                                                               |
 
+
 ---
+
 
 ## igi_script_methos.txt
 
@@ -622,5 +639,7 @@ AIFunction_SendResponse
 AIFunction_RemoveAlarmActions
 AIFunction_DefaultHandler
 
+
 ---
+
 

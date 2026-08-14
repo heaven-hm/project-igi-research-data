@@ -2,7 +2,9 @@
 
 Auto-generated consolidation of 3 research files.
 
+
 ---
+
 
 ## Graph-Structure.md
 
@@ -20,6 +22,7 @@ STATIC ANALYSIS SECTION - (РАЗДЕЛ СТАТИЧЕСКОГО АНАЛИЗА)
 * Here all data could be found at static index i.e [current_index + 8] 
 * example Node Material '0429' index is 20 then [20 + 8] = 28, Read DataType of 4 or 8 Bytes.
 
+
 | S.No | Graph Item          | Signature | Hex Bytes | Data-Type |
 |------|---------------------|-----------|-----------|-----------|
 | 1    | Max Nodes           | 04E6      | 04E63A0D  | Integer   |
@@ -32,8 +35,6 @@ STATIC ANALYSIS SECTION - (РАЗДЕЛ СТАТИЧЕСКОГО АНАЛИЗА)
 | 8    | Node Edge(Link1)    | 044A      | 044A1009  | Integer   |
 | 9    | Node Edge(Link2)    | 04F6      | 04F61809  | Integer   |
 | 10   | Node Edge(LinkType) | 0423      | 0423A90D  | Integer   |
-
-
 
 
 RUNTIME ANALYSIS SECTION - (РАЗДЕЛ АНАЛИЗА РАБОТЫ)
@@ -67,9 +68,12 @@ Node size elements = 0xA77247
 * NODECRITERIA_VIEW = 2
 * NODECRITERIA_STAIR = 4
 
+
 ---
 
+
 ## Graph_Items.md
+
 
 | S.No | Graph Item          | Signature | Hex Bytes     | Data-Type |
 |------|---------------------|-----------|---------------|-----------|
@@ -84,9 +88,12 @@ Node size elements = 0xA77247
 | 9    | Node Edge(Link2)    | 04F6    | 04 F6 18 09 | Integer   |
 | 10   | Node Edge(LinkType) | 0423    | 04 23 A9 0D | Integer   |
 
+
 ---
 
+
 ## Graph_Nodes.md
+
 
 | S.No | Node Type       | Method Sub     |
 |------|-----------------|----------------|
@@ -101,5 +108,7 @@ Node size elements = 0xA77247
 | 9    | nLinkID2      | SUB_004FB0B0() |
 | 10   | eLinkType     | SUB_004FB0D0() |
 
+
 ---
+
 

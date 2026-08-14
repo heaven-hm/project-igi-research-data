@@ -2,9 +2,12 @@
 
 Auto-generated consolidation of 5 research files.
 
+
 ---
 
+
 ## QVM-v5-Instructions.md
+
 
 | Opcode | OpName   |
 |--------|----------|
@@ -58,9 +61,12 @@ Auto-generated consolidation of 5 research files.
 |   2F   |     BLK  |
 |   30   | ILLEGAL  |
 
+
 ---
 
+
 ## QVM-v7-Instructions.md
+
 
 | Opcode | OpName   |
 |--------|----------|
@@ -114,14 +120,18 @@ Auto-generated consolidation of 5 research files.
 |   2F   |     BLK  |
 |   30   | ILLEGAL  |
 
+
 ---
 
+
 ## QVM_DOC.md
+
 
 ## What is QVM?
 
 QVM stands for "Q Virtual Machine". It is a compiled binary file used in Project IGI to run game logic like AI, objects, and player scripts. The virtual machine interprets bytecode from these files during gameplay.</br>
 The **QVM** are not **readable** to make them **readable** we need to **decompile** them to **QSC** file.
+
 
 ## File Signature & Variability
 
@@ -139,6 +149,7 @@ These files follow this path:
 QSC → QAS → QVM
 ```
 
+
 ## Compilation and Decompilation Flow
 
 During development:
@@ -153,7 +164,9 @@ QVM → QSC (decompiled)
 
 QAS is only generated if a flag is set during compilation.
 
+
 ## File Header Structure
+
 
 | Offset | Type | Name        | Description              |
 |--------|------|-------------|--------------------------|
@@ -161,9 +174,12 @@ QAS is only generated if a flag is set during compilation.
 | 0x04   | U4   | ver_major   | Major version number     |
 | 0x08   | U4   | ver_minor   | Minor version number     |
 
+
 This header defines where tables for integers, strings, and bytecode instructions are located inside the file.
 
+
 ## Opcodes Information
+
 
 | Hex | Name  | Description                            |
 |-----|-------|----------------------------------------|
@@ -171,7 +187,9 @@ This header defines where tables for integers, strings, and bytecode instruction
 | 01  | NOP   | No action                              |
 | 02  | PUSH  | Pushes 32-bit value to stack           |
 
+
 These are basic commands interpreted by the virtual machine to control flow and data handling.
+
 
 ## Task-Based Structure - objects.qvm
 
@@ -185,6 +203,7 @@ Task_New(-1, "EditRigidObj", "", 24977198.0, -55751300.0, 174413136.0, 0, 0, 0.6
 ```
 
 Each child task can be referenced via ID later in scripts.
+
 
 ## Script-Based Logic - ai.qvm
 
@@ -202,11 +221,14 @@ They define behavior routines and event handlers used by in-game characters.
 
 # Project IGI QVM Versions & Tools
 
+
 ## Overview
 
 Project IGI is split into two major versions — **IGI 1** and **IGI 2**, each using its own QVM format. These formats are not compatible with each other, making direct file sharing or reuse between the two games impossible.
 
+
 ---
+
 
 ## 🎮 Project IGI 1 – QVM 0.5
 
@@ -220,7 +242,9 @@ For compiling IGI 1 files, there has been recent progress a **DLL based compiler
 
 There is no official SDK, compiler, or decompiler available for this version. However, an unofficial tool called [DConv](https://github.com/NEWME0/Project-IGI/tree/master/tools/dconv), created by modder **Artiom**, can successfully decompile IGI 1 QVM files into readable QSC (source code). It also supports conversion between QVM 0.5 and QVM 0.7, helping bridge the gap between the two IGI versions.
 
+
 ---
+
 
 ## 🎮 Project IGI 2 – QVM 0.7
 
@@ -230,7 +254,9 @@ In IGI 2 it comes with an **[Official SDK](https://www.nexusmods.com/igi2coverts
 
 Despite having official tools, GConv is not always user-friendly or well-documented, so community tools and documentation continue to play a big role in expanding modding support.
 
+
 ---
+
 
 ## QVM_FORMAT.md
 
@@ -240,7 +266,9 @@ Despite having official tools, GConv is not always user-friendly or well-documen
 
 QVM is a compiled bytecode format for IGI's scripting virtual machine (version "0.5", stored as major=8, minor=5 in the header).
 
+
 ## 4.1 Header (60 bytes)
+
 
 | Offset | Size | Type     | Field         | Description                            |
 |--------|------|----------|---------------|----------------------------------------|
@@ -260,13 +288,16 @@ QVM is a compiled bytecode format for IGI's scripting virtual machine (version "
 | 0x34   | 4    | uint32   | unknown_1     | Unknown                                |
 | 0x38   | 4    | uint32   | unknown_2     | Unknown                                |
 
+
 ## 4.2 String Pools
 
 The identifier pool (`of_ivalue`, `sz_ivalue`) and string pool (`of_svalue`, `sz_svalue`) are both arrays of null-terminated strings packed sequentially. The parser splits on `\0` bytes to recover individual strings.
 
+
 ## 4.3 Opcodes (49 total)
 
 All opcodes are encoded as a single byte. The operand (if any) follows immediately in little-endian format.
+
 
 | Value | Name     | Operand Size | Description                           |
 |-------|----------|--------------|---------------------------------------|
@@ -320,6 +351,7 @@ All opcodes are encoded as a single byte. The operand (if any) follows immediate
 | 0x2F  | BLK      | 0            | Block marker                          |
 | 0x30  | ILLEGAL  | 0            | Illegal / invalid opcode              |
 
+
 ## 4.4 CALL Instruction Encoding
 
 The CALL opcode has variable-length encoding:
@@ -328,13 +360,16 @@ The CALL opcode has variable-length encoding:
 [0x18] [uint32 count] [int32 target_0] [int32 target_1] ... [int32 target_(count-1)]
 ```
 
+
 | Offset | Size        | Type     | Description                   |
 |--------|-------------|----------|-------------------------------|
 | 0      | 1           | uint8    | Opcode (0x18)                 |
 | 1      | 4           | uint32   | count -- number of call targets |
 | 5      | count * 4   | int32[]  | Array of call target offsets  |
 
+
 **Total instruction size:** `1 + 4 + (count * 4)` bytes.
+
 
 ## 4.5 Instruction Encoding Summary
 
@@ -342,6 +377,7 @@ The CALL opcode has variable-length encoding:
 [opcode: 1 byte] [operand: 0, 1, 2, or 4 bytes depending on opcode]
 ```
 Most instructions are 1 byte (opcode only). Branch instructions (BRA, BF, BT) use 4-byte signed offsets. Push variants use 1, 2, or 4-byte operands as indicated in the table above.
+
 
 ## 4.6 Execution Model
 
@@ -358,6 +394,7 @@ The decompiler reconstructs the structured control flow from branch offsets:
 - **BF with BRA offset = 0 at end of then-block** -> if (no else)
 - **BF with backward BRA at end of then-block (offset < 0)** -> while loop
 
+
 ## 4.7 Decompiled Output (QSC)
 
 The converter decompiles QVM bytecode into QSC — a C-like scripting language. Example:
@@ -369,6 +406,7 @@ if(AIFunction_GetCurrentEventType() == AIEVENT_CREATE)
 `
 QSC files use tab indentation and semicolon-terminated statements. Function calls use the Task_New(id, "Type", "Name", ...) pattern for object definitions, and engine API calls like AIFunction_*, AIAction_* for AI scripting.
 
+
 ## 4.8 File Organization
 
 QVM files appear throughout the game directory structure:
@@ -378,11 +416,14 @@ QVM files appear throughout the game directory structure:
 - missions/location1/level1/mission.qvm -> Mission logic
 - missions/location1/level1/ai/500.qvm -> Individual AI scripts
 
+
 ---
+
 
 ## humanplayer.md
 
 The `DefineHumanPlayerGeneral` function in Project IGI 1's Humanplayer QVM configures core player mechanics. While structurally similar to IGI 2, IGI 1 uses unique parameter sequences with critical gameplay implications. Due to the absence of official documentation, these values were reverse-engineered by the modding community through extensive testing. Below is a complete parameter breakdown with verified defaults and contextual explanations.
+
 
 ## Parameter Documentation
 ```c
@@ -432,5 +473,7 @@ DefineHumanPlayerGeneral(
     100000    
 );
 
+
 ---
+
 

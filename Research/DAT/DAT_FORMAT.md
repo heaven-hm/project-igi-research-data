@@ -6,6 +6,7 @@
 
 DAT files are text-based lookup tables that map model IDs to their texture IDs within a specific level.
 
+
 ## 7.1 Format
 
 The file is a sequence of whitespace-separated tokens, one per line. Lines starting with `***` are comments and are skipped. Empty lines are skipped.
@@ -23,7 +24,9 @@ The file is a sequence of whitespace-separated tokens, one per line. Lines start
 ...
 ```
 
+
 ## 7.2 Token Sequence
+
 
 | Token Index | Description                                          |
 |-------------|------------------------------------------------------|
@@ -33,6 +36,7 @@ The file is a sequence of whitespace-separated tokens, one per line. Lines start
 | 3..N        | Texture IDs for first model (strings)                |
 | N+1         | Second model ID                                      |
 | ...         | Repeating pattern                                    |
+
 
 ## 7.3 Example
 

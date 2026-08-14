@@ -2,7 +2,9 @@
 
 Auto-generated consolidation of 20 research files.
 
+
 ---
+
 
 ## AI-Models.json
 
@@ -109,7 +111,9 @@ Auto-generated consolidation of 20 research files.
   }
 ]
 
+
 ---
+
 
 ## AIEVENTS.txt
 
@@ -138,7 +142,9 @@ AIEVENT_LADDER
 AIEVENT_TAKINGDAMAGE
 AIEVENT_WALK
 
+
 ---
+
 
 ## AIEvents.json
 
@@ -241,7 +247,9 @@ AIEVENT_WALK
   }
 ]
 
+
 ---
+
 
 ## AIFUNCTION.txt
 
@@ -283,7 +291,9 @@ AIFunction_SetViewLength
 AIFunction_RemoveAlarmActions
 AIFunction_DefaultHandler
 
+
 ---
+
 
 ## AIFUNCTIONS.json
 
@@ -438,7 +448,9 @@ AIFunction_DefaultHandler
   }
 ]
 
+
 ---
+
 
 ## AISCRIPTS_DATA.txt
 
@@ -603,7 +615,9 @@ AIFunction_DefaultHandler
 "AILOOKAROUND_PATTERN_360_SLOW"
 "AILOOKAROUND_PATTERN_360_FAST"
 
+
 ---
+
 
 ## AITYPES.json
 
@@ -667,7 +681,9 @@ AIFunction_DefaultHandler
   }
 }
 
+
 ---
+
 
 ## AITYPES.txt
 
@@ -701,13 +717,17 @@ AITYPE_SPETNAZ_PATROL_AK
 AITYPE_SPETNAZ_PATROL_SPAS
 AITYPE_SPETNAZ_PATROL_UZI
 
+
 ---
+
 
 ## CameraEngine.md
 
 This is a **high-level overview** of how the camera works in Project I.G.I and in game engines generally — short, clear, and practical.
 
+
 ---
+
 
 # 🧠 1️⃣ What Is a Camera in a Game Engine?
 
@@ -729,9 +749,12 @@ Instead:
 World is transformed relative to camera.
 ```
 
+
 ---
 
+
 # 🎥 2️⃣ Basic Camera Concepts
+
 
 ## 📍 Position
 
@@ -743,7 +766,9 @@ Y → Forward / Backward
 Z → Up / Down
 ```
 
+
 ---
+
 
 ## 🔄 Rotation
 
@@ -766,7 +791,9 @@ In IGI:
 - Yaw + Pitch are active
 - Roll is typically unused
 
+
 ---
+
 
 # 🧮 3️⃣ Rotation Matrix (Why 9 Floats?)
 
@@ -785,7 +812,9 @@ Why?
 - Stable 3D transformations
 - Direct use in view matrix calculations
 
+
 ---
+
 
 # 🏗 4️⃣ Structure of IGI Camera (Simplified)
 
@@ -802,7 +831,9 @@ typedef struct IGICamera
 
 Then copied into a viewport structure used by the renderer.
 
+
 ---
+
 
 # 🖥 5️⃣ What Is the Viewport?
 
@@ -818,7 +849,9 @@ It contains:
 
 Renderer reads this every frame.
 
+
 ---
+
 
 # 🔁 6️⃣ IGI Camera Flow (Simplified)
 
@@ -838,7 +871,9 @@ Copy Camera → Viewport
 Render Scene
 ```
 
+
 ---
+
 
 # 🎬 7️⃣ Use Cases of IGI Camera System
 
@@ -856,7 +891,9 @@ The difference is only how:
 - Rotation is controlled
 - Camera state flags are set
 
+
 ---
+
 
 # 🧩 Core Takeaway
 
@@ -871,7 +908,9 @@ Everything visual in the game depends on this transform.
 
 That’s the entire foundation of the IGI camera engine. 🚀
 
+
 ---
+
 
 ## EVENTS.txt
 
@@ -896,7 +935,9 @@ EVENT_LADDER
 EVENT_TAKINGDAMAGE
 EVENT_WALK
 
+
 ---
+
 
 ## GCONV_SCRIPTS.qsc
 
@@ -1077,7 +1118,9 @@ VerticalFontSpacing();
 // unknown identifier Run();
 // unknown identifier World();
 
+
 ---
+
 
 ## GConv_Script.cpp
 
@@ -1260,7 +1303,9 @@ void Exec();
 void BreakScript();
 void _Script_SetWarningLevel(string severityLevelFlag);
 
+
 ---
+
 
 ## IGI-SFX.json
 
@@ -1424,7 +1469,9 @@ void _Script_SetWarningLevel(string severityLevelFlag);
   }
 ]
 
+
 ---
+
 
 ## IGI-SFX.txt
 
@@ -1910,7 +1957,9 @@ void _Script_SetWarningLevel(string severityLevelFlag);
 "_cut12_03",
 "_cut12_05",
 
+
 ---
+
 
 ## IGI_AOB.txt
 
@@ -1920,7 +1969,9 @@ Player Loaded : 1E 00 00 00 24 BA B3 04 //Game Frames FPS
 Game Running : 02 00 00 00 00 00 00 00 58 53 68 //Menu Manager
 Game Paused : 00 00 00 00 ?? ?? ?? 00 7D 00 00 00 ?? 00 00 00 00 00 00 00 00 00 00 00 7C FE 9A 04 02 00 00 00 //QStrip For MenuManager.
 
+
 ---
+
 
 ## PATROLPATH.txt
 
@@ -1934,9 +1985,12 @@ PATROLPATH_END = 6
 PATROLPATH_QUIT = 7
 PATROLPATH_SETSPEED = 8
 
+
 ---
 
+
 ## SFX_Table.md
+
 
 | Name       | Children                                                                                                                        |
 |------------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -1957,7 +2011,9 @@ PATROLPATH_SETSPEED = 8
 | Rock       | bul_rock_1, bul_rock_2, bul_rock_3                                                                                              |
 | Wood       | bul_wood_1, bul_wood_2, bul_wood_3                                                                                              |
 
+
 ---
+
 
 ## TASKEVENTS.txt
 
@@ -1981,7 +2037,9 @@ AIEVENT_DEAD
 AIEVENT_DELETE
 AIEVENT_CREATE
 
+
 ---
+
 
 ## TASKTYPE.txt
 
@@ -2050,7 +2108,9 @@ TASKTYPE_SMOKE
 TASKTYPE_SMOOTHQTASK
 TASKTYPE_WHEEL
 
+
 ---
+
 
 ## WEAPONS_AMMO.cs
 
@@ -2072,5 +2132,7 @@ Dictionary<string, string> ammoList = new Dictionary<string, string>()
         {"PROXIMITYMINE","AMMO_ID_PROXIMITYMINE"}
 };
 
+
 ---
+
 

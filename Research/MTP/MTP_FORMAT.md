@@ -2,7 +2,9 @@
 
 Auto-generated consolidation of 8 research files.
 
+
 ---
+
 
 ## MTP-Structure-Explanation.md
 
@@ -32,7 +34,9 @@ Here is a bullet list of the general structure of the MTP Material Structure:
 * Each model is defined by a line that contains the model name and the number of materials that the model uses.
 * The following lines list the materials that the model uses, each with the name of the associated texture file.
 
+
 ---
+
 
 ## MTP-Structure.txt
 
@@ -82,7 +86,9 @@ waypoint    model 415 name
 000_06_1
 000_01_1
 
+
 ---
+
 
 ## MTP_FORMAT.md
 
@@ -91,7 +97,9 @@ waypoint    model 415 name
 
 MTP files define which textures belong to which models for a given level or asset group.
 
+
 ## 6.1 File Header (12 bytes)
+
 
 | Offset | Size | Type         | Description                         |
 |--------|------|--------------|-------------------------------------|
@@ -99,16 +107,21 @@ MTP files define which textures belong to which models for a given level or asse
 | 0x04   | 4    | uint32 (BE)  | FORM payload size (big-endian)      |
 | 0x08   | 4    | char[4]      | Format ID: `"MTP "` (with trailing space) |
 
+
 ## 6.2 IFF Chunk Header (8 bytes)
+
 
 | Offset | Size | Type         | Description                    |
 |--------|------|--------------|--------------------------------|
 | 0x00   | 4    | char[4]      | FourCC chunk type              |
 | 0x04   | 4    | uint32 (BE)  | Data size (big-endian)         |
 
+
 Chunks are aligned to 2-byte boundaries (standard IFF). If data size is odd, one padding byte follows.
 
+
 ## 6.3 Chunk Types
+
 
 | FourCC | Description                            | Data Format              |
 |--------|----------------------------------------|--------------------------|
@@ -122,32 +135,40 @@ Chunks are aligned to 2-byte boundaries (standard IFF). If data size is odd, one
 | `GTT`  | (Unknown purpose)                      | -                        |
 | `INST` | Model-texture instance mappings        | Instance array (see below) |
 
+
 ## 6.4 String Array Format
 
 All string-list chunks (BANM, SVOL, MODS, TEXF, etc.) use this layout:
+
 
 | Offset | Size | Type   | Description                                    |
 |--------|------|--------|------------------------------------------------|
 | 0x00   | 4    | uint32 (LE) | count -- number of strings                |
 | 0x04   | var  | char[] | `count` null-terminated strings packed sequentially |
 
+
 Note: The count field is little-endian despite the IFF chunk sizes being big-endian.
+
 
 ## 6.5 INST Chunk -- Instance Mappings
 
 The INST chunk maps each model to its texture list:
 
+
 | Offset | Size | Type        | Description                           |
 |--------|------|-------------|---------------------------------------|
 | 0x00   | 4    | uint32 (LE) | count -- number of mapping entries    |
 
+
 Each entry (variable length):
+
 
 | Offset | Size       | Type        | Description                           |
 |--------|------------|-------------|---------------------------------------|
 | 0x00   | 2          | uint16 (LE) | modelIdx -- index into MODS array    |
 | 0x02   | 2          | uint16 (LE) | texCount -- number of textures       |
 | 0x04   | texCount*2 | uint16 (LE)[] | Array of texture indices into TEXF |
+
 
 ## 6.6 Example Parsing Flow
 
@@ -161,9 +182,12 @@ Each entry (variable length):
 4. Each INST entry: model_name = MODS[modelIdx], textures = TEXF[texIdx] for each texIdx
 ```
 
+
 ---
 
+
 ## MTP_Import.md
+
 
 ## Material Importer manual method
 
@@ -187,7 +211,9 @@ Each entry (variable length):
 6. Add your new textures to the `mtp` file of the source level, increase the total object count, and decode the file.
 7. Add your new model with the full qualified name like `435_01_1` to your level.
 
+
 ---
+
 
 ## Material_Import_Info.txt
 
@@ -204,40 +230,56 @@ Steps to Import new Model from another level.
 7)Now add your New model with full qualified name like 435_01_1 into your level"
 
 +---------------------------------------------------+
+
 | Decompile target level and source level models.res|
+
 +-----------------------+---------------------------+
                         |
 +-----------------------v---------------------------+
+
 |   Copy desired model MEF object and all mefs with   |
 |           the same model name.                      |
+
 +-----------------------+---------------------------+
                         |
 +-----------------------v---------------------------+
+
 |     Paste the copied objects into your source      |
 |             level models and pack them again        |
 |                      to models.res.                 |
+
 +-----------------------+---------------------------+
                         |
 +-----------------------v---------------------------+
+
 |      Copy object texture data from level#.mtp      |
+
 +-----------------------+---------------------------+
                         |
 +-----------------------v---------------------------+
+
 | Download and use MTP Decoder tool found under      |
 |                  \Tools section.                   |
+
 +-----------------------+---------------------------+
                         |
 +-----------------------v---------------------------+
+
 |  Add your new textures in level#.mtp file, increase|
 | the total Objects Count and decode it.             |
+
 +-----------------------+---------------------------+
                         |
 +-----------------------v---------------------------+
+
 |     Add your new model with a full qualified name   |
 |            like 435_01_1 into your level.           |
+
 +-----------------------------------------------------+
 
+
 ---
+
 
 ## Materials.json
 
@@ -342,9 +384,12 @@ Steps to Import new Model from another level.
   ]
 }
 
+
 ---
 
+
 ## Materials.md
+
 
 | MaterialName | MaterialId |
 |---|---|
@@ -373,7 +418,9 @@ Steps to Import new Model from another level.
 | MetalLadder   | 22        |
 | MetalFence    | 23        |
 
+
 ---
+
 
 ## Materials_info.txt
 
@@ -402,5 +449,7 @@ MATERIAL_HUMANCOLLISION = 21
 MATERIAL_METALLADDER = 22
 MATERIAL_METALFENCE = 23
 
+
 ---
+
 

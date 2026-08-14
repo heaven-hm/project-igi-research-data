@@ -5,6 +5,7 @@
 
 RES files bundle multiple named resources (models, textures, scripts, etc.) into a single archive.
 
+
 ## 5.1 Structure
 
 ```
@@ -27,29 +28,37 @@ RES files bundle multiple named resources (models, textures, scripts, etc.) into
     data:   raw binary resource data
 ```
 
+
 ## 5.2 Chunk Layout
+
 
 | Field  | FourCC (LE hex) | Description                              |
 |--------|-----------------|------------------------------------------|
 | NAME   | 0x454D414E      | Resource name (null-terminated string)   |
 | BODY   | 0x59444F42      | Resource data (raw bytes)                |
 
+
 Chunks alternate NAME/BODY pairs. If a BODY chunk appears without a preceding NAME, it is assigned a synthetic name `<unnamed_N>`.
+
 
 ## 5.3 Alignment
 
 All chunks are aligned to 4-byte boundaries. If a chunk's data does not end on a 4-byte boundary, 1-3 padding bytes are skipped before the next chunk.
 
+
 ## 5.4 RES Chunk Detail
 
 Unlike MEF's linked-list chunks, RES uses a simpler 8-byte chunk header:
+
 
 | Offset | Size | Type     | Description            |
 |--------|------|----------|------------------------|
 | 0x00   | 4    | uint32   | FourCC identifier      |
 | 0x04   | 4    | uint32   | Data size              |
 
+
 Data follows immediately at offset 0x08 from the chunk start.
+
 
 ## 5.5 Example
 
