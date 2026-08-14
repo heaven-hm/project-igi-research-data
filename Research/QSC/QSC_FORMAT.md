@@ -1,4 +1,10 @@
-# QSC -- Script Source
+# QSC Format - Consolidated Reference
+
+Auto-generated consolidation of 2 research files.
+
+---
+
+## QSC_FORMAT.md
 
 **Extension:** `.qsc`
 **Container:** None (plain text)
@@ -40,3 +46,6 @@ Task(1, "patrol",
 |----------------|--------|-------------------------------------|
 | MAX_QSC_FUNCS  | 4096   | Maximum function nodes              |
 | MAX_QSC_ARGS   | 65536  | Maximum argument nodes              |
+
+---
+

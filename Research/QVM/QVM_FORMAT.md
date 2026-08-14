@@ -1,4 +1,238 @@
-# QVM -- Script Bytecode
+# QVM Format - Consolidated Reference
+
+Auto-generated consolidation of 5 research files.
+
+---
+
+## QVM-v5-Instructions.md
+
+| Opcode | OpName   |
+|--------|----------|
+|   00   |    BRK   |
+|   01   |    NOP   |
+|   02   |    PUSH  |
+|   03   |   PUSHB  |
+|   04   |   PUSHW  |
+|   05   |   PUSHF  |
+|   06   |   PUSHA  |
+|   07   |   PUSHS  |
+|   08   |  PUSHSI  |
+|   09   | PUSHSIB  |
+|   0A   | PUSHSIW  |
+|   0B   |   PUSHI  |
+|   0C   |  PUSHII  |
+|   0D   | PUSHSIB  |
+|   0E   | PUSHSIW  |
+|   0F   |   PUSH0  |
+|   10   |   PUSH1  |
+|   11   |   PUSHM  |
+|   12   |     POP  |
+|   13   |     RET  |
+|   14   |     BRA  |
+|   15   |      BF  |
+|   16   |      BT  |
+|   17   |     JSR  |
+|   18   |    CALL  |
+|   19   |     ADD  |
+|   1A   |     SUB  |
+|   1B   |     MUL  |
+|   1C   |     DIV  |
+|   1D   |     SHL  |
+|   1E   |     SHR  |
+|   1F   |     AND  |
+|   20   |      OR  |
+|   21   |     XOR  |
+|   22   |    LAND  |
+|   23   |     LOR  |
+|   24   |      EQ  |
+|   25   |      NE  |
+|   26   |      LT  |
+|   27   |      LE  |
+|   28   |      GT  |
+|   29   |      GE  |
+|   2A   |  ASSIGN  |
+|   2B   |    PLUS  |
+|   2C   |   MINUS  |
+|   2D   |     INV  |
+|   2E   |     NOT  |
+|   2F   |     BLK  |
+|   30   | ILLEGAL  |
+
+---
+
+## QVM-v7-Instructions.md
+
+| Opcode | OpName   |
+|--------|----------|
+|   01   |    NOP   |
+|   00   |    BRK   |
+|   02   |    RET   |
+|   03   |    BRA   |
+|   04   |     BF   |
+|   05   |     BT   |
+|   06   |    JSR   |
+|   07   |   CALL   |
+|   08   |    PUSH  |
+|   09   |   PUSHB  |
+|   0A   |   PUSHW  |
+|   0B   |   PUSHF  |
+|   0C   |   PUSHA  |
+|   0D   |   PUSHS  |
+|   0E   |  PUSHSI  |
+|   0F   | PUSHSIB  |
+|   10   | PUSHSIW  |
+|   11   |   PUSHI  |
+|   12   |  PUSHII  |
+|   13   | PUSHSIB  |
+|   14   | PUSHSIW  |
+|   15   |   PUSH0  |
+|   16   |   PUSH1  |
+|   17   |   PUSHM  |
+|   18   |     POP  |
+|   19   |     ADD  |
+|   1A   |     SUB  |
+|   1B   |     MUL  |
+|   1C   |     DIV  |
+|   1D   |     SHL  |
+|   1E   |     SHR  |
+|   1F   |     AND  |
+|   20   |      OR  |
+|   21   |     XOR  |
+|   22   |    LAND  |
+|   23   |     LOR  |
+|   24   |      EQ  |
+|   25   |      NE  |
+|   26   |      LT  |
+|   27   |      LE  |
+|   28   |      GT  |
+|   29   |      GE  |
+|   2A   |  ASSIGN  |
+|   2B   |    PLUS  |
+|   2C   |   MINUS  |
+|   2D   |     INV  |
+|   2E   |     NOT  |
+|   2F   |     BLK  |
+|   30   | ILLEGAL  |
+
+---
+
+## QVM_DOC.md
+
+## What is QVM?
+
+QVM stands for "Q Virtual Machine". It is a compiled binary file used in Project IGI to run game logic like AI, objects, and player scripts. The virtual machine interprets bytecode from these files during gameplay.</br>
+The **QVM** are not **readable** to make them **readable** we need to **decompile** them to **QSC** file.
+
+## File Signature & Variability
+
+Most QVM files start with the ASCII signature `LOOP`. They vary in internal layout: object files use task trees (`objects.qvm`), while AI scripts are logic-based (`ai.qvm`). File sizes range from 270 bytes to 990 KB.</br>
+
+
+## What Are QSC and QAS file formats?
+
+- **QSC**: Human-readable source script written in _C-style_ syntax.
+- **QAS**: Intermediate assembly generated from _QSC_ during build.
+- **QVM**: Final compiled binary executed by the game engine.
+
+These files follow this path:
+```
+QSC → QAS → QVM
+```
+
+## Compilation and Decompilation Flow
+
+During development:
+```
+QSC (source) → QAS (assembler) → QVM (compiled)
+```
+
+When reverse engineering:
+```
+QVM → QSC (decompiled)
+```
+
+QAS is only generated if a flag is set during compilation.
+
+## File Header Structure
+
+| Offset | Type | Name        | Description              |
+|--------|------|-------------|--------------------------|
+| 0x00   | U4   | signature   | Must be `'LOOP'`         |
+| 0x04   | U4   | ver_major   | Major version number     |
+| 0x08   | U4   | ver_minor   | Minor version number     |
+
+This header defines where tables for integers, strings, and bytecode instructions are located inside the file.
+
+## Opcodes Information
+
+| Hex | Name  | Description                            |
+|-----|-------|----------------------------------------|
+| 00  | BRK   | Stops execution                        |
+| 01  | NOP   | No action                              |
+| 02  | PUSH  | Pushes 32-bit value to stack           |
+
+These are basic commands interpreted by the virtual machine to control flow and data handling.
+
+## Task-Based Structure - objects.qvm
+
+`objects.qvm` uses recursive task trees built using:
+- `Task_DeclareParameters`: Defines expected types
+- `Task_New`: Creates node with ID, type, context, and values
+
+Example:
+```c
+Task_New(-1, "EditRigidObj", "", 24977198.0, -55751300.0, 174413136.0, 0, 0, 0.6645680069923401, "905_01_1", 1, 1, 1, 0, 0, 0)
+```
+
+Each child task can be referenced via ID later in scripts.
+
+## Script-Based Logic - ai.qvm
+
+AI logic lives in `ai.qvm`. These are QSC scripts that use C-like syntax with conditionals, functions, and logical operators.
+
+Example:
+```c
+if(AIFunction_GetCurrentEventType() == AIEVENT_IDLE) 
+{ 
+    AIAction_Patrol(1203, 0, AIACTIONFLAG_NONE); 
+}
+```
+
+They define behavior routines and event handlers used by in-game characters.
+
+# Project IGI QVM Versions & Tools
+
+## Overview
+
+Project IGI is split into two major versions — **IGI 1** and **IGI 2**, each using its own QVM format. These formats are not compatible with each other, making direct file sharing or reuse between the two games impossible.
+
+---
+
+## 🎮 Project IGI 1 – QVM 0.5
+
+IGI 1 uses the `QVM 0.5` format, which contains structured bytecode for various game elements like AI, human characters, and objects. Each type of QVM file may have a different internal layout depending on its use case.
+
+### Compiler</br>
+
+For compiling IGI 1 files, there has been recent progress a **DLL based compiler** [IGI-Compiler](https://github.com/Jones-HM/project-igi-editor/blob/develop/IGIEditor/QCompiler.cs#L119) with [Native-method](https://github.com/search?q=repo%3AJones-HM%2Fproject-igi-internals%20QSCRIPT_COMPILE&type=code) thanks to a discovery by **Jones-HM**. He found a way to compile files directly inside the game by using **DLL injection** to call the game’s internal compilation functions. This method is fast, doesn't require external tools, and is now used in the **Project IGI Editor**.
+
+### Decompiler</br>
+
+There is no official SDK, compiler, or decompiler available for this version. However, an unofficial tool called [DConv](https://github.com/NEWME0/Project-IGI/tree/master/tools/dconv), created by modder **Artiom**, can successfully decompile IGI 1 QVM files into readable QSC (source code). It also supports conversion between QVM 0.5 and QVM 0.7, helping bridge the gap between the two IGI versions.
+
+---
+
+## 🎮 Project IGI 2 – QVM 0.7
+
+IGI 2 uses the newer `QVM 0.7` format, which has a completely different structure from IGI 1. The two formats are incompatible, meaning you cannot use QVM files from one version in the other.
+
+In IGI 2 it comes with an **[Official SDK](https://www.nexusmods.com/igi2covertstrike/mods/1)** that includes a powerful tool called [GConv](https://www.gamepressure.com/download/igi-2-covert-strike-map-editor-mod/zbbfc). This tool allows full decompilation and compilation of QVM files to QSC and back again. It is widely used for mod development and scripting support.
+
+Despite having official tools, GConv is not always user-friendly or well-documented, so community tools and documentation continue to play a big role in expanding modding support.
+
+---
+
+## QVM_FORMAT.md
 
 **Extension:** `.qvm`
 **Container:** None (raw structured binary)
@@ -143,3 +377,60 @@ QVM files appear throughout the game directory structure:
 - missions/location1/level1/objects.qvm -> Level object placement (largest files)
 - missions/location1/level1/mission.qvm -> Mission logic
 - missions/location1/level1/ai/500.qvm -> Individual AI scripts
+
+---
+
+## humanplayer.md
+
+The `DefineHumanPlayerGeneral` function in Project IGI 1's Humanplayer QVM configures core player mechanics. While structurally similar to IGI 2, IGI 1 uses unique parameter sequences with critical gameplay implications. Due to the absence of official documentation, these values were reverse-engineered by the modding community through extensive testing. Below is a complete parameter breakdown with verified defaults and contextual explanations.
+
+## Parameter Documentation
+```c
+// Project IGI 1 - Humanplayer QVM Parameter Reference
+// Verified defaults (community-researched via reverse engineering)
+// Note: Parameters beyond healthFence follow undocumented patterns (0.5/0.75/1 sequences)
+DefineHumanPlayerGeneral(
+    1.75,       // movementSpeed: Base movement speed multiplier (default: 1.75)
+                // Controls overall walking/running pace. Higher = faster movement
+    
+    17.5,       // forwardSpeed: Forward jump directional speed (default: 17.5)
+                // Determines forward momentum when jumping toward targets
+    
+    27.0,       // upwardSpeed: Vertical climbing/jumping speed (default: 27.0)
+                // Controls jumping and heights.
+    
+    0.5,        // AirSpeed: Air movement multiplier (default: 0.5)
+                // Speed of player movements while in air.
+    
+    0.85,       // peekLRLen: Horizontal peek distance (left/right) (default: 0.85)
+                // Distance player can lean sideways while peeking around cover
+    
+    0.85,       // peekCrouchLen: Crouched peek distance (default: 0.85)
+                // Vertical peek range when crouching
+    
+    0.25,       // peekTime: Peek animation duration (seconds) (default: 0.25)
+                // Time to complete peek and reset it back to normal position.
+    
+    3.0,        // healthScale: Health scale of player (default: 3.0)
+                // Health scale from 0.0 - 3.0
+    
+    0.5,        // healthFence: Critical health threshold (default: 0.5)
+                // Health damage multiplier by fence.
+    
+    // Undocumented parameters (pattern analysis by modding community):
+    0.5, 0.75, 1,  
+    0.5, 0.75, 1,  
+    0.5, 0.75, 1,   
+    0.5, 0.75, 1,   
+    1, 1, 1, 1, 1, 
+    0.5, 0.75, 1, 
+    0.5, 0.75, 1,  
+    0.5, 0.75, 1,   
+    0.5, 0.75, 1,  
+    1, 1, 1, 1,   
+    100000,        
+    100000    
+);
+
+---
+
