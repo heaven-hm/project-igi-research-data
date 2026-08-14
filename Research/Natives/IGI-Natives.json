@@ -1303,6 +1303,398 @@
                 "signature": "void Config_GameOptionsInputSetMouseSensitivity(float sensitivity);",
                 "note": "Sets mouse look sensitivity multiplier."
             }
+        },
+        {
+            "Native": {
+                "name": "HumanSoldierTask_Register",
+                "address": "0045CAB0",
+                "signature": "void HumanSoldierTask_Register(void);",
+                "note": "Registers HumanSoldier task type object (3408 bytes) into level task tree."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanSoldier_InitStateDead",
+                "address": "004E8B80",
+                "signature": "void HumanSoldier_InitStateDead(State_s* state, QTask_s* task);",
+                "note": "Initializes dead state for human soldier task and updates death duration."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanTask_Register",
+                "address": "0045E450",
+                "signature": "void HumanTask_Register(void);",
+                "note": "Registers base Human task type object (3320 bytes)."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanPlayerTask_Register",
+                "address": "0040FE30",
+                "signature": "void HumanPlayerTask_Register(void);",
+                "note": "Registers HumanPlayer task type object (3568 bytes)."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanPlayerInputTask_Register",
+                "address": "0045DB70",
+                "signature": "void HumanPlayerInputTask_Register(void);",
+                "note": "Registers HumanPlayerInput task type object (484 bytes)."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanDamage_HitHandler",
+                "address": "0045D3C0",
+                "signature": "void HumanDamage_HitHandler(int* soldier_ptr, int damage_amount, int hit_zone);",
+                "note": "Applies damage multiplier by hit-zone table to soldier entity."
+            }
+        },
+        {
+            "Native": {
+                "name": "Human_GetDeadStateID",
+                "address": "004EBA80",
+                "signature": "short Human_GetDeadStateID(void);",
+                "note": "Returns global dead state ID (0x0054DB4A)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Vec3_Length",
+                "address": "004B3130",
+                "signature": "float Vec3_Length(void* vec_ptr);",
+                "note": "Computes 3D vector length/magnitude sqrt(x^2 + y^2 + z^2)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Timer_GetHighResTick",
+                "address": "00490370",
+                "signature": "int Timer_GetHighResTick(void);",
+                "note": "Returns elapsed game time in milliseconds since engine launch (GetTickCount() - ENGINE_STARTUP_TICK_MS)."
+            }
+        },
+        {
+            "Native": {
+                "name": "Sound_SetPacingLimit",
+                "address": "004E6030",
+                "signature": "void Sound_SetPacingLimit(int target_fps);",
+                "note": "Propagates target FPS frame pacing limit to sound/render subsystem."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_IsConeVisible",
+                "address": "00474F00",
+                "signature": "bool AIDetection_IsConeVisible(AIDetectionListItem_s* item);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_IsFullVisible",
+                "address": "00474EE0",
+                "signature": "bool AIDetection_IsFullVisible(AIDetectionListItem_s* item);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_IsPositionInsideView",
+                "address": "00474390",
+                "signature": "char AIDetection_IsPositionInsideView(AIDetectionView_s* view, real64x3_t* position);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_IsQTaskInDetectionList",
+                "address": "004748A0",
+                "signature": "bool AIDetection_IsQTaskInDetectionList(QTask_s* task);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_GetQTaskMask",
+                "address": "00474870",
+                "signature": "ulong AIDetection_GetQTaskMask(unsigned short mask_id);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_GetDetectionList",
+                "address": "00474F20",
+                "signature": "QTaskList_s* AIDetection_GetDetectionList(void);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_GetFirstFreeListItem",
+                "address": "004745E0",
+                "signature": "AIDetectionListItem_s* AIDetection_GetFirstFreeListItem(AIDetection_s* detection);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_GetListItemFromQTask",
+                "address": "00474610",
+                "signature": "AIDetectionListItem_s* AIDetection_GetListItemFromQTask(AIDetection_s* detection, QTask_s* task);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "AIDetection_FindMatchingListItem",
+                "address": "00474E90",
+                "signature": "AIDetectionListItem_s* AIDetection_FindMatchingListItem(AIDetection_s* detection, QTask_s* task);",
+                "note": "Ghidra-resolved prototype. Static verification only; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAI_GetTargetPosition",
+                "address": "00460EF0",
+                "signature": "void HumanAI_GetTargetPosition(real64x3_t* output, HumanAI_s* human_ai);",
+                "note": "Ghidra-resolved prototype. Writes to output; requires a valid HumanAI_s pointer. Runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAI_GetActivationStatus",
+                "address": "004634A0",
+                "signature": "bool HumanAI_GetActivationStatus(QTask_s* task);",
+                "note": "Ghidra-resolved prototype. Requires a valid task pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAI_IsRPGSoldier",
+                "address": "004647A0",
+                "signature": "bool HumanAI_IsRPGSoldier(HumanAI_s* human_ai);",
+                "note": "Ghidra-resolved prototype. Requires a valid HumanAI_s pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanSoldier_GetCheapHeadBonePosition",
+                "address": "004ECB00",
+                "signature": "void HumanSoldier_GetCheapHeadBonePosition(QTask_s* task, real32x3_t* local_position, real64x3_t* world_position);",
+                "note": "Ghidra-resolved prototype. Writes output structures; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanSoldier_GetCheapCenterBonePosition",
+                "address": "004ECD90",
+                "signature": "void HumanSoldier_GetCheapCenterBonePosition(QTask_s* task, real32x3_t* local_position, real64x3_t* world_position);",
+                "note": "Ghidra-resolved prototype. Writes output structures; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanSoldier_GetCurrentSectorQTask",
+                "address": "004ECFF0",
+                "signature": "QTask_s* HumanSoldier_GetCurrentSectorQTask(QTask_s* task);",
+                "note": "Ghidra-resolved prototype. Requires a valid soldier task pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanSoldier_IsSeenDeadBySquad",
+                "address": "004ED020",
+                "signature": "bool HumanSoldier_IsSeenDeadBySquad(QTask_s* soldier, QTask_s* squad);",
+                "note": "Ghidra-resolved prototype. Requires valid task pointers; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "Game_GetGameStatus",
+                "address": "00408940",
+                "signature": "GameStatus_e Game_GetGameStatus(void);",
+                "note": "Ghidra-resolved prototype. Read-only status query; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "Game_GetHumanCamera",
+                "address": "00409170",
+                "signature": "QTask_s* Game_GetHumanCamera(void);",
+                "note": "Ghidra-resolved prototype. Returns an engine task pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "Human_GetDeadStateID",
+                "address": "004EBA80",
+                "signature": "short Human_GetDeadStateID(void);",
+                "note": "Ghidra-resolved prototype. Read-only state query; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "Vec3_Length",
+                "address": "004B3130",
+                "signature": "float Vec3_Length(void* vector);",
+                "note": "Ghidra-resolved prototype. Requires a valid vector pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "Timer_GetHighResTick",
+                "address": "00490370",
+                "signature": "int Timer_GetHighResTick(void);",
+                "note": "Ghidra-resolved prototype. Read-only timer query; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "PlayerXPHit",
+                "address": "00416D80",
+                "signature": "uint PlayerXPHit(void);",
+                "note": "Ghidra-resolved prototype from the current analysis. Read-only query; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "WeaponsCountGet",
+                "address": "00413BB0",
+                "signature": "int WeaponsCountGet(void);",
+                "note": "Ghidra-resolved prototype. Read-only query; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanPlayer_GetPrimaryWeaponType",
+                "address": "0049E3D0",
+                "signature": "WeaponType_s* HumanPlayer_GetPrimaryWeaponType(void);",
+                "note": "Ghidra-resolved prototype. Returns an engine-owned pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "GunPickup_GetWeaponID",
+                "address": "0046C2A0",
+                "signature": "int GunPickup_GetWeaponID(QTask_s* pickup);",
+                "note": "Ghidra-resolved prototype. Requires a valid pickup task pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "StatusScreen_GetServerMessages",
+                "address": "00476F60",
+                "signature": "TextScroller_s* StatusScreen_GetServerMessages(void);",
+                "note": "Ghidra-resolved prototype. Returns an engine-owned pointer; runtime invocation not yet tested."
+            }
+        },
+        {
+            "Native": {
+                "name": "Human_GetWeaponTypeAnimPtr",
+                "address": "005037D0",
+                "signature": "QTask_s* Human_GetWeaponTypeAnimPtr(QTask_s* task);",
+                "note": "Ghidra-resolved prototype, with decompiler warnings. Do not invoke until a caller confirms the task argument."
+            }
+        },
+        {
+            "Native": {
+                "name": "PlayerTask_DestroyAll",
+                "address": "004082B0",
+                "signature": "void PlayerTask_DestroyAll(int clear_type);",
+                "note": "Iterates player task array at 0x569470-0x56E170 (step 0x268=616 bytes/entry), calls deallocator on each entry, then calls cleanup with 3 global byte values. 108 instructions."
+            }
+        },
+        {
+            "Native": {
+                "name": "LevelCleanupEntities",
+                "address": "00408390",
+                "signature": "void LevelCleanupEntities(int count);",
+                "note": "Iterates entity array at 0x569210-0x56DF10, calls cleanup function fcn.004ce3e0 on each. Called from LevelStart. 44 instructions."
+            }
+        },
+        {
+            "Native": {
+                "name": "WeaponSoundDispatch",
+                "address": "004083C0",
+                "signature": "void WeaponSoundDispatch(short player_id, void* weapon_config, float* pos, float* rot, int sound_type);",
+                "note": "Vtable dispatch for weapon sounds. Reads sound type from global 0x53851a, computes vtable index = type*3*128 + sound_type, calls handler through 0xa96ae0. 94 instructions."
+            }
+        },
+        {
+            "Native": {
+                "name": "PlayerAirborneGateCheck",
+                "address": "00408420",
+                "signature": "void PlayerAirborneGateCheck(void* player);",
+                "note": "Checks if player should enter airborne state. Compares velocity +0x254 vs +0x258, calls PlayerXPHit check, if both pass sets byte +0xcf5=1 and ORs 0x20000 into +0x2f4 flags. Called from PlayerUpdate. 59 instructions."
+            }
+        },
+        {
+            "Native": {
+                "name": "PlayerAnimationFinished",
+                "address": "00408720",
+                "signature": "int PlayerAnimationFinished(void* player);",
+                "note": "Calls fcn.004f23d0 (check animation state), if zero calls fcn.00413c80 and returns signed byte from +0x6dc (animation ID). Returns 1 if animation system busy. 67 instructions."
+            }
+        },
+        {
+            "Native": {
+                "name": "AirborneIntegrate_Revised",
+                "address": "00408460",
+                "signature": "void AirborneIntegrate(void* player);",
+                "note": "REVISED: 694 instructions (not 183). Per-tick airborne physics. Applies gravity 84.741692/tick to +0x66c velocity, reads movement input flags at +0x1b8-0x1c4, adds air control via basis matrix at +0x78-0x94. No damping, no terminal velocity. Checks flag bit 4 at +0x2f4 for airborne gate."
+            }
+        },
+        {
+            "Native": {
+                "name": "PlayerUpdate",
+                "address": "004109A0",
+                "signature": "void PlayerUpdate(void* player, int param);",
+                "note": "MAIN PER-TICK PLAYER UPDATE. 1480 instructions. Calls: AirborneGateCheck(0x408420), camera update(0x460cf0), view update(0x460ee0), check(0x46c060), WeaponState_Update(0x411000), WeaponCycler(0x40f760), WeaponStateMachine(0x4ec1e0) twice, animation state checks, ladder update(0x4113e0), system update(0x411770). This is the biggest player function."
+            }
+        },
+        {
+            "Native": {
+                "name": "PlayerLocomotionSwitch",
+                "address": "0040CD30",
+                "signature": "void PlayerLocomotionSwitch(void* player, int mode, int param);",
+                "note": "13-case movement mode dispatcher (510 instructions). Cases: 1=walk, 2=run, 3=crouch/swim, 4=jump, 5=fall, 6=climb, 7=slide, 8=idle, etc. Calls respective sub-handlers via jump table at 0x40cf30."
+            }
+        },
+        {
+            "Native": {
+                "name": "HeliTask_Register",
+                "address": "004310F0",
+                "signature": "void HeliTask_Register(void);",
+                "note": "Registers 'Heli' task type with QTaskHashTable. 1096 instructions. Registers multiple callback functions: 0x431540 (update), 0x4316d0, 0x431ae0, 0x431b60, 0x432950, 0x432bb0, 0x432be0, 0x432bd0, 0x431b70. Sets task type ID at 0x53be58."
+            }
+        },
+        {
+            "Native": {
+                "name": "VehiclePhysics_Wheels",
+                "address": "00430D10",
+                "signature": "void VehiclePhysics_Wheels(void* vehicle, int wheel_idx, int gear, int mode);",
+                "note": "Per-wheel physics simulation. 983 instructions. Reads physics config from +0x1b4->+0x2d4, applies torque scaled by 0x53367c constant, checks gear state at +0x6d9, reads surface type, applies forces via cross-product calculations. Checks +0x758 for mass, +0x720 for throttle."
+            }
+        },
+        {
+            "Native": {
+                "name": "DoorTask_Register",
+                "address": "004464C0",
+                "signature": "void DoorTask_Register(void);",
+                "note": "Registers 'Door' task type with QTaskHashTable. 1072 instructions. Registers callbacks: 0x4468f0 (update), 0x446d10 (toggle), 0x446ac0, 0x447a80, 0x447830, 0x446b50, 0x447a90, 0x447be0. Sets task type ID at 0x57c1c0."
+            }
+        },
+        {
+            "Native": {
+                "name": "Vehicle_ForceAppend",
+                "address": "004ECF50",
+                "signature": "void Vehicle_ForceAppend(ForceBuffer* buf, Vector3f* force);",
+                "note": "Appends a force vector to the vehicle force buffer. Reads write index from +0x5c, reads buffer base from +0x54, copies 6 floats (24 bytes) from source to buffer entry, increments write index. 39 instructions. Called from heli physics."
+            }
         }
     ]
 }
