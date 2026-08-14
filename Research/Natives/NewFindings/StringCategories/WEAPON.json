@@ -1,0 +1,14 @@
+{
+  "category": "WEAPON",
+  "count": 8,
+  "items": [
+    "WEAPON_ID_BINOCULARS",
+    "WEAPON_ID_DRAGUNOV",
+    "WEAPON_ID_M16A2",
+    "WEAPON_ID_M2HB",
+    "WEAPON_ID_MEDIPACK",
+    "WEAPON_ID_MP5SD",
+    "WEAPON_ID_PROXIMITYMINE",
+    "WEAPON_ID_SPAS12"
+  ]
+}

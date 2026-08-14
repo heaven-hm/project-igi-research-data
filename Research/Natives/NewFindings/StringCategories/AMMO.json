@@ -1,0 +1,8 @@
+{
+  "category": "AMMO",
+  "count": 2,
+  "items": [
+    "AMMO_ID_M203",
+    "AMMO_ID_MEDIPACK"
+  ]
+}

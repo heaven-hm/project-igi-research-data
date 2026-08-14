@@ -1,0 +1,13 @@
+{
+  "category": "HumanAI",
+  "count": 7,
+  "items": [
+    "HumanAI",
+    "HumanAI #%d couldn't find closest node in graph #%d",
+    "HumanAI #%d has AIGraph ID (#%d) but no matching AIGraph was found",
+    "HumanAI #%d has no nodeoccupationiten",
+    "HumanAI - FireAtTask, task id #%d not defined",
+    "HumanAIConfig",
+    "HumanAIConfigItem"
+  ]
+}

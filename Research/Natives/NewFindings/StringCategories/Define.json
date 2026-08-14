@@ -1,0 +1,25 @@
+{
+  "category": "Define",
+  "count": 19,
+  "items": [
+    "DefineAmmoType",
+    "DefineAnimTrigger",
+    "DefineComputerLimit",
+    "DefineComputerObjective",
+    "DefineGameMaterial",
+    "DefineGameOptions",
+    "DefineGraph",
+    "DefineGroup",
+    "DefineHumanPlayerAmmoLimit",
+    "DefineHumanPlayerGeneral",
+    "DefineHumanPlayerWeaponCategory",
+    "DefineHumanPlayerWeaponCycle",
+    "DefineMagicObj",
+    "DefineMission",
+    "DefinePhysicsObjType",
+    "DefineQMaterial",
+    "DefineSound",
+    "DefineTriggerOnce",
+    "DefineWeaponType"
+  ]
+}

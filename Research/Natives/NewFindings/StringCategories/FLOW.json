@@ -1,0 +1,11 @@
+{
+  "category": "FLOW",
+  "count": 5,
+  "items": [
+    "FLOW_EVENT_GAME",
+    "FLOW_EVENT_INTRO",
+    "FLOW_EVENT_MAINMENU",
+    "FLOW_EVENT_QUIT",
+    "FLOW_EVENT_RESTART_GAME"
+  ]
+}

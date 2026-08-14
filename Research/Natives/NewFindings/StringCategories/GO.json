@@ -1,0 +1,22 @@
+{
+  "category": "GO",
+  "count": 16,
+  "items": [
+    "GOActiveMission",
+    "GOContentControlPW",
+    "GOGameDiff",
+    "GOGameLang",
+    "GOGfxDevice",
+    "GOGfxDisp",
+    "GOGfxGamma",
+    "GOGfxPerformance",
+    "GOInMouInv",
+    "GOInMouSens",
+    "GOInRemap",
+    "GOIsBlood",
+    "GOPlayer",
+    "GOSoundFX",
+    "GOSoundMusic",
+    "GOSoundSpeech"
+  ]
+}

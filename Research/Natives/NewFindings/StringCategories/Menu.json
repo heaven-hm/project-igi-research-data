@@ -1,0 +1,25 @@
+{
+  "category": "Menu",
+  "count": 19,
+  "items": [
+    "MenuButton",
+    "MenuFrame",
+    "MenuItem",
+    "MenuItemTask",
+    "MenuItem_Move() called with illegal direction parameter.",
+    "MenuLoader",
+    "MenuManager",
+    "MenuManager_ActivatePopupScreen",
+    "MenuManager_DeactivatePopuScreen",
+    "MenuManager_ForceUpdateWindow",
+    "MenuManager_LeaveMenus",
+    "MenuManager_PopScreen",
+    "MenuManager_PushScreen",
+    "MenuManager_RequestScreen",
+    "MenuManager_SetEnabled",
+    "MenuManager_SetLanguage",
+    "MenuScreen",
+    "MenuText",
+    "MenuWindow"
+  ]
+}

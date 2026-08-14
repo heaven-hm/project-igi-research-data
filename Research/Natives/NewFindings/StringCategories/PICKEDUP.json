@@ -1,0 +1,8 @@
+{
+  "category": "PICKEDUP",
+  "count": 2,
+  "items": [
+    "PICKEDUPAMMO",
+    "PICKEDUPWEAPON%s"
+  ]
+}

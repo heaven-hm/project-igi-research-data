@@ -1,0 +1,9 @@
+{
+  "category": "GOSound",
+  "count": 3,
+  "items": [
+    "GOSoundFX",
+    "GOSoundMusic",
+    "GOSoundSpeech"
+  ]
+}
