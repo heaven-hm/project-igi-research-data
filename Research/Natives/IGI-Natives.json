@@ -1303,6 +1303,862 @@
                 "signature": "void Config_GameOptionsInputSetMouseSensitivity(float sensitivity);",
                 "note": "Sets mouse look sensitivity multiplier."
             }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_CARDOOR",
+                "address": "0053BAC0",
+                "signature": "int TASKTYPE_CARDOOR();",
+                "note": "Task type constant for car doors. Registered via TasktypeSet."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_HELIWHEEL",
+                "address": "0053BAF8",
+                "signature": "int TASKTYPE_HELIWHEEL();",
+                "note": "Task type constant for helicopter wheels."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_HELIDOOR",
+                "address": "0053BB1C",
+                "signature": "int TASKTYPE_HELIDOOR();",
+                "note": "Task type constant for helicopter doors."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_ROCKETPOD",
+                "address": "0053BB40",
+                "signature": "int TASKTYPE_ROCKETPOD();",
+                "note": "Task type constant for rocket pods."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_HITZONE",
+                "address": "0053BB70",
+                "signature": "int TASKTYPE_HITZONE();",
+                "note": "Task type constant for hit zones (damage areas)."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_MISSILE",
+                "address": "0053BC6C",
+                "signature": "int TASKTYPE_MISSILE();",
+                "note": "Task type constant for missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_AFTERBURNER",
+                "address": "0053BD44",
+                "signature": "int TASKTYPE_AFTERBURNER();",
+                "note": "Task type constant for afterburners (plane thrust)."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_ROTOR",
+                "address": "0053BD80",
+                "signature": "int TASKTYPE_ROTOR();",
+                "note": "Task type constant for rotors. Parsed by 0x42D9F0."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_CAR",
+                "address": "0053BE18",
+                "signature": "int TASKTYPE_CAR();",
+                "note": "Task type constant for cars."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_WHEEL",
+                "address": "0053BE3C",
+                "signature": "int TASKTYPE_WHEEL();",
+                "note": "Task type constant for wheels."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_HELI",
+                "address": "0053BEC0",
+                "signature": "int TASKTYPE_HELI();",
+                "note": "Task type constant for helicopters. Registered by HeliTask_Register(0x4310F0)."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_PLANE",
+                "address": "0053BFB4",
+                "signature": "int TASKTYPE_PLANE();",
+                "note": "Task type constant for planes."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_COCKPITSHIELD",
+                "address": "0053BFD4",
+                "signature": "int TASKTYPE_COCKPITSHIELD();",
+                "note": "Task type constant for cockpit shields."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GEAR",
+                "address": "0053BFFC",
+                "signature": "int TASKTYPE_GEAR();",
+                "note": "Task type constant for landing gear."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_HATCH",
+                "address": "0053C00C",
+                "signature": "int TASKTYPE_HATCH();",
+                "note": "Task type constant for hatches."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_RUDDER",
+                "address": "0053C074",
+                "signature": "int TASKTYPE_RUDDER();",
+                "note": "Task type constant for rudders."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_SMOKE",
+                "address": "0053C164",
+                "signature": "int TASKTYPE_SMOKE();",
+                "note": "Task type constant for smoke effects."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNSHOTEFFECT",
+                "address": "0053C1B4",
+                "signature": "int TASKTYPE_GUNSHOTEFFECT();",
+                "note": "Task type constant for gun shot effects (muzzle flash, tracers)."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_ALARMLIGHTREFLECTOR",
+                "address": "0053C26C",
+                "signature": "int TASKTYPE_ALARMLIGHTREFLECTOR();",
+                "note": "Task type constant for alarm light reflectors."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_ALARMLIGHT",
+                "address": "0053C2A0",
+                "signature": "int TASKTYPE_ALARMLIGHT();",
+                "note": "Task type constant for alarm lights."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_EXPLODEMAGICOBJ",
+                "address": "0053C338",
+                "signature": "int TASKTYPE_EXPLODEMAGICOBJ();",
+                "note": "Task type constant for explosive magic objects."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GENERICPHYSICSMAGICOBJ",
+                "address": "0053C470",
+                "signature": "int TASKTYPE_GENERICPHYSICSMAGICOBJ();",
+                "note": "Task type constant for generic physics magic objects."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GENERICPHYSICSOBJ",
+                "address": "0053C4AC",
+                "signature": "int TASKTYPE_GENERICPHYSICSOBJ();",
+                "note": "Task type constant for generic physics objects."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_FENCE",
+                "address": "0053C500",
+                "signature": "int TASKTYPE_FENCE();",
+                "note": "Task type constant for fences."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_LADDER",
+                "address": "0053C528",
+                "signature": "int TASKTYPE_LADDER();",
+                "note": "Task type constant for ladders."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_SCAMERALENSVIEWCONE",
+                "address": "0053C5A0",
+                "signature": "int TASKTYPE_SCAMERALENSVIEWCONE();",
+                "note": "Task type constant for security camera view cones."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_DRAWER",
+                "address": "0053C6BC",
+                "signature": "int TASKTYPE_DRAWER();",
+                "note": "Task type constant for drawers."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_BUILDING",
+                "address": "0053C814",
+                "signature": "int TASKTYPE_BUILDING();",
+                "note": "Task type constant for buildings."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_RADARDISH",
+                "address": "0053C834",
+                "signature": "int TASKTYPE_RADARDISH();",
+                "note": "Task type constant for radar dishes."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GLASS",
+                "address": "0053C868",
+                "signature": "int TASKTYPE_GLASS();",
+                "note": "Task type constant for breakable glass."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_DEATHZONE",
+                "address": "0053F500",
+                "signature": "int TASKTYPE_DEATHZONE();",
+                "note": "Task type constant for death zones (instant kill areas)."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNX2",
+                "address": "0053FE6C",
+                "signature": "int TASKTYPE_GUNX2();",
+                "note": "Task type constant for double guns."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_KNIFESTAB",
+                "address": "0053FE88",
+                "signature": "int TASKTYPE_KNIFESTAB();",
+                "note": "Task type constant for knife stab attacks."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_AISTATIONARYGUN",
+                "address": "0053FEC4",
+                "signature": "int TASKTYPE_AISTATIONARYGUN();",
+                "note": "Task type constant for AI stationary guns/turrets."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_MEDIPACK",
+                "address": "0053FEF0",
+                "signature": "int TASKTYPE_MEDIPACK();",
+                "note": "Task type constant for medipacks (health packs)."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_BINOCULAR",
+                "address": "0053FF58",
+                "signature": "int TASKTYPE_BINOCULAR();",
+                "note": "Task type constant for binoculars."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_CABARREL",
+                "address": "00540300",
+                "signature": "int TASKTYPE_CABARREL();",
+                "note": "Task type constant for ammo barrels."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_CACLIP",
+                "address": "00540314",
+                "signature": "int TASKTYPE_CACLIP();",
+                "note": "Task type constant for ammo clips."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNSPAS12",
+                "address": "00540374",
+                "signature": "int TASKTYPE_GUNSPAS12();",
+                "note": "Task type constant for SPAS-12 shotgun."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNDRAGUNOV",
+                "address": "00540404",
+                "signature": "int TASKTYPE_GUNDRAGUNOV();",
+                "note": "Task type constant for Dragunov sniper rifle."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNM16A2",
+                "address": "00540434",
+                "signature": "int TASKTYPE_GUNM16A2();",
+                "note": "Task type constant for M16A2 assault rifle."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNMP5SD",
+                "address": "005404EC",
+                "signature": "int TASKTYPE_GUNMP5SD();",
+                "note": "Task type constant for MP5SD submachine gun."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_PROXIMITYMINE",
+                "address": "0054053C",
+                "signature": "int TASKTYPE_PROXIMITYMINE();",
+                "note": "Task type constant for proximity mines."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_MINE",
+                "address": "00540618",
+                "signature": "int TASKTYPE_MINE();",
+                "note": "Task type constant for mines."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_M203",
+                "address": "00540654",
+                "signature": "int TASKTYPE_M203();",
+                "note": "Task type constant for M203 grenade launcher."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GRENADE",
+                "address": "005406B0",
+                "signature": "int TASKTYPE_GRENADE();",
+                "note": "Task type constant for grenades."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNMOVINGPART",
+                "address": "00540754",
+                "signature": "int TASKTYPE_GUNMOVINGPART();",
+                "note": "Task type constant for moving gun parts."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNCLIP",
+                "address": "0054076C",
+                "signature": "int TASKTYPE_GUNCLIP();",
+                "note": "Task type constant for gun clips."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNFLAME",
+                "address": "00540780",
+                "signature": "int TASKTYPE_GUNFLAME();",
+                "note": "Task type constant for flame throwers."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUN",
+                "address": "00540800",
+                "signature": "int TASKTYPE_GUN();",
+                "note": "Task type constant for generic guns."
+            }
+        },
+        {
+            "Native": {
+                "name": "TASKTYPE_GUNSHOT",
+                "address": "0054087C",
+                "signature": "int TASKTYPE_GUNSHOT();",
+                "note": "Task type constant for gun shots (projectiles)."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_PROXIMITYMINE",
+                "address": "00538DF4",
+                "signature": "int WEAPON_ID_PROXIMITYMINE();",
+                "note": "Weapon ID constant for proximity mines."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_M16A2",
+                "address": "00538E1C",
+                "signature": "int WEAPON_ID_M16A2();",
+                "note": "Weapon ID constant for M16A2."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_BINOCULARS",
+                "address": "00538E40",
+                "signature": "int WEAPON_ID_BINOCULARS();",
+                "note": "Weapon ID constant for binoculars."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_PROXIMITYMINE",
+                "address": "00539314",
+                "signature": "int WEAPONTYPE_PROXIMITYMINE();",
+                "note": "Weapon type constant for proximity mines."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_MEDIPACK",
+                "address": "00539330",
+                "signature": "int WEAPONTYPE_MEDIPACK();",
+                "note": "Weapon type constant for medipacks."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_BINOCULAR",
+                "address": "00539344",
+                "signature": "int WEAPONTYPE_BINOCULAR();",
+                "note": "Weapon type constant for binoculars."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_GRENADE",
+                "address": "0053935C",
+                "signature": "int WEAPONTYPE_GRENADE();",
+                "note": "Weapon type constant for grenades."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_KNIFE",
+                "address": "00539370",
+                "signature": "int WEAPONTYPE_KNIFE();",
+                "note": "Weapon type constant for knives."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_SHOTGUN",
+                "address": "00539384",
+                "signature": "int WEAPONTYPE_SHOTGUN();",
+                "note": "Weapon type constant for shotguns."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_PISTOL",
+                "address": "00539398",
+                "signature": "int WEAPONTYPE_PISTOL();",
+                "note": "Weapon type constant for pistols."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPONTYPE_GUN",
+                "address": "005393AC",
+                "signature": "int WEAPONTYPE_GUN();",
+                "note": "Weapon type constant for generic guns."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_MEDIPACK",
+                "address": "0053FF10",
+                "signature": "int WEAPON_ID_MEDIPACK();",
+                "note": "Weapon ID constant for medipacks."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_SPAS12",
+                "address": "00540394",
+                "signature": "int WEAPON_ID_SPAS12();",
+                "note": "Weapon ID constant for SPAS-12 shotgun."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_MP5SD",
+                "address": "0054050C",
+                "signature": "int WEAPON_ID_MP5SD();",
+                "note": "Weapon ID constant for MP5SD submachine gun."
+            }
+        },
+        {
+            "Native": {
+                "name": "WEAPON_ID_M2HB",
+                "address": "0054051C",
+                "signature": "int WEAPON_ID_M2HB();",
+                "note": "Weapon ID constant for M2HB heavy machine gun."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMO_ID_M203",
+                "address": "00538E0C",
+                "signature": "int AMMO_ID_M203();",
+                "note": "Ammo type ID for M203 grenades."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMO_ID_MEDIPACK",
+                "address": "00538E2C",
+                "signature": "int AMMO_ID_MEDIPACK();",
+                "note": "Ammo type ID for medipacks (healing items)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_GRENADE",
+                "address": "00539250",
+                "signature": "int AMMODISPLAYTYPE_GRENADE();",
+                "note": "Ammo display type for grenades (thrown weapon icon)."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_SHELL",
+                "address": "00539268",
+                "signature": "int AMMODISPLAYTYPE_SHELL();",
+                "note": "Ammo display type for shotgun shells."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_BARREL",
+                "address": "00539280",
+                "signature": "int AMMODISPLAYTYPE_BARREL();",
+                "note": "Ammo display type for ammo barrels."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_CLIP",
+                "address": "00539298",
+                "signature": "int AMMODISPLAYTYPE_CLIP();",
+                "note": "Ammo display type for gun clips."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_NORMAL",
+                "address": "005392B0",
+                "signature": "int AMMODISPLAYTYPE_NORMAL();",
+                "note": "Ammo display type for normal bullets."
+            }
+        },
+        {
+            "Native": {
+                "name": "AMMODISPLAYTYPE_NONE",
+                "address": "005392C8",
+                "signature": "int AMMODISPLAYTYPE_NONE();",
+                "note": "Ammo display type for no ammo display."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_HIND_HELICOPTER",
+                "address": "0053BB90",
+                "signature": "int MISSILE_TYPE_HIND_HELICOPTER();",
+                "note": "Missile type for HIND helicopter."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_BOMB",
+                "address": "0053BBB0",
+                "signature": "int MISSILE_TYPE_BOMB();",
+                "note": "Missile type for bombs."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_KEYBOARD",
+                "address": "0053BBC4",
+                "signature": "int MISSILE_TYPE_MISSILE_KEYBOARD();",
+                "note": "Missile type for keyboard-controlled missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_ANTITANK",
+                "address": "0053BBE4",
+                "signature": "int MISSILE_TYPE_MISSILE_ANTITANK();",
+                "note": "Missile type for anti-tank missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_BALLISTIC",
+                "address": "0053BC04",
+                "signature": "int MISSILE_TYPE_MISSILE_BALLISTIC();",
+                "note": "Missile type for ballistic missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_TYPE_MISSILE_DIRECT",
+                "address": "0053BC24",
+                "signature": "int MISSILE_TYPE_MISSILE_DIRECT();",
+                "note": "Missile type for direct-fire missiles."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_SMOKE_NORMAL",
+                "address": "0053BC40",
+                "signature": "int MISSILE_SMOKE_NORMAL();",
+                "note": "Missile smoke trail type: normal."
+            }
+        },
+        {
+            "Native": {
+                "name": "MISSILE_SMOKE_NONE",
+                "address": "0053BC58",
+                "signature": "int MISSILE_SMOKE_NONE();",
+                "note": "Missile smoke trail type: none."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_RESTART_GAME",
+                "address": "00536214",
+                "signature": "int FLOW_EVENT_RESTART_GAME();",
+                "note": "Flow event: restart current mission. Registered via Flow_RequestEvent."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_GAME",
+                "address": "0053622C",
+                "signature": "int FLOW_EVENT_GAME();",
+                "note": "Flow event: start game (enter mission)."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_MAINMENU",
+                "address": "0053623C",
+                "signature": "int FLOW_EVENT_MAINMENU();",
+                "note": "Flow event: return to main menu."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_INTRO",
+                "address": "00536250",
+                "signature": "int FLOW_EVENT_INTRO();",
+                "note": "Flow event: play intro sequence."
+            }
+        },
+        {
+            "Native": {
+                "name": "FLOW_EVENT_QUIT",
+                "address": "00536264",
+                "signature": "int FLOW_EVENT_QUIT();",
+                "note": "Flow event: quit game."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOStart",
+                "address": "00533237",
+                "signature": "int GOStart();",
+                "note": "Game option: start game."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOPlayer",
+                "address": "00533240",
+                "signature": "int GOPlayer();",
+                "note": "Game option: player settings."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOInRemap",
+                "address": "0053324C",
+                "signature": "int GOInRemap();",
+                "note": "Game option: input remapping."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOInMouInv",
+                "address": "00533258",
+                "signature": "int GOInMouInv();",
+                "note": "Game option: mouse invert."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOInMouSens",
+                "address": "00533264",
+                "signature": "float GOInMouSens();",
+                "note": "Game option: mouse sensitivity."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxDisp",
+                "address": "00533270",
+                "signature": "int GOGfxDisp();",
+                "note": "Game option: graphics display mode."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxDevice",
+                "address": "0053327C",
+                "signature": "int GOGfxDevice();",
+                "note": "Game option: graphics device selection."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxGamma",
+                "address": "00533288",
+                "signature": "float GOGfxGamma();",
+                "note": "Game option: gamma correction."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGfxPerformance",
+                "address": "00533294",
+                "signature": "int GOGfxPerformance();",
+                "note": "Game option: graphics performance level."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGameLang",
+                "address": "005332A8",
+                "signature": "int GOGameLang();",
+                "note": "Game option: game language."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOGameDiff",
+                "address": "005332B4",
+                "signature": "int GOGameDiff();",
+                "note": "Game option: game difficulty."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOIsBlood",
+                "address": "005332C0",
+                "signature": "int GOIsBlood();",
+                "note": "Game option: blood enabled."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOSoundSpeech",
+                "address": "005332CC",
+                "signature": "float GOSoundSpeech();",
+                "note": "Game option: speech volume."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOSoundMusic",
+                "address": "005332DC",
+                "signature": "float GOSoundMusic();",
+                "note": "Game option: music volume."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOSoundFX",
+                "address": "005332EC",
+                "signature": "float GOSoundFX();",
+                "note": "Game option: sound effects volume."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOActiveMission",
+                "address": "005332F8",
+                "signature": "int GOActiveMission();",
+                "note": "Game option: active mission ID."
+            }
+        },
+        {
+            "Native": {
+                "name": "GOContentControlPW",
+                "address": "00533308",
+                "signature": "char* GOContentControlPW();",
+                "note": "Game option: content control password."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAIConfigItem",
+                "address": "005383DC",
+                "signature": "void HumanAIConfigItem(int* task);",
+                "note": "Human AI config item registration."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAIConfig",
+                "address": "005383F0",
+                "signature": "void HumanAIConfig(int* task);",
+                "note": "Human AI config task type."
+            }
+        },
+        {
+            "Native": {
+                "name": "HumanAI",
+                "address": "0053D404",
+                "signature": "void HumanAI(int* task);",
+                "note": "Human AI base task type."
+            }
         }
     ]
 }
