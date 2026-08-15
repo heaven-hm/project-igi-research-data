@@ -58,27 +58,18 @@ IGI 1 uses a consistent scale of **4096 units = 1 meter**.
 // Applies damage to soldier with zone multiplier and difficulty scaling
 
 void HitHandler_Soldier(SoldierStruct* soldier, DamageInfo* damage) {
-    // Validate hit zone
-    if (damage->zone == 0) {
-        return; // Invalid zone, skip
-    }
-    
     // Get zone multiplier from 17-zone hit table
+    // Zone 0 = head (100x), zone 1 = neck (50x), etc.
     float zone_mult = g_HitZoneTable[damage->zone];
     
     // Get difficulty scaling factor
     float diff_scale = g_DifficultyScale; // 0.75, 1.0, or 1.25
     
-    // Calculate final damage
+    // Calculate final damage with all multipliers
     float final_damage = damage->amount * zone_mult * diff_scale;
     
     // Apply to health (offset 0x254 in soldier struct)
     soldier->health -= final_damage;
-    
-    // Check for headshot (zone 0 = head, proximity 614.4 units)
-    if (damage->zone == 0 && distance < 614.4f) {
-        final_damage *= 100.0f; // Headshot multiplier
-    }
     
     // Clamp health
     if (soldier->health <= 0.0f) {
@@ -86,17 +77,17 @@ void HitHandler_Soldier(SoldierStruct* soldier, DamageInfo* damage) {
         soldier->state = STATE_DEAD;
     }
 }
-```
+```text
 
 ### Health Calculation
 
-```
+```text
 final_damage = base_damage x zone_multiplier x difficulty_scale
 
 Where:
   zone_multiplier = hit_table[zone_id]  (17 zones)
   difficulty_scale = 0.75 | 1.0 | 1.25
-```
+```text
 
 ---
 
@@ -157,17 +148,17 @@ void AirborneIntegrate(PlayerStruct* player) {
     // No damping, no terminal velocity
     // Fall continues accelerating indefinitely
 }
-```
+```text
 
 ### Physics Formula
 
-```
+```text
 velocity.z -= gravity_per_tick
 
 Where:
   gravity_per_tick = 84.741692 (from global 0x5333F0)
   Applied every 30Hz tick
-```
+```text
 
 > **Note:** At 4096 units/meter, gravity = 0.62 m/s. A 1024-unit takeoff reaches apex in ~12 ticks.
 
@@ -243,11 +234,11 @@ void DamageState_Init(SoldierStruct* soldier, DamageState* state) {
     // Head proximity check (614.4 units = 15cm)
     state->head_proximity_units = 614.4f;
 }
-```
+```text
 
 ### Zone Mapping
 
-```
+```text
 Direction Tests:
   zone == 13 -> Front hit (direction refinement)
   zone == 14 -> Rear hit (direction refinement)
@@ -256,7 +247,7 @@ Direction Tests:
 Head Proximity: 614.4 units (15cm radius)
   - Within this range = headshot (100x damage)
   - Outside = neck or torso
-```
+```text
 
 ---
 
@@ -347,7 +338,7 @@ void WeaponState_Update(PlayerStruct* player, float dt) {
         player->recoil = 0.0f;
     }
 }
-```
+```text
 
 ---
 
@@ -429,11 +420,11 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
     
     return DETECTED;
 }
-```
+```text
 
 ### Detection Cascade
 
-```
+```text
 1. Vision Cone Test
    (target within cone)
 2. Distance Check
@@ -445,7 +436,7 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
 5. Hearing Check (independent)
    (sound event)
 6. State Transition (Idle -> Alert -> Combat)
-```
+```text
 
 ---
 
@@ -529,18 +520,18 @@ void HeliPhysics_Update(VehicleStruct* heli, float dt) {
         ForceAppend(heli->force_buffer, &drag_force);
     }
 }
-```
+```text
 
 ### Torque Smoothing Formula
 
-```
+```text
 smoothed_torque = current x smoothing_factor + previous x (1 - smoothing_factor)
 
 Applied to:
   Pitch (X axis)
   Yaw (Y axis)  
   Roll (Z axis)
-```
+```text
 
 ---
 
@@ -609,15 +600,15 @@ void ExplosionDamage_Apply(Vector3D* explosion_pos, float base_damage, float rad
         EntityApplyDamage(entity, damage, zone);
     }
 }
-```
+```text
 
 ### Damage Formula
 
-```
+```text
 distance <= 2048 units (< 0.5m):    damage = base_damage
 2048 < distance < 40960:            damage = base x (1 - (distance - 2048) / 38912)
 distance >= 40960 units (> 10m):   damage = 0
-```
+```text
 
 ---
 
@@ -706,21 +697,21 @@ void LadderClimb_Update(PlayerStruct* player, InputState* input) {
         player->ladder_direction = 0;
     }
 }
-```
+```text
 
 ### State Transitions
 
-```
+```text
 Climbing -> GettingOnTop:  reached top rung
 Climbing -> SlidingDown:   activate pressed
 GettingOnTop -> Climbing:  animation 170 complete
 GettingOffTop -> Inactive:  animation 170 complete
 SlidingDown -> Inactive:   ground contact
-```
+```text
 
 ### Rung System
 
-```
+```text
 Animation 168 events:
   Event 8: Commit rung (nCurrentStep += nStepChange)
   
@@ -730,7 +721,7 @@ Movement only when:
   
 Delta translation:
   Disabled during ladder (isDisableDeltaTranslationScale = true)
-```
+```text
 
 ---
 
