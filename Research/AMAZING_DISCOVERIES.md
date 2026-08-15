@@ -38,7 +38,18 @@ The soldier hit handler manages all damage calculation for AI characters. Health
 | Difficulty Normal | 1.0x | Standard damage |
 | Difficulty Hard | 1.25x | Increased damage |
 | Lethal Multiplier | 100.0 | Instant kill threshold |
-| Head Proximity | 614.4 units | 15cm headshot range |
+| Head Proximity | 614.4 units | Headshot range |
+
+### Unit Scale
+
+IGI 1 uses a consistent scale of **4096 units = 1 meter**.
+
+| Game Value | Real-World Equivalent |
+|------------|----------------------|
+| 614.4 units | 0.15 meters (15 cm) |
+| 2048 units | 0.5 meters (50 cm) |
+| 40960 units | 10 meters |
+| 84.741692 units/tick | 0.62 m/s² at 30 Hz |
 
 ### Decompiled C Code
 
@@ -102,11 +113,18 @@ The airborne integrator applies gravity to the player's vertical velocity every 
 
 | Constant | Value | Description |
 |----------|-------|-------------|
-| Gravity Per Tick | 84.741692 | ~18.6 m/s (nearly 2x Earth) |
+| Gravity Per Tick | 84.741692 | Per-tick velocity reduction |
 | Gravity Source | Global at `0x5333F0` | FPU float constant |
 | Velocity Offset | +0x66C | Player struct offset |
+| Tick Rate | 30 Hz | Physics update frequency |
 | No Damping | None | Falling body accelerates indefinitely |
 | No Terminal Velocity | None | Fall speed unlimited |
+
+### Unit Scale
+
+Gravity in real-world units:
+- 84.741692 units/tick × 30 ticks/s = 2542.25 units/s²
+- At 4096 units/meter: 2542.25 / 4096 = **0.62 m/s²**
 
 ### Decompiled C Code
 
@@ -148,10 +166,10 @@ velocity.z -= gravity_per_tick
 
 Where:
   gravity_per_tick = 84.741692 (from global 0x5333F0)
-  Applied every 30Hz tick (delta_t = 1/30)
+  Applied every 30Hz tick
 ```
 
-> **Note:** This is why IGI 1 jumps feel "heavy" - the gravity is nearly twice Earth's gravity (9.8 m/s vs 18.6 m/s). A 1024-unit takeoff reaches apex in just 12 ticks.
+> **Note:** At 4096 units/meter, gravity = 0.62 m/s. A 1024-unit takeoff reaches apex in ~12 ticks.
 
 ---
 
@@ -539,11 +557,15 @@ Explosion damage with linear falloff from `FullDamageRange` to `MaxDamageRange`.
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| Full Damage Range | 2048 units | 20 meters |
-| Max Damage Range | 40960 units | 40 meters |
+| Full Damage Range | 2048 units | 0.5 meters |
+| Max Damage Range | 40960 units | 10 meters |
 | Falloff Type | Linear | Linear reduction |
 | Hardcoded Zone | 13 | Front direction |
 | Body Radius Scale | 0.33333334 | Collision radius |
+
+### Unit Scale
+
+All distances use **4096 units = 1 meter**.
 
 ### Decompiled C Code
 
@@ -592,9 +614,9 @@ void ExplosionDamage_Apply(Vector3D* explosion_pos, float base_damage, float rad
 ### Damage Formula
 
 ```
-distance <= 2048:    damage = base_damage
-2048 < distance < 40960:  damage = base x (1 - (distance - 2048) / 38912)
-distance >= 40960:   damage = 0
+distance <= 2048 units (< 0.5m):    damage = base_damage
+2048 < distance < 40960:            damage = base x (1 - (distance - 2048) / 38912)
+distance >= 40960 units (> 10m):   damage = 0
 ```
 
 ---
@@ -717,12 +739,24 @@ Delta translation:
 | Address | Constant | Value | Usage |
 |---------|----------|-------|-------|
 | 0x5333EC | DAT_ZERO | 0.0 | Float zero |
-| 0x5333F0 | GRAVITY | 84.741692 | Airborne gravity |
-| 0x533470 | LADDER_DRAG | 0.99 | Slide damping |
-| 0x53346C | LADDER_GRAVITY | 44.600887 | Slide gravity |
-| 0x533588 | GROUND_THRESHOLD | 0.0 | Ground check |
-| 0x533758 | THROTTLE_THRESHOLD | 0.5 | Vehicle throttle |
+| 0x5333F0 | GRAVITY_PER_TICK | 84.741692 | Airborne gravity per tick |
+| 0x533470 | LADDER_DRAG | 0.99 | Ladder slide damping |
+| 0x53346C | LADDER_GRAVITY | 44.600887 | Ladder slide gravity |
+| 0x533588 | GROUND_THRESHOLD | 0.0 | Ground contact check |
+| 0x533758 | THROTTLE_THRESHOLD | 0.5 | Vehicle throttle threshold |
 | 0x56E1F4 | GRAVITY_DELTA | 84.741692 | Airborne gravity delta |
+
+### Unit Scale Reference
+
+All values use the standard IGI 1 scale: **4096 units = 1 meter**
+
+| Measurement | Game Value | Real-World |
+|-------------|------------|------------|
+| Head proximity | 614.4 units | 0.15 m (15 cm) |
+| Full damage range | 2048 units | 0.5 m (50 cm) |
+| Max damage range | 40960 units | 10 m |
+| Gravity per tick | 84.741692 | 0.62 m/s at 30 Hz |
+| Ladder gravity | 44.600887 | 0.33 m/s at 30 Hz |
 
 ---
 
