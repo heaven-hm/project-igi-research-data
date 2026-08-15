@@ -399,6 +399,14 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
         detection_rate = ai->view_gamma;     // Normal rate
     }
     
+    // Calculate distance
+    float distance = sqrt(dir.x * dir.x + dir.y * dir.y + dir.z * dir.z);
+    
+    // Handle coincident positions (target at AI eye position)
+    if (distance < 0.001f) {
+        return DETECTED; // Target is on top of AI
+    }
+    
     // Check distance
     if (distance > length) {
         return NOT_DETECTED;
@@ -406,7 +414,7 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
     
     // Check angle (cosine of half-angle)
     float cos_angle = local_z / distance; // Forward component
-    if (cos_angle < cos(half_angle)) {
+    if (cos_angle < cosf(half_angle)) {
         return NOT_DETECTED; // Outside cone
     }
     
@@ -653,7 +661,7 @@ void LadderClimb_Update(PlayerStruct* player, InputState* input) {
     }
     
     // Direction input (only when paused at rung event)
-    if (player->ladler_at_boundary) {
+    if (player->ladder_at_boundary) {
         if (input->move_up) {
             // Check if reached top rung
             if (player->ladder_step == player->ladder_top_step) {
