@@ -1,0 +1,570 @@
+{
+  "AI-Models": [
+    {
+      "ModelName": "ANYA",
+      "ModelId": "015_01_1"
+    },
+    {
+      "ModelName": "EKK",
+      "ModelId": "012_01_1"
+    },
+    {
+      "ModelName": "FRIENDLY",
+      "ModelId": "020_01_1"
+    },
+    {
+      "ModelName": "GUARD_AK",
+      "ModelId": "004_01_1"
+    },
+    {
+      "ModelName": "GUARD_AK",
+      "ModelId": "006_01_1"
+    },
+    {
+      "ModelName": "GUNNER",
+      "ModelId": "011_02_1"
+    },
+    {
+      "ModelName": "GUNNER",
+      "ModelId": "011_03_1"
+    },
+    {
+      "ModelName": "JACH_PRIBOI",
+      "ModelId": "009_01_1"
+    },
+    {
+      "ModelName": "JOSIP_PRIBOI",
+      "ModelId": "009_02_1"
+    },
+    {
+      "ModelName": "MAFIA2_PATROL_AK",
+      "ModelId": "014_02_1"
+    },
+    {
+      "ModelName": "MAFIA_PATROL_AK",
+      "ModelId": "014_01_1"
+    },
+    {
+      "ModelName": "PATROL_AK",
+      "ModelId": "003_01_1"
+    },
+    {
+      "ModelName": "PATROL_AK",
+      "ModelId": "003_02_1"
+    },
+    {
+      "ModelName": "RPG",
+      "ModelId": "013_01_1"
+    },
+    {
+      "ModelName": "SECURITY_PATROL_SPAS",
+      "ModelId": "019_01_1"
+    },
+    {
+      "ModelName": "SNIPER",
+      "ModelId": "001_01_1"
+    },
+    {
+      "ModelName": "SNIPER",
+      "ModelId": "001_02_1"
+    },
+    {
+      "ModelName": "SOLDIER_AK",
+      "ModelId": "008_01_1"
+    },
+    {
+      "ModelName": "SPETNAZ_GUARD_AK",
+      "ModelId": "018_01_1"
+    },
+    {
+      "ModelName": "CIVILIAN_GUY1",
+      "ModelId": "011_01_1"
+    },
+    {
+      "ModelName": "GUARD_WAREHOUSE",
+      "ModelId": "004_02_1"
+    },
+    {
+      "ModelName": "HARRISON",
+      "ModelId": "021_01_1"
+    },
+    {
+      "ModelName": "HARRISON",
+      "ModelId": "022_01_1"
+    },
+    {
+      "ModelName": "JONES",
+      "ModelId": "000_01_1"
+    },
+    {
+      "ModelName": "GENERAL",
+      "ModelId": "016_01_1"
+    }
+  ],
+  "AIEvents": [
+    {
+      "AIEvent": "AIEVENT_ALARMOFF",
+      "AIEvenDesc": "The AI has turned off its alarm."
+    },
+    {
+      "AIEvent": "AIEVENT_ALARMON",
+      "AIEvenDesc": "The AI has turned on its alarm."
+    },
+    {
+      "AIEvent": "AIEVENT_ALERT",
+      "AIEvenDesc": "The AI has been alerted to something."
+    },
+    {
+      "AIEvent": "AIEVENT_ALERT_RESPONSE",
+      "AIEvenDesc": "The AI is responding to an alert."
+    },
+    {
+      "AIEvent": "AIEVENT_ANIMATION",
+      "AIEvenDesc": "The AI is playing an animation."
+    },
+    {
+      "AIEvent": "AIEVENT_COMBAT",
+      "AIEvenDesc": "The AI is in combat."
+    },
+    {
+      "AIEvent": "AIEVENT_CREATE",
+      "AIEvenDesc": "The AI has been created."
+    },
+    {
+      "AIEvent": "AIEVENT_DEAD",
+      "AIEvenDesc": "The AI has died."
+    },
+    {
+      "AIEvent": "AIEVENT_DELETE",
+      "AIEvenDesc": "The AI has been deleted."
+    },
+    {
+      "AIEvent": "AIEVENT_DOOR",
+      "AIEvenDesc": "The AI has interacted with a door."
+    },
+    {
+      "AIEvent": "AIEVENT_ENEMYDETECTION",
+      "AIEvenDesc": "The AI has detected an enemy."
+    },
+    {
+      "AIEvent": "AIEVENT_EXPLOSION",
+      "AIEvenDesc": "The AI has detected an explosion."
+    },
+    {
+      "AIEvent": "AIEVENT_FENCE",
+      "AIEvenDesc": "The AI has interacted with a fence."
+    },
+    {
+      "AIEvent": "AIEVENT_FLASHBANG",
+      "AIEvenDesc": "The AI has been flashed by a flashbang."
+    },
+    {
+      "AIEvent": "AIEVENT_FRIENDLYDETECTION",
+      "AIEvenDesc": "The AI has detected a friendly unit."
+    },
+    {
+      "AIEvent": "AIEVENT_GRENADELAND",
+      "AIEvenDesc": "The AI has detected a grenade landing."
+    },
+    {
+      "AIEvent": "AIEVENT_GRENADETHROWN",
+      "AIEvenDesc": "The AI has thrown a grenade."
+    },
+    {
+      "AIEvent": "AIEVENT_GROUNDIMPACT",
+      "AIEvenDesc": "The AI has detected a ground impact."
+    },
+    {
+      "AIEvent": "AIEVENT_GUNSHOT",
+      "AIEvenDesc": "The AI has heard a gunshot."
+    },
+    {
+      "AIEvent": "AIEVENT_GUNSHOTMISS",
+      "AIEvenDesc": "The AI has heard a gunshot that missed it."
+    },
+    {
+      "AIEvent": "AIEVENT_IDLE",
+      "AIEvenDesc": "The AI is idling."
+    },
+    {
+      "AIEvent": "AIEVENT_LADDER",
+      "AIEvenDesc": "The AI has interacted with a ladder."
+    },
+    {
+      "AIEvent": "AIEVENT_TAKINGDAMAGE",
+      "AIEvenDesc": "The AI is taking damage."
+    },
+    {
+      "AIEvent": "AIEVENT_WALK",
+      "AIEvenDesc": "The AI is walking."
+    }
+  ],
+  "AIFUNCTIONS": [
+    {
+      "FunctionName": "AIFunction_SendResponse",
+      "FunctionDesc": "Sends a response to an event."
+    },
+    {
+      "FunctionName": "AIFunction_GetAnimationToPlay",
+      "FunctionDesc": "Gets the animation to play for an event."
+    },
+    {
+      "FunctionName": "AIFunction_AddAnimationEntry",
+      "FunctionDesc": "Adds an animation entry to the animation queue."
+    },
+    {
+      "FunctionName": "AIFunction_SetAnimationInterval",
+      "FunctionDesc": "Sets the animation interval."
+    },
+    {
+      "FunctionName": "AIFunction_GetAlarmTriggerDistance",
+      "FunctionDesc": "Gets the alarm trigger distance."
+    },
+    {
+      "FunctionName": "AIFunction_GetEventDistance",
+      "FunctionDesc": "Gets the event distance."
+    },
+    {
+      "FunctionName": "AIFunction_GetRandomValue",
+      "FunctionDesc": "Gets a random value."
+    },
+    {
+      "FunctionName": "AIFunction_GetScriptRealValue",
+      "FunctionDesc": "Gets a script real value."
+    },
+    {
+      "FunctionName": "AIFunction_IsEventBehind",
+      "FunctionDesc": "Checks if an event is behind the current event."
+    },
+    {
+      "FunctionName": "AIFunction_GetCurrentEventType",
+      "FunctionDesc": "Gets the current event type."
+    },
+    {
+      "FunctionName": "AIFunction_GetScriptIntegerValue",
+      "FunctionDesc": "Gets a script integer value."
+    },
+    {
+      "FunctionName": "AIFunction_GetGunnerStatus",
+      "FunctionDesc": "Gets the gunner status."
+    },
+    {
+      "FunctionName": "AIFunction_GetAlarmControlStatus",
+      "FunctionDesc": "Gets the alarm control status."
+    },
+    {
+      "FunctionName": "AIFunction_GetGunnerID",
+      "FunctionDesc": "Gets the gunner ID."
+    },
+    {
+      "FunctionName": "AIFunction_GetAlarmAccess",
+      "FunctionDesc": "Gets the alarm access."
+    },
+    {
+      "FunctionName": "AIFunction_GetAlarmControlID",
+      "FunctionDesc": "Gets the alarm control ID."
+    },
+    {
+      "FunctionName": "AIFunction_GetAlarmTriggerID",
+      "FunctionDesc": "Gets the alarm trigger ID."
+    },
+    {
+      "FunctionName": "AIFunction_SetScriptRealValue",
+      "FunctionDesc": "Sets a script real value."
+    },
+    {
+      "FunctionName": "AIFunction_SetScriptIntegerValue",
+      "FunctionDesc": "Sets a script integer value."
+    },
+    {
+      "FunctionName": "AIFunction_SetGunnerID",
+      "FunctionDesc": "Sets the gunner ID."
+    },
+    {
+      "FunctionName": "AIFunction_SetAlarmAccess",
+      "FunctionDesc": "Sets the alarm access."
+    },
+    {
+      "FunctionName": "AIFunction_SetAlarmControlID",
+      "FunctionDesc": "Sets the alarm control ID."
+    },
+    {
+      "FunctionName": "AIFunction_SetAlarmTriggerID",
+      "FunctionDesc": "Sets the alarm trigger ID."
+    },
+    {
+      "FunctionName": "AIFunction_SetDeathAnimation",
+      "FunctionDesc": "Sets the death animation."
+    },
+    {
+      "FunctionName": "AIFunction_SetInstantDeath",
+      "FunctionDesc": "Sets the instant death."
+    },
+    {
+      "FunctionName": "AIFunction_SetInvulnerability",
+      "FunctionDesc": "Sets the invulnerability."
+    },
+    {
+      "FunctionName": "AIFunction_SetEventPriority",
+      "FunctionDesc": "Sets the event priority."
+    },
+    {
+      "FunctionName": "AIFunction_SetSecondaryViewGamma",
+      "FunctionDesc": "Sets the secondary view gamma."
+    },
+    {
+      "FunctionName": "AIFunction_SetSecondaryViewAlpha",
+      "FunctionDesc": "Sets the secondary view alpha."
+    },
+    {
+      "FunctionName": "AIFunction_SetSecondaryAlarmViewLength",
+      "FunctionDesc": "Sets the secondary alarm view length."
+    },
+    {
+      "FunctionName": "AIFunction_SetSecondaryViewLength",
+      "FunctionDesc": "Sets the secondary view length."
+    },
+    {
+      "FunctionName": "AIFunction_SetViewGamma",
+      "FunctionDesc": "Sets the view gamma."
+    },
+    {
+      "FunctionName": "AIFunction_SetViewAlpha",
+      "FunctionDesc": "Sets the view alpha."
+    },
+    {
+      "FunctionName": "AIFunction_SetAlarmViewLength",
+      "FunctionDesc": "Sets the alarm view length."
+    },
+    {
+      "FunctionName": "AIFunction_SetViewLength",
+      "FunctionDesc": "Sets the view length."
+    },
+    {
+      "FunctionName": "AIFunction_RemoveAlarmActions",
+      "FunctionDesc": "Removes all alarm actions."
+    },
+    {
+      "FunctionName": "AIFunction_DefaultHandler",
+      "FunctionDesc": "The default handler for AI functions."
+    }
+  ],
+  "AITYPES": {
+    "AITYPE_MAFIA": {
+      "childs": [
+        "AITYPE_MAFIA_GUARD_AK",
+        "AITYPE_MAFIA_GUARD_SPAS",
+        "AITYPE_MAFIA_GUARD_UZI",
+        "AITYPE_MAFIA_PATROL_AK",
+        "AITYPE_MAFIA_PATROL_SPAS",
+        "AITYPE_MAFIA_PATROL_UZI"
+      ]
+    },
+    "AITYPE_GUARD": {
+      "childs": [
+        "AITYPE_GUARD_AK",
+        "AITYPE_GUARD_PISTOL",
+        "AITYPE_GUARD_SPAS",
+        "AITYPE_GUARD_UZI"
+      ]
+    },
+    "AITYPE_PATROL": {
+      "childs": [
+        "AITYPE_PATROL_AK",
+        "AITYPE_PATROL_PISTOL",
+        "AITYPE_PATROL_SPAS",
+        "AITYPE_PATROL_UZI"
+      ]
+    },
+    "AITYPE_SECURITY_PATROL": {
+      "childs": [
+        "AITYPE_SECURITY_PATROL_SPAS",
+        "AITYPE_SECURITY_PATROL_UZI"
+      ]
+    },
+    "AITYPE_SPETNAZ_GUARD": {
+      "childs": [
+        "AITYPE_SPETNAZ_GUARD_AK",
+        "AITYPE_SPETNAZ_GUARD_SPAS",
+        "AITYPE_SPETNAZ_GUARD_UZI"
+      ]
+    },
+    "AITYPE_SPETNAZ_PATROL": {
+      "childs": [
+        "AITYPE_SPETNAZ_PATROL_AK",
+        "AITYPE_SPETNAZ_PATROL_SPAS",
+        "AITYPE_SPETNAZ_PATROL_UZI"
+      ]
+    },
+    "AITYPE_OTHERS": {
+      "childs": [
+        "AITYPE_ANYA",
+        "AITYPE_CIVILIAN",
+        "AITYPE_EKK",
+        "AITYPE_GUNNER",
+        "AITYPE_PRIBOI",
+        "AITYPE_RPG",
+        "AITYPE_SNIPER"
+      ]
+    }
+  },
+  "IGI-SFX": [
+    {
+      "name": "Ambience",
+      "children": [
+        "m1_ambience",
+        "m13_ambience",
+        "m14_ambience",
+        "m11_ambience",
+        "m2_ambience",
+        "m3_ambience",
+        "m4_ambience",
+        "m5_ambience",
+        "m6_ambience",
+        "m7_ambience",
+        "m8_ambience",
+        "m9_ambience"
+      ]
+    },
+    {
+      "name": "Animal",
+      "children": [
+        "bird_01",
+        "bird_02",
+        "bird_03",
+        "dog_01",
+        "dog_01_cut",
+        "dog_02",
+        "dog_02_cut"
+      ]
+    },
+    {
+      "name": "Car",
+      "children": [
+        "car_01",
+        "car_1"
+      ]
+    },
+    {
+      "name": "Clothing",
+      "children": [
+        "bul_textile_1"
+      ]
+    },
+    {
+      "name": "Concrete",
+      "children": [
+        "bul_concrete_1",
+        "bul_concrete_2"
+      ]
+    },
+    {
+      "name": "Dirt",
+      "children": [
+        "bul_dirt_1",
+        "bul_dirt_2"
+      ]
+    },
+    {
+      "name": "Door",
+      "children": [
+        "door_close_1",
+        "door_move_1",
+        "door_open_1",
+        "door_slide_1"
+      ]
+    },
+    {
+      "name": "Electricity",
+      "children": [
+        "electricity_2"
+      ]
+    },
+    {
+      "name": "Flesh",
+      "children": [
+        "bul_flesh_1",
+        "bul_flesh_2",
+        "bul_flesh_3",
+        "bul_flesh_4",
+        "bul_flesh_5"
+      ]
+    },
+    {
+      "name": "Glass",
+      "children": [
+        "bul_glass_1",
+        "bul_glass_2",
+        "bul_glass_3",
+        "bul_glass_4"
+      ]
+    },
+    {
+      "name": "Gun",
+      "children": [
+        "ak47_SFX",
+        "colt_shot_1",
+        "glock_reload_1",
+        "glock_reload_2",
+        "glock_reload_3",
+        "glock_shot_1",
+        "glock_shot_2",
+        "jackh_loop",
+        "jackh_loop_e",
+        "jackh_reload_1",
+        "jackh_reload_2",
+        "jackh_reload_3",
+        "jackh_reload_4",
+        "m16_g_reload_1",
+        "m16_loop",
+        "m16_loop_e",
+        "m16_reload_1",
+        "m16_reload_2",
+        "m16_reload_3",
+        "m203_launch_1",
+        "m2hb_loop"
+      ]
+    },
+    {
+      "name": "Nature",
+      "children": [
+        "tree_01",
+        "tree_02",
+        "tree_03"
+      ]
+    },
+    {
+      "name": "Person",
+      "children": [
+        "man_01",
+        "man_02",
+        "woman_01",
+        "woman_02"
+      ]
+    },
+    {
+      "name": "Plastic",
+      "children": [
+        "bul_plastic_1",
+        "bul_plastic_2",
+        "bul_plastic_3"
+      ]
+    },
+    {
+      "name": "Rock",
+      "children": [
+        "bul_rock_1",
+        "bul_rock_2",
+        "bul_rock_3"
+      ]
+    },
+    {
+      "name": "Wood",
+      "children": [
+        "bul_wood_1",
+        "bul_wood_2",
+        "bul_wood_3"
+      ]
+    }
+  ]
+}

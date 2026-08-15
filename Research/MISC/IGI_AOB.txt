@@ -1,5 +1,0 @@
-Game loaded : 25 73 2F 6F 62 6A 65 63 74 73 2E //Level Load Path
-Player Loaded : 00 00 80 3F 3A CD 13 3F 00 00 00 00 AA 43 //Human FOV.
-Player Loaded : 1E 00 00 00 24 BA B3 04 //Game Frames FPS
-Game Running : 02 00 00 00 00 00 00 00 58 53 68 //Menu Manager
-Game Paused : 00 00 00 00 ?? ?? ?? 00 7D 00 00 00 ?? 00 00 00 00 00 00 00 00 00 00 00 7C FE 9A 04 02 00 00 00 //QStrip For MenuManager.

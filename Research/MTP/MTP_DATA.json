@@ -1,0 +1,102 @@
+{
+  "Materials": {
+    "materials": [
+      {
+        "MaterialName": "Air",
+        "MaterialId": 0
+      },
+      {
+        "MaterialName": "Ground",
+        "MaterialId": 1
+      },
+      {
+        "MaterialName": "Water",
+        "MaterialId": 2
+      },
+      {
+        "MaterialName": "Wood",
+        "MaterialId": 3
+      },
+      {
+        "MaterialName": "Carton",
+        "MaterialId": 4
+      },
+      {
+        "MaterialName": "StrongMetal",
+        "MaterialId": 5
+      },
+      {
+        "MaterialName": "NormalMetal",
+        "MaterialId": 6
+      },
+      {
+        "MaterialName": "SoftMetal",
+        "MaterialId": 7
+      },
+      {
+        "MaterialName": "Flesh",
+        "MaterialId": 8
+      },
+      {
+        "MaterialName": "BloodyFlesh",
+        "MaterialId": 9
+      },
+      {
+        "MaterialName": "Textiles",
+        "MaterialId": 10
+      },
+      {
+        "MaterialName": "Concrete",
+        "MaterialId": 11
+      },
+      {
+        "MaterialName": "Runway",
+        "MaterialId": 12
+      },
+      {
+        "MaterialName": "Rug",
+        "MaterialId": 13
+      },
+      {
+        "MaterialName": "Glass",
+        "MaterialId": 14
+      },
+      {
+        "MaterialName": "Plastic",
+        "MaterialId": 15
+      },
+      {
+        "MaterialName": "Porcelain",
+        "MaterialId": 16
+      },
+      {
+        "MaterialName": "Rubber",
+        "MaterialId": 17
+      },
+      {
+        "MaterialName": "Fence",
+        "MaterialId": 18
+      },
+      {
+        "MaterialName": "Gravel",
+        "MaterialId": 19
+      },
+      {
+        "MaterialName": "Snow",
+        "MaterialId": 20
+      },
+      {
+        "MaterialName": "HumanCollision",
+        "MaterialId": 21
+      },
+      {
+        "MaterialName": "MetalLadder",
+        "MaterialId": 22
+      },
+      {
+        "MaterialName": "MetalFence",
+        "MaterialId": 23
+      }
+    ]
+  }
+}
