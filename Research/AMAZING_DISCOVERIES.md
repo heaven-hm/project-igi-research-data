@@ -53,6 +53,7 @@ IGI 1 uses a consistent scale of **4096 units = 1 meter**.
 
 ### Decompiled C Code
 
+
 ```c
 // Soldier Hit Handler - 0x45D3C0
 // Applies damage to soldier with zone multiplier and difficulty scaling
@@ -77,9 +78,13 @@ void HitHandler_Soldier(SoldierStruct* soldier, DamageInfo* damage) {
         soldier->state = STATE_DEAD;
     }
 }
+
 ```text
 
+
+
 ### Health Calculation
+
 
 ```text
 final_damage = base_damage x zone_multiplier x difficulty_scale
@@ -87,6 +92,7 @@ final_damage = base_damage x zone_multiplier x difficulty_scale
 Where:
   zone_multiplier = hit_table[zone_id]  (17 zones)
   difficulty_scale = 0.75 | 1.0 | 1.25
+
 ```text
 
 ---
@@ -119,6 +125,7 @@ Gravity in real-world units:
 
 ### Decompiled C Code
 
+
 ```c
 // Airborne Integrator - 0x408460
 // Applies gravity to player velocity every tick (30Hz)
@@ -148,9 +155,13 @@ void AirborneIntegrate(PlayerStruct* player) {
     // No damping, no terminal velocity
     // Fall continues accelerating indefinitely
 }
+
 ```text
 
+
+
 ### Physics Formula
+
 
 ```text
 velocity.z -= gravity_per_tick
@@ -158,6 +169,7 @@ velocity.z -= gravity_per_tick
 Where:
   gravity_per_tick = 84.741692 (from global 0x5333F0)
   Applied every 30Hz tick
+
 ```text
 
 > **Note:** At 4096 units/meter, gravity = 0.62 m/s. A 1024-unit takeoff reaches apex in ~12 ticks.
@@ -197,6 +209,7 @@ The damage state initializer copies the 17-zone hit multiplier table into the so
 
 ### Decompiled C Code
 
+
 ```c
 // Damage State Initializer - 0x489C30
 // Copies 17-zone hit table into soldier damage state
@@ -234,9 +247,13 @@ void DamageState_Init(SoldierStruct* soldier, DamageState* state) {
     // Head proximity check (614.4 units = 15cm)
     state->head_proximity_units = 614.4f;
 }
+
 ```text
 
+
+
 ### Zone Mapping
+
 
 ```text
 Direction Tests:
@@ -247,6 +264,7 @@ Direction Tests:
 Head Proximity: 614.4 units (15cm radius)
   - Within this range = headshot (100x damage)
   - Outside = neck or torso
+
 ```text
 
 ---
@@ -277,6 +295,7 @@ The main weapon state machine handles all weapon states: Ready, Firing, Striking
 | 10 | MapComputer | Overlay active |
 
 ### Decompiled C Code
+
 
 ```c
 // Weapon State Machine - 0x411000
@@ -338,6 +357,7 @@ void WeaponState_Update(PlayerStruct* player, float dt) {
         player->recoil = 0.0f;
     }
 }
+
 ```text
 
 ---
@@ -363,6 +383,7 @@ The AI view cone test checks if a target is within the AI's field of view. Uses 
 | Sight Obstruction Tolerance | 0.79 | Same | Raycast threshold |
 
 ### Decompiled C Code
+
 
 ```c
 // AI View Cone Test - 0x4502F0
@@ -428,9 +449,13 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
     
     return DETECTED;
 }
+
 ```text
 
+
+
 ### Detection Cascade
+
 
 ```text
 1. Vision Cone Test
@@ -444,6 +469,7 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
 5. Hearing Check (independent)
    (sound event)
 6. State Transition (Idle -> Alert -> Combat)
+
 ```text
 
 ---
@@ -469,6 +495,7 @@ Full helicopter physics simulation including torque smoothing, collective pitch,
 | Ground Contact Threshold | 0x533588 | Altitude check |
 
 ### Decompiled C Code
+
 
 ```c
 // Vehicle Heli Physics - 0x431E30
@@ -528,9 +555,13 @@ void HeliPhysics_Update(VehicleStruct* heli, float dt) {
         ForceAppend(heli->force_buffer, &drag_force);
     }
 }
+
 ```text
 
+
+
 ### Torque Smoothing Formula
+
 
 ```text
 smoothed_torque = current x smoothing_factor + previous x (1 - smoothing_factor)
@@ -539,6 +570,7 @@ Applied to:
   Pitch (X axis)
   Yaw (Y axis)  
   Roll (Z axis)
+
 ```text
 
 ---
@@ -567,6 +599,7 @@ Explosion damage with linear falloff from `FullDamageRange` to `MaxDamageRange`.
 All distances use **4096 units = 1 meter**.
 
 ### Decompiled C Code
+
 
 ```c
 // Explosion Damage - 0x416C90
@@ -608,14 +641,19 @@ void ExplosionDamage_Apply(Vector3D* explosion_pos, float base_damage, float rad
         EntityApplyDamage(entity, damage, zone);
     }
 }
+
 ```text
 
+
+
 ### Damage Formula
+
 
 ```text
 distance <= 2048 units (< 0.5m):    damage = base_damage
 2048 < distance < 40960:            damage = base x (1 - (distance - 2048) / 38912)
 distance >= 40960 units (> 10m):   damage = 0
+
 ```text
 
 ---
@@ -639,6 +677,7 @@ Four-state ladder climbing system: Climbing (37), GettingOnTop (38), GettingOffT
 | 40 | SlidingDown | 169 | Gravity slide |
 
 ### Decompiled C Code
+
 
 ```c
 // Ladder Climb State Machine - 0x40D6B0
@@ -705,9 +744,13 @@ void LadderClimb_Update(PlayerStruct* player, InputState* input) {
         player->ladder_direction = 0;
     }
 }
+
 ```text
 
+
+
 ### State Transitions
+
 
 ```text
 Climbing -> GettingOnTop:  reached top rung
@@ -715,9 +758,13 @@ Climbing -> SlidingDown:   activate pressed
 GettingOnTop -> Climbing:  animation 170 complete
 GettingOffTop -> Inactive:  animation 170 complete
 SlidingDown -> Inactive:   ground contact
+
 ```text
 
+
+
 ### Rung System
+
 
 ```text
 Animation 168 events:
@@ -729,6 +776,7 @@ Movement only when:
   
 Delta translation:
   Disabled during ladder (isDisableDeltaTranslationScale = true)
+
 ```text
 
 ---
