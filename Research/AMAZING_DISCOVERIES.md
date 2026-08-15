@@ -7,16 +7,16 @@
 
 ## Table of Contents
 
-| # | Discovery | Address | Category |
-|---|-----------|---------|----------|
-| 1 | Health System (1.0 - 3.0 Scale) | `0x45D3C0` | Health |
-| 2 | Airborne Physics (Gravity Integration) | `0x408460` | Physics |
-| 3 | 17-Zone Hit Table | `0x489C30` | Combat |
-| 4 | Weapon State Machine | `0x411000` | Weapons |
-| 5 | AI View Cone Detection | `0x4502F0` | AI |
-| 6 | Vehicle Heli Physics | `0x431E30` | Vehicles |
-| 7 | Damage Falloff & Explosion | `0x416C90` | Explosions |
-| 8 | Ladder Climb State Machine | `0x40D6B0` | Interactions |
+| # | Discovery                              | Address    | Category     |
+| - | -------------------------------------- | ---------- | ------------ |
+| 1 | Health System (1.0 - 3.0 Scale)        | `0x45D3C0` | Health       |
+| 2 | Airborne Physics (Gravity Integration) | `0x408460` | Physics      |
+| 3 | 17-Zone Hit Table                      | `0x489C30` | Combat       |
+| 4 | Weapon State Machine                   | `0x411000` | Weapons      |
+| 5 | AI View Cone Detection                 | `0x4502F0` | AI           |
+| 6 | Vehicle Heli Physics                   | `0x431E30` | Vehicles     |
+| 7 | Damage Falloff & Explosion             | `0x416C90` | Explosions   |
+| 8 | Ladder Climb State Machine             | `0x40D6B0` | Interactions |
 
 ---
 
@@ -31,25 +31,25 @@ The soldier hit handler manages all damage calculation for AI characters. Health
 
 ### Key Findings
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Health Range | 1.0 - 0.0 | Full to dead |
-| Difficulty Easy | 0.75x | Damage multiplier |
-| Difficulty Normal | 1.0x | Standard damage |
-| Difficulty Hard | 1.25x | Increased damage |
-| Lethal Multiplier | 100.0 | Instant kill threshold |
-| Head Proximity | 614.4 units | Headshot range |
+| Parameter         | Value       | Description            |
+| ----------------- | ----------- | ---------------------- |
+| Health Range      | 1.0 - 0.0   | Full to dead           |
+| Difficulty Easy   | 0.75x       | Damage multiplier      |
+| Difficulty Normal | 1.0x        | Standard damage        |
+| Difficulty Hard   | 1.25x       | Increased damage       |
+| Lethal Multiplier | 100.0       | Instant kill threshold |
+| Head Proximity    | 614.4 units | Headshot range         |
 
 ### Unit Scale
 
 IGI 1 uses a consistent scale of **4096 units = 1 meter**.
 
-| Game Value | Real-World Equivalent |
-|------------|----------------------|
-| 614.4 units | 0.15 meters (15 cm) |
-| 2048 units | 0.5 meters (50 cm) |
-| 40960 units | 10 meters |
-| 84.741692 units/tick | 0.62 m/s² at 30 Hz |
+| Game Value           | Real-World Equivalent |
+| -------------------- | --------------------- |
+| 614.4 units          | 0.15 meters (15 cm)   |
+| 2048 units           | 0.5 meters (50 cm)    |
+| 40960 units          | 10 meters             |
+| 84.741692 units/tick | 0.62 m/s² at 30 Hz    |
 
 ### Decompiled C Code
 
@@ -77,7 +77,7 @@ void HitHandler_Soldier(SoldierStruct* soldier, DamageInfo* damage) {
         soldier->state = STATE_DEAD;
     }
 }
-```text
+```
 
 ### Health Calculation
 
@@ -87,7 +87,7 @@ final_damage = base_damage x zone_multiplier x difficulty_scale
 Where:
   zone_multiplier = hit_table[zone_id]  (17 zones)
   difficulty_scale = 0.75 | 1.0 | 1.25
-```text
+```
 
 ---
 
@@ -102,20 +102,21 @@ The airborne integrator applies gravity to the player's vertical velocity every 
 
 ### Key Findings
 
-| Constant | Value | Description |
-|----------|-------|-------------|
-| Gravity Per Tick | 84.741692 | Per-tick velocity reduction |
-| Gravity Source | Global at `0x5333F0` | FPU float constant |
-| Velocity Offset | +0x66C | Player struct offset |
-| Tick Rate | 30 Hz | Physics update frequency |
-| No Damping | None | Falling body accelerates indefinitely |
-| No Terminal Velocity | None | Fall speed unlimited |
+| Constant             | Value                | Description                           |
+| -------------------- | -------------------- | ------------------------------------- |
+| Gravity Per Tick     | 84.741692            | Per-tick velocity reduction           |
+| Gravity Source       | Global at `0x5333F0` | FPU float constant                    |
+| Velocity Offset      | +0x66C               | Player struct offset                  |
+| Tick Rate            | 30 Hz                | Physics update frequency              |
+| No Damping           | None                 | Falling body accelerates indefinitely |
+| No Terminal Velocity | None                 | Fall speed unlimited                  |
 
 ### Unit Scale
 
 Gravity in real-world units:
-- 84.741692 units/tick × 30 ticks/s = 2542.25 units/s²
-- At 4096 units/meter: 2542.25 / 4096 = **0.62 m/s²**
+
+* 84.741692 units/tick × 30 ticks/s = 2542.25 units/s²
+* At 4096 units/meter: 2542.25 / 4096 = **0.62 m/s²**
 
 ### Decompiled C Code
 
@@ -148,7 +149,7 @@ void AirborneIntegrate(PlayerStruct* player) {
     // No damping, no terminal velocity
     // Fall continues accelerating indefinitely
 }
-```text
+```
 
 ### Physics Formula
 
@@ -158,7 +159,7 @@ velocity.z -= gravity_per_tick
 Where:
   gravity_per_tick = 84.741692 (from global 0x5333F0)
   Applied every 30Hz tick
-```text
+```
 
 > **Note:** At 4096 units/meter, gravity = 0.62 m/s. A 1024-unit takeoff reaches apex in ~12 ticks.
 
@@ -175,25 +176,25 @@ The damage state initializer copies the 17-zone hit multiplier table into the so
 
 ### Key Findings
 
-| Zone ID | Zone Name | Multiplier |
-|---------|-----------|------------|
-| 0 | Head | 100.0x |
-| 1 | Neck | 50.0x |
-| 2 | Upper Torso | 1.0x |
-| 3 | Lower Torso | 1.0x |
-| 4 | Right Upper Arm | 0.75x |
-| 5 | Right Lower Arm | 0.5x |
-| 6 | Right Hand | 0.25x |
-| 7 | Left Upper Arm | 0.75x |
-| 8 | Left Lower Arm | 0.5x |
-| 9 | Left Hand | 0.25x |
-| 10 | Right Upper Leg | 0.75x |
-| 11 | Right Lower Leg | 0.5x |
-| 12 | Right Foot | 0.25x |
-| 13 | Left Upper Leg | 0.75x |
-| 14 | Left Lower Leg | 0.5x |
-| 15 | Left Foot | 0.25x |
-| 16 | Groin | 2.0x |
+| Zone ID | Zone Name       | Multiplier |
+| ------- | --------------- | ---------- |
+| 0       | Head            | 100.0x     |
+| 1       | Neck            | 50.0x      |
+| 2       | Upper Torso     | 1.0x       |
+| 3       | Lower Torso     | 1.0x       |
+| 4       | Right Upper Arm | 0.75x      |
+| 5       | Right Lower Arm | 0.5x       |
+| 6       | Right Hand      | 0.25x      |
+| 7       | Left Upper Arm  | 0.75x      |
+| 8       | Left Lower Arm  | 0.5x       |
+| 9       | Left Hand       | 0.25x      |
+| 10      | Right Upper Leg | 0.75x      |
+| 11      | Right Lower Leg | 0.5x       |
+| 12      | Right Foot      | 0.25x      |
+| 13      | Left Upper Leg  | 0.75x      |
+| 14      | Left Lower Leg  | 0.5x       |
+| 15      | Left Foot       | 0.25x      |
+| 16      | Groin           | 2.0x       |
 
 ### Decompiled C Code
 
@@ -234,7 +235,7 @@ void DamageState_Init(SoldierStruct* soldier, DamageState* state) {
     // Head proximity check (614.4 units = 15cm)
     state->head_proximity_units = 614.4f;
 }
-```text
+```
 
 ### Zone Mapping
 
@@ -247,7 +248,7 @@ Direction Tests:
 Head Proximity: 614.4 units (15cm radius)
   - Within this range = headshot (100x damage)
   - Outside = neck or torso
-```text
+```
 
 ---
 
@@ -262,19 +263,19 @@ The main weapon state machine handles all weapon states: Ready, Firing, Striking
 
 ### Key Findings
 
-| State ID | State Name | Description |
-|----------|------------|-------------|
-| 0 | Ready | Weapon idle, can fire |
-| 1 | Firing | Trigger held, discharging |
-| 2 | Striking | Melee attack animation |
-| 3 | DryFire | Empty magazine click |
-| 4 | Reloading | Reload animation |
-| 5 | Changing | Switching weapons |
-| 6 | Peeking | Aim around cover |
-| 7 | Throwing | Grenade toss |
-| 8 | Placing | Mine/object placement |
-| 9 | Medipack | Healing animation |
-| 10 | MapComputer | Overlay active |
+| State ID | State Name  | Description               |
+| -------- | ----------- | ------------------------- |
+| 0        | Ready       | Weapon idle, can fire     |
+| 1        | Firing      | Trigger held, discharging |
+| 2        | Striking    | Melee attack animation    |
+| 3        | DryFire     | Empty magazine click      |
+| 4        | Reloading   | Reload animation          |
+| 5        | Changing    | Switching weapons         |
+| 6        | Peeking     | Aim around cover          |
+| 7        | Throwing    | Grenade toss              |
+| 8        | Placing     | Mine/object placement     |
+| 9        | Medipack    | Healing animation         |
+| 10       | MapComputer | Overlay active            |
 
 ### Decompiled C Code
 
@@ -338,7 +339,7 @@ void WeaponState_Update(PlayerStruct* player, float dt) {
         player->recoil = 0.0f;
     }
 }
-```text
+```
 
 ---
 
@@ -353,14 +354,14 @@ The AI view cone test checks if a target is within the AI's field of view. Uses 
 
 ### Key Findings
 
-| Parameter | Default | Alarm State | Description |
-|-----------|---------|-------------|-------------|
-| Primary Length | Alert distance | Increased | Sight range |
-| Primary Half-Angle | Alpha | Wider | Cone width |
-| Primary Detection Rate | Gamma | Faster | Detection speed |
-| Secondary Length | Peripheral | Increased | Peripheral range |
-| Secondary Half-Angle | Wider | Wider | Peripheral width |
-| Sight Obstruction Tolerance | 0.79 | Same | Raycast threshold |
+| Parameter                   | Default        | Alarm State | Description       |
+| --------------------------- | -------------- | ----------- | ----------------- |
+| Primary Length              | Alert distance | Increased   | Sight range       |
+| Primary Half-Angle          | Alpha          | Wider       | Cone width        |
+| Primary Detection Rate      | Gamma          | Faster      | Detection speed   |
+| Secondary Length            | Peripheral     | Increased   | Peripheral range  |
+| Secondary Half-Angle        | Wider          | Wider       | Peripheral width  |
+| Sight Obstruction Tolerance | 0.79           | Same        | Raycast threshold |
 
 ### Decompiled C Code
 
@@ -428,7 +429,7 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
     
     return DETECTED;
 }
-```text
+```
 
 ### Detection Cascade
 
@@ -444,7 +445,7 @@ uint32_t AI_ViewConeTest(AIStruct* ai, Vector3D* target_pos, bool use_alarm_cone
 5. Hearing Check (independent)
    (sound event)
 6. State Transition (Idle -> Alert -> Combat)
-```text
+```
 
 ---
 
@@ -459,14 +460,14 @@ Full helicopter physics simulation including torque smoothing, collective pitch,
 
 ### Key Findings
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Throttle Offset | +0x720 | Vehicle struct |
-| Torque Smoothing | Exponential | All 3 axes |
-| High Collective Step | Configurable | Max rotor angle |
-| Low Collective Step | Configurable | Min rotor angle |
-| Aerodynamic Surfaces | Variable | Per-surface drag |
-| Ground Contact Threshold | 0x533588 | Altitude check |
+| Parameter                | Value        | Description      |
+| ------------------------ | ------------ | ---------------- |
+| Throttle Offset          | +0x720       | Vehicle struct   |
+| Torque Smoothing         | Exponential  | All 3 axes       |
+| High Collective Step     | Configurable | Max rotor angle  |
+| Low Collective Step      | Configurable | Min rotor angle  |
+| Aerodynamic Surfaces     | Variable     | Per-surface drag |
+| Ground Contact Threshold | 0x533588     | Altitude check   |
 
 ### Decompiled C Code
 
@@ -528,7 +529,7 @@ void HeliPhysics_Update(VehicleStruct* heli, float dt) {
         ForceAppend(heli->force_buffer, &drag_force);
     }
 }
-```text
+```
 
 ### Torque Smoothing Formula
 
@@ -539,7 +540,7 @@ Applied to:
   Pitch (X axis)
   Yaw (Y axis)  
   Roll (Z axis)
-```text
+```
 
 ---
 
@@ -554,13 +555,13 @@ Explosion damage with linear falloff from `FullDamageRange` to `MaxDamageRange`.
 
 ### Key Findings
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Full Damage Range | 2048 units | 0.5 meters |
-| Max Damage Range | 40960 units | 10 meters |
-| Falloff Type | Linear | Linear reduction |
-| Hardcoded Zone | 13 | Front direction |
-| Body Radius Scale | 0.33333334 | Collision radius |
+| Parameter         | Value       | Description      |
+| ----------------- | ----------- | ---------------- |
+| Full Damage Range | 2048 units  | 0.5 meters       |
+| Max Damage Range  | 40960 units | 10 meters        |
+| Falloff Type      | Linear      | Linear reduction |
+| Hardcoded Zone    | 13          | Front direction  |
+| Body Radius Scale | 0.33333334  | Collision radius |
 
 ### Unit Scale
 
@@ -608,7 +609,7 @@ void ExplosionDamage_Apply(Vector3D* explosion_pos, float base_damage, float rad
         EntityApplyDamage(entity, damage, zone);
     }
 }
-```text
+```
 
 ### Damage Formula
 
@@ -616,7 +617,7 @@ void ExplosionDamage_Apply(Vector3D* explosion_pos, float base_damage, float rad
 distance <= 2048 units (< 0.5m):    damage = base_damage
 2048 < distance < 40960:            damage = base x (1 - (distance - 2048) / 38912)
 distance >= 40960 units (> 10m):   damage = 0
-```text
+```
 
 ---
 
@@ -631,12 +632,12 @@ Four-state ladder climbing system: Climbing (37), GettingOnTop (38), GettingOffT
 
 ### Key Findings
 
-| State ID | State Name | Animation | Description |
-|----------|------------|-----------|-------------|
-| 37 | Climbing | 168 | Paused at rung events |
-| 38 | GettingOnTop | 170 (reverse) | Enter from top |
-| 39 | GettingOffTop | 170 (forward) | Exit to roof |
-| 40 | SlidingDown | 169 | Gravity slide |
+| State ID | State Name    | Animation     | Description           |
+| -------- | ------------- | ------------- | --------------------- |
+| 37       | Climbing      | 168           | Paused at rung events |
+| 38       | GettingOnTop  | 170 (reverse) | Enter from top        |
+| 39       | GettingOffTop | 170 (forward) | Exit to roof          |
+| 40       | SlidingDown   | 169           | Gravity slide         |
 
 ### Decompiled C Code
 
@@ -705,7 +706,7 @@ void LadderClimb_Update(PlayerStruct* player, InputState* input) {
         player->ladder_direction = 0;
     }
 }
-```text
+```
 
 ### State Transitions
 
@@ -715,7 +716,7 @@ Climbing -> SlidingDown:   activate pressed
 GettingOnTop -> Climbing:  animation 170 complete
 GettingOffTop -> Inactive:  animation 170 complete
 SlidingDown -> Inactive:   ground contact
-```text
+```
 
 ### Rung System
 
@@ -729,33 +730,33 @@ Movement only when:
   
 Delta translation:
   Disabled during ladder (isDisableDeltaTranslationScale = true)
-```text
+```
 
 ---
 
 ## Summary of Key Constants
 
-| Address | Constant | Value | Usage |
-|---------|----------|-------|-------|
-| 0x5333EC | DAT_ZERO | 0.0 | Float zero |
-| 0x5333F0 | GRAVITY_PER_TICK | 84.741692 | Airborne gravity per tick |
-| 0x533470 | LADDER_DRAG | 0.99 | Ladder slide damping |
-| 0x53346C | LADDER_GRAVITY | 44.600887 | Ladder slide gravity |
-| 0x533588 | GROUND_THRESHOLD | 0.0 | Ground contact check |
-| 0x533758 | THROTTLE_THRESHOLD | 0.5 | Vehicle throttle threshold |
-| 0x56E1F4 | GRAVITY_DELTA | 84.741692 | Airborne gravity delta |
+| Address  | Constant           | Value     | Usage                      |
+| -------- | ------------------ | --------- | -------------------------- |
+| 0x5333EC | DAT_ZERO           | 0.0       | Float zero                 |
+| 0x5333F0 | GRAVITY_PER_TICK   | 84.741692 | Airborne gravity per tick  |
+| 0x533470 | LADDER_DRAG        | 0.99      | Ladder slide damping       |
+| 0x53346C | LADDER_GRAVITY     | 44.600887 | Ladder slide gravity       |
+| 0x533588 | GROUND_THRESHOLD   | 0.0       | Ground contact check       |
+| 0x533758 | THROTTLE_THRESHOLD | 0.5       | Vehicle throttle threshold |
+| 0x56E1F4 | GRAVITY_DELTA      | 84.741692 | Airborne gravity delta     |
 
 ### Unit Scale Reference
 
 All values use the standard IGI 1 scale: **4096 units = 1 meter**
 
-| Measurement | Game Value | Real-World |
-|-------------|------------|------------|
-| Head proximity | 614.4 units | 0.15 m (15 cm) |
-| Full damage range | 2048 units | 0.5 m (50 cm) |
-| Max damage range | 40960 units | 10 m |
-| Gravity per tick | 84.741692 | 0.62 m/s at 30 Hz |
-| Ladder gravity | 44.600887 | 0.33 m/s at 30 Hz |
+| Measurement       | Game Value  | Real-World        |
+| ----------------- | ----------- | ----------------- |
+| Head proximity    | 614.4 units | 0.15 m (15 cm)    |
+| Full damage range | 2048 units  | 0.5 m (50 cm)     |
+| Max damage range  | 40960 units | 10 m              |
+| Gravity per tick  | 84.741692   | 0.62 m/s at 30 Hz |
+| Ladder gravity    | 44.600887   | 0.33 m/s at 30 Hz |
 
 ---
 
